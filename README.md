@@ -1,2 +1,5 @@
-# BechtleSpeiseplan
-Speiseplan für Bechtle
+# Bechtle Speiseplan
+
+- Wochenübersicht
+- Tagesübersicht
+- Datenerfassung
