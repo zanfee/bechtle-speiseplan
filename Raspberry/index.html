@@ -16,14 +16,28 @@
             </div>
 
             <h1>Bechtle</h1><h2>Speiseplan</h2>
+            <div id="myProgress">
+                <div id="myBar"></div>
+            </div>
         </nav>
 
         <div></div>
 
         <script>
-                function myFunction(x) {
-                    x.classList.toggle("change");
+            function move() {
+                var elem = document.getElementById("myBar"); 
+                var width = 1;
+                var id = setInterval(frame, 10);
+                function frame() {
+                     if (width >= 100) {
+                        width++; 
+                        elem.style.width = width + '%'; 
+                    } else {
+                        width++; 
+                        elem.style.width = width + '%'; 
+                    }
                 }
+            }
         </script>
     </body>
 </html>
