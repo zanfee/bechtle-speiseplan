@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <meta name="author" content="Jan Fröhlich, Pasquale Di Vincenzo">
         <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
+        <script src="clock.js"></script>
+        <script src="progressBar.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700" rel="stylesheet">
         <title>Bechtle Speiseplan</title>
     </head>
@@ -15,29 +17,18 @@
                 <div class="bar3"></div>
             </div>
 
-            <h1>Bechtle</h1><h2>Speiseplan</h2>
+            <h1>Bechtle</h1>
+            <h2>Speiseplan</h2>
+            <h3 id="clock"></h3>
+            <h5 id="date"></h5>
+            <h4 id="week"></h4>
+            
+
             <div id="myProgress">
                 <div id="myBar"></div>
             </div>
         </nav>
 
         <div></div>
-
-        <script>
-            var start = null; 
-            var element = document.getElementById('SomeElementYouWantToAnimate');
-
-            element.style.position = 'absolute';
-
-            function step(timestamp) { 
-                if (!start) start = timestamp;
-                var progress = timestamp - start;
-                element.style.left = Math.min(progress / 10, 200) + 'px';
-                if (progress < 2000) {
-                    window.requestAnimationFrame(step); 
-                }
-            }
-            window.requestAnimationFrame(step);
-        </script>
     </body>
 </html>

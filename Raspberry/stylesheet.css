@@ -10,11 +10,15 @@ nav{
     float: left;
 }
 
+.nav_button:hover{
+    background-color: beige;
+}
+
 .nav_button{
-    margin: 20px 20px 20px 20px;
     float: left;
     display: inline-block;
     cursor: pointer;
+    padding: 20px 20px 20px 20px;
 }
 
 .bar1, .bar2, .bar3 {
@@ -27,7 +31,7 @@ nav{
 }
 
 h1{
-    margin: 5px 0 0 0;
+    margin: 5px 0 0 10px;
     font-size: 40px;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 700;
@@ -41,6 +45,33 @@ h2{
     font-family: 'Source Sans Pro';
     font-weight: 200;
     float: left;
+    color: #757575;
+}
+
+h3{
+    margin: 10px 0 0 450px;
+    font-size: 32px;
+    font-family: 'Source Sans Pro';
+    font-weight: 700;
+    float: left;
+    color: #757575;
+}
+
+h4{
+    margin: 10px 10px 0 0;
+    font-size: 32px;
+    font-family: 'Source Sans Pro';
+    font-weight: 700;
+    float: right;
+    color: #757575;
+}
+
+h5{
+    margin: 10px 50px 0 0;
+    font-size: 32px;
+    font-family: 'Source Sans Pro';
+    font-weight: 200;
+    float: right;
     color: #757575;
 }
 
