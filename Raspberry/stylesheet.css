@@ -31,48 +31,57 @@ nav {
 }
 
 h1 {
-    margin: 5px 0 0 10px;
+    margin: 4px 0 0 8px;
     font-size: 40px;
     font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 700;
-    float: left;
-    color: #757575;
+    font-weight: 200;
+    color: #757575;    
 }
 
 h2 {
-    margin: 5px 0 0 10px;
     font-size: 40px;
     font-family: 'Source Sans Pro';
     font-weight: 200;
-    float: left;
     color: #757575;
 }
 
 h3 {
-    margin: 10px 0 0 450px;
+    margin: 10px 0 0 0;
     font-size: 32px;
     font-family: 'Source Sans Pro';
     font-weight: 700;
-    float: left;
     color: #757575;
 }
 
 h4 {
-    margin: 10px 10px 0 0;
+    margin: 10px 8px 0 0;
     font-size: 32px;
     font-family: 'Source Sans Pro';
     font-weight: 700;
-    float: right;
     color: #757575;
 }
 
 h5 {
-    margin: 10px 50px 0 0;
+    margin: 10px 48px 0 0;
     font-size: 32px;
     font-family: 'Source Sans Pro';
-    font-weight: 200;
-    float: right;
+    font-weight: 400;
     color: #757575;
+}
+
+.pagename {
+    float: left;
+    
+}
+
+#clock {
+    position: absolute;
+    left: 50%;
+    
+}
+
+#week, #date {
+    float: right;
 }
 
 #myProgress {
