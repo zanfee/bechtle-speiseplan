@@ -1,20 +1,20 @@
-body{
+body {
     margin: 0;
     padding: 0;
     text-decoration: none;
 }
 
-nav{
+nav {
     height: 60px;
     width: 100%;
     float: left;
 }
 
-.nav_button:hover{
+.nav_button:hover {
     background-color: beige;
 }
 
-.nav_button{
+.nav_button {
     float: left;
     display: inline-block;
     cursor: pointer;
@@ -30,7 +30,7 @@ nav{
     color: #757575;
 }
 
-h1{
+h1 {
     margin: 5px 0 0 10px;
     font-size: 40px;
     font-family: 'Source Sans Pro', sans-serif;
@@ -39,7 +39,7 @@ h1{
     color: #757575;
 }
 
-h2{
+h2 {
     margin: 5px 0 0 10px;
     font-size: 40px;
     font-family: 'Source Sans Pro';
@@ -48,7 +48,7 @@ h2{
     color: #757575;
 }
 
-h3{
+h3 {
     margin: 10px 0 0 450px;
     font-size: 32px;
     font-family: 'Source Sans Pro';
@@ -57,7 +57,7 @@ h3{
     color: #757575;
 }
 
-h4{
+h4 {
     margin: 10px 10px 0 0;
     font-size: 32px;
     font-family: 'Source Sans Pro';
@@ -66,7 +66,7 @@ h4{
     color: #757575;
 }
 
-h5{
+h5 {
     margin: 10px 50px 0 0;
     font-size: 32px;
     font-family: 'Source Sans Pro';
