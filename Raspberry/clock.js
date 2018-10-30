@@ -1,26 +1,22 @@
 function tick(){
     var hours, minutes, seconds, weekDay, day, month, year;
-    var HoursCount, MinutesCount, SecondCount, WeekDayCount, DayCount, MonthCount, YearCount;
     var today;
     
     today = new Date();
-    HoursCount = today.getHours();
-    MinutesCount = today.getMinutes();
-    SecondCount = today.getSeconds();
-    WeekDayCount = today.getDay();
-    DayCount = today.getDate();
-    MonthCount = today.getMonth() + 1;
-    YearCount = today.getFullYear();
+    hours = today.getHours();
+    minutes = today.getMinutes();
+    seconds = today.getSeconds();
+    weekDay = today.getDay();
+    day = today.getDate();
+    month = today.getMonth() + 1;
+    year = today.getFullYear();
     
-    hours = HoursCount+":";
-    if (MinutesCount < 10) {minutes = "0" + MinutesCount + ":";}
-        else {minutes = MinutesCount + ":";}
-    if (SecondCount < 10) {seconds = "0" + SecondCount + " ";}
-        else {seconds = SecondCount + " ";}
-    time = hours + minutes + seconds + " Uhr";
+    if (minutes < 10) {minutes = "0" + minutes}
+    if (seconds < 10) {seconds = "0" + seconds}
+    time = hours + ":" + minutes + ":" + seconds + " Uhr";
     clock.innerHTML = time;
 
-    switch(WeekDayCount){
+    switch(weekDay){
         case 1: weekDay = "Samstag, ";
         case 2: weekDay = "Sonntag, ";
         case 3: weekDay = "Montag, ";
@@ -31,14 +27,11 @@ function tick(){
     }
     week.innerHTML = weekDay;
 
-    year = YearCount;
-    if (MonthCount < 10) {month = "0" + MonthCount + ".";}
-        else {month = MonthCount + ".";}
-    if (DayCount < 10) {day = "0" + DayCount + ".";}
-        else {day = DayCount + ".";}
-    date_ = day + month + year;
+    if (month < 10) {month = "0" + month}
+    if (day < 10) {day = "0" + day}
+    date_ = day + "." + month + "." + year;
     date.innerHTML = date_;
-    
+
     window.setTimeout("tick();", 1000);
 }
     
