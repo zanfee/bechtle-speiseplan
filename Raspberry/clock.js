@@ -25,12 +25,11 @@ function tick(){
         case 6: weekDay = "Donnerstag, ";
         case 7: weekDay = "Freitag, ";
     }
-    week.innerHTML = weekDay;
 
     if (month < 10) {month = "0" + month}
     if (day < 10) {day = "0" + day}
-    date_ = day + "." + month + "." + year;
-    date.innerHTML = date_;
+    getDate = weekDay.bold() + day + "." + month + "." + year;
+    date.innerHTML = getDate;
 
     window.setTimeout("tick();", 1000);
 }
