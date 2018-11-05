@@ -1,14 +1,17 @@
-var start = null; 
-var element = document.getElementById('SomeElementYouWantToAnimate');
+var width = 0; 
+var bar = document.getElementById('progress-bar');
 
-element.style.position = 'absolute';
-
-function step(timestamp) { 
-    if (!start) start = timestamp;
-    var progress = timestamp - start;
-    element.style.left = Math.min(progress / 10, 200) + 'px';
-    if (progress < 2000) {
-        window.requestAnimationFrame(step); 
+function move() {
+    if (width < 100) {
+        width += 0.5;
     }
+    else {
+        width = 0;
+        // color animation green → grey ~2s
+        // scroll to next element
+    }
+    bar.style.width = width + '%';
+    window.requestAnimationFrame(move);
 }
-window.requestAnimationFrame(step);
+
+window.requestAnimationFrame(move);
