@@ -4,8 +4,6 @@
         <meta charset="UTF-8">
         <meta name="author" content="Jan Fröhlich, Pasquale Di Vincenzo">
         <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
-        <script src="clock.js"></script>
-        <script src="progressBar.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700" rel="stylesheet">
         <title>Bechtle Speiseplan</title>
     </head>
@@ -21,17 +19,20 @@
             <h2 id="clock"></h2>
             <h3 id="date"></h3>      
                 
-            <input type="radio" class="radio" name="progress" value="five" id="five">
+            <!-- <input type="radio" class="radio" name="progress" value="five" id="five">
             <label for="five" class="label">5%</label>
 
             <input type="radio" class="radio" name="progress" value="onehundred" id="onehundred">
-            <label for="onehundred" class="label">100%</label>
+            <label for="onehundred" class="label">100%</label> -->
 
             <div class="progress">
-                <div class="progress-bar"></div>
+                <div id="progress-bar"></div>
             </div>
         </nav>
 
         <div></div>
+
+        <script src="clock.js"></script>
+        <script src="progressBar.js"></script>
     </body>
 </html>

@@ -71,22 +71,28 @@ h3 {
     position: absolute;
 }
 
-.progress {background: rgb(60, 60, 60)}
-
-.progress-bar {
-  height: 2px;
-  transition: 10s linear;
+.progress {
+    width: 100%;
+    background-color: rgb(60, 60, 60);
+    height: 2px;
 }
 
-#five:checked ~ .progress > .progress-bar {
+#progress-bar {
+  height: 2px;
+  width: 5%;
+  background-color: #86e01e;
+  position: absolute;
+}
+
+/*  #five:checked ~ .progress > .progress-bar {
     width: 0%;
     background-color: #f63a0f;
-  }
+  } 
   
   .progress > .progress-bar {
     width: 100%;
     background-color: #86e01e;
-  }
+  } */
 
 .unselectable {
     -webkit-touch-callout: none;
