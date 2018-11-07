@@ -2,7 +2,7 @@
 - Wochenübersicht
 - Tagesübersicht
 - TV-Ansicht
-  ![Preview](https://drive.google.com/file/d/1zfhmmEjxygbyoL_VhNAhvGbv5OGqNRNa/view?usp=sharing)
+  ![Preview](https://imgur.com/Zmpkkao)
 - Datenerfassung
 
 ### Fonts
