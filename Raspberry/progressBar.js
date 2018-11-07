@@ -1,5 +1,5 @@
 var width = 0; 
-var bar = document.getElementById('progress-bar');
+var bar = document.getElementById('progress');
 
 function move() {
     if (width < 100) {

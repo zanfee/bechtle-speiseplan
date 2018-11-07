@@ -1,6 +1,6 @@
 function tick(){
     var time, hours, minutes, seconds, weekDay, day, month, year;
-    
+
     time = new Date();
     hours = time.getHours();
     minutes = time.getMinutes();
@@ -9,13 +9,11 @@ function tick(){
     day = time.getDate();
     month = time.getMonth() + 1;
     year = time.getFullYear();
-    
+
     if (minutes < 10) {minutes = "0" + minutes}
     if (seconds < 10) {seconds = "0" + seconds}
     time = hours + ":" + minutes + ":" + seconds + " Uhr";
     clock.innerHTML = time;
-
-    
 
     switch(weekDay){
         case 1: weekDay = "Montag, ";
@@ -41,5 +39,5 @@ function tick(){
 
     window.setTimeout("tick();", 1000);
 }
-    
+
 window.onload = tick;
