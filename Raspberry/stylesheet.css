@@ -4,11 +4,14 @@ body {
     text-decoration: none;
 }
 
-nav {
+.header {
     height: 60px;
     width: 100%;
-    display:inline-block;
-    vertical-align: top;
+    display: inline-block;
+}
+
+.top {
+    height: 58px;
 }
 
 .nav_button:hover {
@@ -58,6 +61,7 @@ h3 {
 .pagename {
     position: absolute;
     margin: 4px 64px;
+    white-space: nowrap;
 }
 
 #clock {
@@ -65,10 +69,22 @@ h3 {
     padding: 9px 0 9px 0;
 }
 
+@media only screen and (max-width: 1000px) {
+    #clock {
+        visibility: hidden;
+    }
+}
+
 #date {
     right: 32px;
     top: 0;
     position: absolute;
+}
+
+@media only screen and (max-width: 800px) {
+    #date {
+        visibility: hidden;
+    }
 }
 
 .progress {

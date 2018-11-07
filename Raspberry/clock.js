@@ -1,29 +1,37 @@
 function tick(){
-    var hours, minutes, seconds, weekDay, day, month, year;
-    var today;
+    var time, hours, minutes, seconds, weekDay, day, month, year;
     
-    today = new Date();
-    hours = today.getHours();
-    minutes = today.getMinutes();
-    seconds = today.getSeconds();
-    weekDay = today.getDay();
-    day = today.getDate();
-    month = today.getMonth() + 1;
-    year = today.getFullYear();
+    time = new Date();
+    hours = time.getHours();
+    minutes = time.getMinutes();
+    seconds = time.getSeconds();
+    weekDay = time.getDay();
+    day = time.getDate();
+    month = time.getMonth() + 1;
+    year = time.getFullYear();
     
     if (minutes < 10) {minutes = "0" + minutes}
     if (seconds < 10) {seconds = "0" + seconds}
     time = hours + ":" + minutes + ":" + seconds + " Uhr";
     clock.innerHTML = time;
 
+    
+
     switch(weekDay){
-        case 1: weekDay = "Samstag, ";
-        case 2: weekDay = "Sonntag, ";
-        case 3: weekDay = "Montag, ";
-        case 4: weekDay = "Dienstag, ";
-        case 5: weekDay = "Mittwoch, ";
-        case 6: weekDay = "Donnerstag, ";
-        case 7: weekDay = "Freitag, ";
+        case 1: weekDay = "Montag, ";
+            break;
+        case 2: weekDay = "Dienstag, ";
+            break;
+        case 3: weekDay = "Mittwoch, ";
+            break;
+        case 4: weekDay = "Donnerstag, ";
+            break;
+        case 5: weekDay = "Freitag, ";
+            break;
+        case 6: weekDay = "Samstag, ";
+            break;
+        case 7: weekDay = "Sonntag, ";
+            break;
     }
 
     if (month < 10) {month = "0" + month}
