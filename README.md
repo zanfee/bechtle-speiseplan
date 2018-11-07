@@ -2,7 +2,7 @@
 - Wochenübersicht
 - Tagesübersicht
 - TV-Ansicht
-  ![Preview](https://i.imgur.com/Zmpkkao.jpg)
+  ![Preview](https://i.imgur.com/Zmpkkao.jpg =400x)
 - Datenerfassung
 
 ### Fonts
