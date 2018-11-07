@@ -7,8 +7,8 @@
 - Datenerfassung
 
 ### Fonts
-Phenomena :       Bold  
-Source Sans Pro : Bold | Regular | Light
+* **Phenomena** : (Bold)  
+* **Source Sans Pro** : (Bold | Regular | Light)
 
 ### Icons
 **Vegetarisch**
