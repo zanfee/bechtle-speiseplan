@@ -8,7 +8,7 @@
  * Source Sans Pro Bold | Regular | Light
 
 ### Icons
-Vegetarisch
+**Vegetarisch**
 https://www.flaticon.com/free-icon/cabbage_135699#term=vegetarian&page=1&position=41
 https://www.flaticon.com/free-icon/lettuce_424227
 
