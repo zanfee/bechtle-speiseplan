@@ -28,14 +28,26 @@ h3 {
     margin: 10px 8px 0 0;
 }
 
+a {
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    font-size: 16pt;
+    color: #3c3c3c;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
 ::selection {
     background-color: #3c3c3c;
     color: #f5f5f5;
 }
 
-/* navigation head */
+/* navigation header */
 
-.nav_header {
+.nav-header {
     height: 60px;
     width: 100%;
     display: inline-block;
@@ -45,18 +57,18 @@ h3 {
     height: 58px;
 }
 
-#nav_button {
+#nav-button {
     display: inline-block;
     cursor: pointer;
     padding: 21px;
     position: absolute;
 }
 
-#nav_button:hover {
+#nav-button:hover {
     background-color: #f5f5f5;
 }
 
-#nav_button:focus {
+#nav-button:focus {
     background-color: #f5f5f5;
     outline: 0px;
 }
@@ -128,7 +140,7 @@ h3 {
     left: 0px;
 }
 
-#nav_body {
+#nav-body {
     background: #f5f5f5;
     box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     height: calc(100vh - 60px);
@@ -141,9 +153,21 @@ h3 {
     transform: translateZ(0);
 }
 
-.nav_base {
-
+.nav-admin {
+    : red;
+    list-style: none;
+    border-bottom: 1px solid #e0e0e0;
 }
+
+p .nav-admin {
+    color
+}
+
+.nav-base {
+    list-style: none;
+}
+
+/* attributes */
 
 .unselectable {
     -webkit-touch-callout: none;

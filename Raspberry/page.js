@@ -1,5 +1,5 @@
-var mover = document.getElementById('nav_body');
-var trigger = document.getElementById('nav_button');
+var mover = document.getElementById('nav-body');
+var trigger = document.getElementById('nav-button');
 
 function toggleMenu() {
     mover.className = mover.className === 'go-left'? 'go-right': 'go-left';
