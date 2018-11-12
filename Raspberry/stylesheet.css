@@ -28,6 +28,11 @@ h3 {
     margin: 10px 8px 0 0;
 }
 
+::selection {
+    background-color: #3c3c3c;
+    color: #f5f5f5;
+}
+
 /* navigation head */
 
 .nav_header {
@@ -47,8 +52,13 @@ h3 {
     position: absolute;
 }
 
-.nav_button:hover {
+#nav_button:hover {
     background-color: #f5f5f5;
+}
+
+#nav_button:focus {
+    background-color: #f5f5f5;
+    outline: 0px;
 }
 
 .bar {
@@ -100,27 +110,28 @@ h3 {
     position: absolute;
 }
 
-/* navigation body https://www.quora.com/How-can-I-slide-a-div-left-and-right-by-clicking-another-div-using-JavaScript-without-jQuery */
+/* navigation body */
 
 .go-left {
     -webkit-transform: translate(30px,0);
     -moz-transform: translate(30px,0);
     -o-transform: translate(30px,0);
-    transform: translate(30px,0)
+    transform: translate(30px,0);
+    left: -260px;
 }
  
 .go-right {
     -webkit-transform: translate(-30px,0);
     -moz-transform: translate(-30px,0);
     -o-transform: translate(-30px,0);
-    transform: translate(-30px,0)
+    transform: translate(-30px,0);
+    left: 0px;
 }
 
 #nav_body {
     background: #f5f5f5;
     box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     height: calc(100vh - 60px);
-    left: 260px;
     line-height: 1.2em;
     overflow: auto;
     position: fixed;
