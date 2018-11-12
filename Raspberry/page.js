@@ -1,14 +1,24 @@
-var mover = document.getElementById('nav-body');
-var trigger = document.getElementById('nav-button');
+var navBody = document.getElementById('nav-body');
+var navButton = document.getElementById('nav-button');
+
+var expModules = document.getElementById('expandable-Modules');
+var expSettings = document.getElementById('expandable-Settings');
 
 function toggleMenu() {
-    mover.className = mover.className === 'go-left'? 'go-right': 'go-left';
+    navBody.className = navBody.className === 'go-left'? 'go-right': 'go-left';
 }
-trigger.addEventListener('click', toggleMenu);
-trigger.addEventListener("keyup", function(event) {
+
+function expand(element) {
+    
+}
+
+navButton.addEventListener('click', toggleMenu);
+navButton.addEventListener("keyup", function(event) {
 
   if (event.keyCode === 13 | event.keyCode === 32) {
 
-    trigger.click();
+    navButton.click();
   }
 });
+expModules.addEventListener('click', expand(expModules));
+expSettings.addEventListener('click', expand(expSettings));
