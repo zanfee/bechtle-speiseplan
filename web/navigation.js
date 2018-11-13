@@ -7,6 +7,8 @@ var navButton = document.getElementById('nav-button');
 var modules = document.getElementById('modules').childNodes;
 var settings = document.getElementById('settings').childNodes;
 
+var outsideMenu = document.getElementById('nav-open');
+
 var content = document.getElementById('content');
 
 /* Progress Bar*/
@@ -21,7 +23,19 @@ var time, hours, minutes, seconds, weekDay, day, month, year;
 
 /* Navigation */
 function toggleMenu() {
-    navBody.className = navBody.className === 'go-left' ? 'go-right' : 'go-left';
+    if (navBody.className === 'go-left') {
+      navBody.className = 'go-right';
+      outsideMenu.className = 'shown';
+    }
+    else {
+      navBody.className = 'go-left';
+      outsideMenu.className = 'hidden';
+    }
+}
+
+function closeMenu() {
+  navBody.className = 'go-left';
+  outsideMenu.className = 'hidden';
 }
 
 function expandModules() {

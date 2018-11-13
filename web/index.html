@@ -28,12 +28,12 @@
 
         <nav id="nav-body" class="go-left">
             <ul class="nav-admin unselectable">
-                <a onclick="loadAdmin()" style="color: darkred;">Bearbeiten</a>
+                <a onclick="loadAdmin(); closeMenu()" style="color: darkred;">Bearbeiten</a>
             </ul>
             <ul class="nav-view unselectable">
-                <a onclick="loadWeek()">Wochenübersicht</a>
-                <a onclick="loadDay()">Tagesübersicht</a>
-                <a onclick="loadCarousel()">Karussell Ansicht</a>
+                <a onclick="loadWeek(); closeMenu()">Wochenübersicht</a>
+                <a onclick="loadDay(); closeMenu()">Tagesübersicht</a>
+                <a onclick="loadCarousel(); closeMenu()">Karussell Ansicht</a>
             </ul>
             <ul class="nav-base unselectable">
                 <div id="modules">
@@ -52,6 +52,7 @@
             </ul>
         </nav>
 
+        <div id="nav-open" class="hidden" onclick="closeMenu()" style="width:100%"></div>
         <div id="content"></div>
 
         <script src="navigation.js"></script>
