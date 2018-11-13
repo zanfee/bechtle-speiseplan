@@ -28,21 +28,24 @@
 
         <nav id="nav-body" class="go-left">
             <ul class="nav-admin unselectable">
-                <a style="color: darkred;">Bearbeiten</a>
+                <a onclick="loadAdmin()" style="color: darkred;">Bearbeiten</a>
             </ul>
             <ul class="nav-view unselectable">
-                <a>Wochenübersicht</a>
+                <a onclick="loadWeek">Wochenübersicht</a>
                 <a>Tagesübersicht</a>
                 <a>Karussell Ansicht</a>
             </ul>
             <ul class="nav-base unselectable">
                 <div id="modules">
-                    <a onclick={expand(0)}>Module</a>
+                    <a onclick=expandModules()>Module</a>
 
-                    <a class="hidden">test</a>
+                    <a class="hidden">Speiseplan Karussell</a>
+                    <a class="hidden">Speiseplan Tag</a>
+                    <a class="hidden">Speiseplan Woche</a>
+                    <a class="hidden">Wetter</a>
                 </div>
                 <div id="settings">
-                    <a onclick={expand(1)}>Einstellungen</a>
+                    <a onclick=expandSettings()>Einstellungen</a>
 
                     <a class="hidden">Nachtmodus</a>
                     <a class="hidden">Language</a>
@@ -51,7 +54,7 @@
             </ul>
         </nav>
 
-        <div></div>
+        <div id="content"></div>
 
         <script src="clock.js"></script>
         <script src="progressBar.js"></script>
