@@ -27,21 +27,26 @@
         </div>
 
         <nav id="nav-body" class="go-left">
-            <ul class="nav-admin">
+            <ul class="nav-admin unselectable">
                 <a style="color: darkred;">Bearbeiten</a>
             </ul>
-            <ul class="nav-view">
+            <ul class="nav-view unselectable">
                 <a>Wochenübersicht</a>
                 <a>Tagesübersicht</a>
-                <a>Theater Ansicht</a>
+                <a>Karussell Ansicht</a>
             </ul>
-            <ul class="nav-base">
-                <div id="expandable-Modules">
-                    <a>Theater Module</a>
+            <ul class="nav-base unselectable">
+                <div id="modules">
+                    <a onclick={expand(0)}>Module</a>
+
                     <a class="hidden">test</a>
                 </div>
-                <div id="expandable-Settings">
-                    <a>Einstellungen</a>
+                <div id="settings">
+                    <a onclick={expand(1)}>Einstellungen</a>
+
+                    <a class="hidden">Nachtmodus</a>
+                    <a class="hidden">Language</a>
+                    <a class="hidden">Geschwindigkeit</a>
                 </div>
             </ul>
         </nav>
