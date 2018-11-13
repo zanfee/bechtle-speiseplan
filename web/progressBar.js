@@ -10,6 +10,7 @@ function move() {
         /* --- 05.11.2018-jf ---
         // color animation green → grey ~2s
         // scroll to next element
+        // Time adjustable in settings
         */
     }
     bar.style.width = width + '%';
