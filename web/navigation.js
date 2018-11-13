@@ -47,19 +47,19 @@ function expandSettings() {
 }
 
 function loadAdmin() {
-  content.innerHTML = '<object type="text/html" data="/admin/adminTool.html"></object>';
+  content.innerHTML = '<object type="text/html" data="./admin/adminTool.html"></object>';
 }
 
 function loadWeek() {
-  content.innerHTML = '<object type="text/html" data="/Speiseplan/viewWeek/week.html"></object>';
+  content.innerHTML = '<object type="text/html" data="./Speiseplan/viewWeek/week.html"></object>';
 }
 
 function loadDay() {
-  content.innerHTML = '<object type="text/html" data="/Speiseplan/viewDay/day.html"></object>';
+  content.innerHTML = '<object type="text/html" data="./Speiseplan/viewDay/day.html"></object>';
 }
 
 function loadCarousel() {
-  content.innerHTML = '<object type="text/html" data="/Speiseplan/viewCarousel/carousel.html"></object>';
+  content.innerHTML = '<object type="text/html" data="./Speiseplan/viewCarousel/carousel.html"></object>';
 }
 
 navButton.addEventListener('click', toggleMenu);
@@ -70,6 +70,8 @@ navButton.addEventListener("keyup", function(event) {
     navButton.click();
   }
 });
+
+loadDay();
 
 /* Progress Bar */
 function move() {

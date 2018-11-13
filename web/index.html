@@ -31,14 +31,13 @@
                 <a onclick="loadAdmin()" style="color: darkred;">Bearbeiten</a>
             </ul>
             <ul class="nav-view unselectable">
-                <a onclick="loadWeek">Wochenübersicht</a>
-                <a onclick="loadDay">Tagesübersicht</a>
-                <a onclick="loadCarousel">Karussell Ansicht</a>
+                <a onclick="loadWeek()">Wochenübersicht</a>
+                <a onclick="loadDay()">Tagesübersicht</a>
+                <a onclick="loadCarousel()">Karussell Ansicht</a>
             </ul>
             <ul class="nav-base unselectable">
                 <div id="modules">
                     <a onclick=expandModules()>Module</a>
-
                     <a class="hidden">Speiseplan Karussell</a>
                     <a class="hidden">Speiseplan Tag</a>
                     <a class="hidden">Speiseplan Woche</a>
@@ -46,7 +45,6 @@
                 </div>
                 <div id="settings">
                     <a onclick=expandSettings()>Einstellungen</a>
-
                     <a class="hidden">Nachtmodus</a>
                     <a class="hidden">Language</a>
                     <a class="hidden">Geschwindigkeit</a>
