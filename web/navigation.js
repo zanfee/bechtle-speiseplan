@@ -3,11 +3,10 @@
 /* Navigation */
 var navBody = document.getElementById('nav-body');
 var navButton = document.getElementById('nav-button');
+var navOpen = document.getElementById('nav-open');
 
 var modules = document.getElementById('modules').childNodes;
 var settings = document.getElementById('settings').childNodes;
-
-var outsideMenu = document.getElementById('nav-open');
 
 var content = document.getElementById('content');
 
@@ -25,17 +24,17 @@ var time, hours, minutes, seconds, weekDay, day, month, year;
 function toggleMenu() {
     if (navBody.className === 'go-left') {
       navBody.className = 'go-right';
-      outsideMenu.className = 'shown';
+      navOpen.className = 'shown';
     }
     else {
       navBody.className = 'go-left';
-      outsideMenu.className = 'hidden';
+      navOpen.className = 'hidden';
     }
 }
 
 function closeMenu() {
   navBody.className = 'go-left';
-  outsideMenu.className = 'hidden';
+  navOpen.className = 'hidden';
 }
 
 function expandModules() {
