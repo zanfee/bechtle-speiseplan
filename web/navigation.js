@@ -60,19 +60,19 @@ function expandSettings() {
 }
 
 function loadAdmin() {
-  content.innerHTML = '<object type="text/html" data="./admin/adminTool.html"></object>';
+  content.innerHTML = '<object type="text/html" data="./admin/adminTool.html" class="fullscreen"></object>';
 }
 
 function loadWeek() {
-  content.innerHTML = '<object type="text/html" data="./Speiseplan/viewWeek/week.html"></object>';
+  content.innerHTML = '<object type="text/html" data="./Speiseplan/viewWeek/week.html" class="fullscreen"></object>';
 }
 
 function loadDay() {
-  content.innerHTML = '<object type="text/html" data="./Speiseplan/viewDay/day.html"></object>';
+  content.innerHTML = '<object type="text/html" data="./Speiseplan/viewDay/day.html" class="fullscreen"></object>';
 }
 
 function loadCarousel() {
-  content.innerHTML = '<object type="text/html" data="./Speiseplan/viewCarousel/carousel.html"></object>';
+  content.innerHTML = '<object type="text/html" data="./Speiseplan/viewCarousel/carousel.html" class="fullscreen"></object>';
 }
 
 navButton.addEventListener('click', toggleMenu);
