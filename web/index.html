@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700" rel="stylesheet">
         <title>Bechtle Speiseplan</title>
     </head>
-    <body>
+    <body class="light">
         <div class="nav-header">
             <div class="header">
                 <div id="nav-button" tabindex="1">
@@ -17,14 +17,12 @@
                     <div class="bar"></div>
                 </div>
 
-                <h1 class="pagename"><strong>Bechtle</strong> Speiseplan</h1>
-                <h2 id="clock"></h2>
-                <h3 id="date"></h3>
+                <h5 class="pagename"><strong>Bechtle</strong> Speiseplan</h5>
+                <h6 id="clock"></h6>
+                <h6 id="date"></h6>
             </div>
 
-            <div class="progress-bar">
-                <div id="progress"></div>
-            </div>
+            <div id="progress"></div>
         </div>
 
         <nav id="nav-body" class="go-left">
@@ -46,7 +44,7 @@
                 </div>
                 <div id="settings">
                     <a onclick=expandSettings()>Einstellungen</a>
-                    <a class="hidden">Nachtmodus</a>
+                    <a onclick=toggleTheme() class="hidden">Nachtmodus</a>
                     <a class="hidden">Language</a>
                     <a class="hidden">Geschwindigkeit</a>
                 </div>
@@ -56,6 +54,7 @@
         <div id="nav-open" class="hidden" onclick="closeMenu()" style="width:100%"></div>
         <div id="content"></div>
 
+        <script src="theme.js"></script>
         <script src="navigation.js"></script>
     </body>
 </html>

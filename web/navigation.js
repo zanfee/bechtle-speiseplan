@@ -1,5 +1,3 @@
-/* Variables */
-
 /* Navigation */
 var navBody = document.getElementById('nav-body');
 var navButton = document.getElementById('nav-button');
@@ -8,17 +6,18 @@ var navOpen = document.getElementById('nav-open');
 var modules = document.getElementById('modules').childNodes;
 var settings = document.getElementById('settings').childNodes;
 
-var content = document.getElementById('content');
+//content.innerHTML = '<object type="text/html" data="./Speiseplan/viewCarousel/carousel.html" class="fullscreen"></object>';
 
 /* Progress Bar*/
-var barWidth = 0; 
+var barGradient = -400;
 var progressbar = document.getElementById('progress');
 
 /* Date */
 var time, hours, minutes, seconds, weekDay, day, month, year;
 
-/* End Variables */
-
+/* Content */
+var content = document.getElementById('content');
+var page;
 
 /* Navigation */
 function toggleMenu() {
@@ -60,19 +59,19 @@ function expandSettings() {
 }
 
 function loadAdmin() {
-  content.innerHTML = '<object type="text/html" data="./admin/adminTool.html" class="fullscreen"></object>';
+  content.innerHTML = '<iframe type="text/html" id="page-object" class="fullscreen" frameborder="0" src="./admin/adminTool.html"></iframe>';
 }
 
 function loadWeek() {
-  content.innerHTML = '<object type="text/html" data="./Speiseplan/viewWeek/week.html" class="fullscreen"></object>';
+  content.innerHTML = '<iframe type="text/html" id="page-object" class="fullscreen" frameborder="0" src="./Speiseplan/viewWeek/week.html"></iframe>';
 }
 
 function loadDay() {
-  content.innerHTML = '<object type="text/html" data="./Speiseplan/viewDay/day.html" class="fullscreen"></object>';
+  content.innerHTML = '<iframe type="text/html" id="page-object" class="fullscreen" frameborder="0" src="./Speiseplan/viewDay/day.html"></iframe>';
 }
 
 function loadCarousel() {
-  content.innerHTML = '<object type="text/html" data="./Speiseplan/viewCarousel/carousel.html" class="fullscreen"></object>';
+  content.innerHTML = '<iframe type="text/html" id="page-object" class="fullscreen" frameborder="0" src="./Speiseplan/viewCarousel/carousel.html"></iframe>';
 }
 
 navButton.addEventListener('click', toggleMenu);
@@ -84,22 +83,22 @@ navButton.addEventListener("keyup", function(event) {
   }
 });
 
-loadDay();
+loadCarousel();
 
 /* Progress Bar */
 function move() {
-  if (barWidth < 100) {
-      barWidth += 0.5;
+  if (barGradient < 128) {
+      barGradient += 1;
   }
   else {
-      barWidth = 0;
+      barGradient = -200;
       /* --- 05.11.2018-jf ---
       // color animation green → grey ~2s
       // scroll to next element
       // Time adjustable in settings
       */
   }
-  progressbar.style.width = barWidth + '%';
+  progressbar.style.backgroundImage = "linear-gradient(90deg, #008451 " + barGradient + "% , #f76b20)";
   window.requestAnimationFrame(move);
 }
 

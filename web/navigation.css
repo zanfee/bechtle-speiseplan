@@ -1,25 +1,17 @@
 /* general */
-h1 {
+h5 {
     font-size: 40px;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 200;
     color: #757575;
 }
 
-h2 {
-    font-size: 32px;
-    font-family: 'Source Sans Pro';
-    font-weight: 700;
-    color: #757575;
-    margin: auto;
-}
-
-h3 {
+h6 {
     font-size: 32px;
     font-family: 'Source Sans Pro';
     font-weight: 400;
     color: #757575;
-    margin: 10px 8px 0 0;
+    
 }
 
 a {
@@ -39,7 +31,6 @@ a {
 .nav-header {
     height: 60px;
     width: 100%;
-    background-color: white;
     display: inline-block;
     position: relative;
     z-index: 3;
@@ -68,7 +59,6 @@ a {
 .bar {
     width: 18px;
     height: 2px;
-    background-color: #757575;
     margin: 3px 0;
 }
 
@@ -81,6 +71,8 @@ a {
 #clock {
     text-align: center;
     padding: 9px 0 9px 0;
+    margin: auto;
+    font-weight: 700;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -93,6 +85,7 @@ a {
     right: 32px;
     top: 0;
     position: absolute;
+    margin: 10px 8px 0 0;
 }
 
 @media only screen and (max-width: 800px) {
@@ -101,16 +94,9 @@ a {
     }
 }
 
-.progress-bar {
-    width: 100%;
-    background-color: rgb(60, 60, 60);
-    height: 2px;
-}
-
 #progress {
     height: 2px;
-    width: 5%;
-    background-color: #86e01e;
+    width: 100%;
     position: absolute;
 }
 
