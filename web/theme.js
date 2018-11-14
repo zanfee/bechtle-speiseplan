@@ -12,15 +12,17 @@ var dark1 = '#3c3c3c';
 var dark2 = '#505050';
 var dark3 = '#757575';
 
-var light_dark1_c   = document.querySelectorAll('h1, h2, h3, h4');
+var light_dark1_c   = document.querySelectorAll('h1, h2, h3, h4, a');
 var light_dark3_c   = document.querySelectorAll('h5, h6, h7, h8');
 var light_dark3_b   = document.querySelectorAll('div.bar');
+var light_light2_b  = document.querySelectorAll('#nav-body');
 var light_light1_b  = document.querySelectorAll('body');
   
-var dark_light1_c   = document.querySelectorAll('h1, h3, h4');
+var dark_light1_c   = document.querySelectorAll('h1, h3, h4, a');
 var dark_dark2_c    = document.querySelectorAll('h2');
 var dark_light3_c   = document.querySelectorAll('h5, h6, h7, h8');
 var dark_light3_b   = document.querySelectorAll('div.bar');
+var dark_dark2_b    = document.querySelectorAll('#nav-body');
 var dark_dark1_b    = document.querySelectorAll('body');
 
 function loadTheme() {
@@ -33,6 +35,9 @@ function loadTheme() {
         }
         for (i=0; i < light_dark3_b.length; i++) {
             light_dark3_b[i].style.backgroundColor = dark3;
+        }
+        for (i=0; i < light_light2_b.length; i++) {
+            light_light2_b[i].style.backgroundColor = light2;
         }
         for (i=0; i < light_light1_b.length; i++) {
             light_light1_b[i].style.backgroundColor = light1;
@@ -50,6 +55,9 @@ function loadTheme() {
         }
         for (i=0; i < dark_light3_b.length; i++) {
             dark_light3_b[i].style.backgroundColor = light3;
+        }
+        for (i=0; i < dark_dark2_b.length; i++) {
+            dark_dark2_b[i].style.backgroundColor = dark2;
         }
         for (i=0; i < dark_dark1_b.length; i++) {
             dark_dark1_b[i].style.backgroundColor = dark1;
