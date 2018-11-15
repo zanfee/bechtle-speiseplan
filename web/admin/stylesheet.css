@@ -1,5 +1,4 @@
 body{
-  height: 100%;
   margin: 0;
   padding: 0;
   background-color: #505050;
@@ -8,47 +7,61 @@ body{
 .wrapper{
   height: 800px;
   width: 1050px;
-  margin: 0 0 0 450px;
+  margin-left: 450px;
 }
 
 .card{
-  width: 500px;
   height: 600px;
-  background-color: #4a4a4a;
+  width: 500px;
+  margin-top: 150px;
   border-radius: 20px;
+  
+  background-color: #4a4a4a;
   box-shadow: 0 0 5px 1px #000000;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 1fr;
+  grid-template-areas: "overlap";
 }
 
 #calendar{
   float: left;
-  margin: 150px 0 0 0;
 }
 
 .cardTitle{
   height: 100px;
   width: 100%;
-  background-color: #424242;
-  border-radius: 20px;
   padding: 10px 0 0 0;
+  border-radius: 20px;
+
+  background-color: #424242;
+
+  grid-area: overlap;
+  z-index: 1;
 }
 
 h1{
-  color: #ffffff;
   margin: 0;
   text-align: center;
   font-family: 'Source Sans Pro';
+  color: #ffffff;
 }
 
 .row{
   height: 100px;
   width: 500px;
-  background-color: #4a4a4a;
+  margin-top: 70px;
   border-radius: 20px;
-  top: 220px;
-  position: absolute;
+
+  background-color: #4a4a4a;
+  
+  grid-area: overlap;
+  z-index: 2;
+  
 }
 
 #form{
+  margin-left: 50px;
   float: left;
-  margin: 150px 0 0 50px;
 }
