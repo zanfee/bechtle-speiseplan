@@ -10,7 +10,7 @@ var date = document.getElementById("date");
 var clock = document.getElementById("clock");
 
 /* Progress Bar*/
-var barGradient = -400;
+var barGradient = -200;
 var progressbar = document.getElementById('progress');
 
 /* Content */
@@ -34,7 +34,7 @@ function closeMenu() {
 }
 
 function expandList(id) {
-  var nodes = document.getElementById(id).childNodes;
+  var nodes = document.getElementById(id).children;
 
   for (var i=0; i < settings.length; i++) {
     var current = nodes[i];
@@ -83,23 +83,30 @@ function loadCarousel() {
 loadCarousel();
 
 /* Progress Bar */
-function move() {
-  if (barGradient < 128) {
-      barGradient += 1;
+
+function moveForeward() {
+  progressbar.style.backgroundImage = "linear-gradient(90deg, #008451 " + barGradient + "% , #f76b20)";
+  if (barGradient < 120) {
+    barGradient += 1;
+    window.requestAnimationFrame(moveForeward);
   }
   else {
-      barGradient = -200;
-      /* --- 05.11.2018-jf ---
-      // color animation green → grey ~2s
-      // scroll to next element
-      // Time adjustable in settings
-      */
+    window.requestAnimationFrame(moveBackward);
   }
-  progressbar.style.backgroundImage = "linear-gradient(90deg, #008451 " + barGradient + "% , #f76b20)";
-  window.requestAnimationFrame(move);
 }
 
-window.requestAnimationFrame(move);
+function moveBackward() {
+  progressbar.style.backgroundImage = "linear-gradient(90deg, #008451 " + barGradient + "% , #f76b20)";
+  if (barGradient > -200) {
+    barGradient -= 5;
+    window.requestAnimationFrame(moveBackward);
+  }
+  else {
+    window.requestAnimationFrame(moveForeward);
+  }
+}
+
+window.requestAnimationFrame(moveForeward);
 
 /* Clock */
 function tick() {

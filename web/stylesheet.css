@@ -5,8 +5,7 @@ body {
 }
 
 ::selection {
-    background-color: #3c3c3c;
-    color: #f5f5f5;
+    background-color: rgba(34, 140, 211, 0.5)
 }
 
 .light1 {
