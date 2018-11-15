@@ -148,32 +148,29 @@ a {
     font-weight: 700;
 }
 
-#expand-modules {
-    cursor: pointer;
-    display: inline-block;
-    padding: 21px;
+#modules {
+    
 }
 
-#expand-settings {
-    display: inline-block;
-    cursor: pointer;
-    padding: 21px;
-}
-
-.hidden {
-    visibility: hidden;
-    position: absolute;
-    left: 0;
-}
-
-.shown {
+.indented {
+    left: 16px;
     visibility: visible;
     position: relative;
     font-weight: 400;
-    color: #3c3c3c;
-    left: 16px;
 }
 
+.hidden {
+    display: none;
+}
+  
+.toggleList {
+    background-color: white;
+    height: 100%;
+    overflow: hidden;
+    -webkit-transition: height 1s ease-in-out;
+    transition: height 1s ease-in-out;
+  }
+  
 /* content */
 
 #nav-open {

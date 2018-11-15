@@ -15,14 +15,14 @@ var dark3 = '#757575';
 var light_dark1_c   = document.querySelectorAll('h1, h2, h3, h4, a');
 var light_dark3_c   = document.querySelectorAll('h5, h6, h7, h8');
 var light_dark3_b   = document.querySelectorAll('div.bar');
-var light_light2_b  = document.querySelectorAll('#nav-body');
+var light_light2_b  = document.querySelectorAll('#nav-body, #modules, #settings');
 var light_light1_b  = document.querySelectorAll('body');
   
 var dark_light1_c   = document.querySelectorAll('h1, h3, h4, a');
 var dark_dark2_c    = document.querySelectorAll('h2');
 var dark_light3_c   = document.querySelectorAll('h5, h6, h7, h8');
 var dark_light3_b   = document.querySelectorAll('div.bar');
-var dark_dark2_b    = document.querySelectorAll('#nav-body');
+var dark_dark2_b    = document.querySelectorAll('#nav-body, #modules, #settings');
 var dark_dark1_b    = document.querySelectorAll('body');
 
 function loadTheme() {

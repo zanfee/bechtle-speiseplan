@@ -1,60 +1,70 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="author" content="Jan Fröhlich, Pasquale Di Vincenzo">
-        <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen"/>
-        <link rel="stylesheet" type="text/css" href="navigation.css" media="screen"/>
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700" rel="stylesheet">
-        <title>Bechtle Speiseplan</title>
-    </head>
-    <body>
-        <div class="nav-header">
-            <div class="header">
-                <div id="nav-button" tabindex="1">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jan Fröhlich, Pasquale Di Vincenzo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="navigation.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="vue.css" media="screen"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700" rel="stylesheet">
+    <title>Bechtle Speiseplan</title>
 
-                <h5 class="pagename"><strong>Bechtle</strong> Speiseplan</h5>
-                <h6 id="clock"></h6>
-                <h6 id="date"></h6>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+    <div class="nav-header">
+        <div class="header">
+            <div id="nav-button" tabindex="1">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
             </div>
 
-            <div id="progress"></div>
+            <h5 class="pagename"><strong>Bechtle</strong> Speiseplan</h5>
+            <h6 id="clock"></h6>
+            <h6 id="date"></h6>
         </div>
 
-        <nav id="nav-body" class="go-left">
-            <ul class="nav-admin unselectable">
-                <a onclick="loadAdmin(); closeMenu()" style="color: darkred;">Bearbeiten</a>
-            </ul>
-            <ul class="nav-view unselectable">
-                <a onclick="loadWeek(); closeMenu()">Wochenübersicht</a>
-                <a onclick="loadDay(); closeMenu()">Tagesübersicht</a>
-                <a onclick="loadCarousel(); closeMenu()">Karussell Ansicht</a>
-            </ul>
-            <ul class="nav-base unselectable">
-                <div id="modules">
-                    <a onclick="expandList('modules')">Module</a>
-                    <a class="hidden">Speiseplan Karussell</a>
-                    <a class="hidden">Speiseplan Tag</a>
-                    <a class="hidden">Speiseplan Woche</a>
-                    <a class="hidden">Wetter</a>
-                </div>
-                <div id="settings">
-                    <a onclick="expandList('settings')">Einstellungen</a>
-                    <a onclick="toggleTheme()" class="hidden">Nachtmodus</a>
-                    <a class="hidden">Language</a>
-                    <a class="hidden">Geschwindigkeit</a>
-                </div>
-            </ul>
-        </nav>
+        <div id="progress"></div>
+    </div>
 
-        <div id="nav-open" class="hidden" onclick="closeMenu()" style="width:100%"></div>
-        <div id="content"></div>
-
-        <script src="theme.js"></script>
-        <script src="navigation.js"></script>
-    </body>
+    <nav id="nav-body" class="go-left">
+        <ul class="nav-admin unselectable">
+            <a onclick="loadAdmin(); closeMenu()" style="color: darkred;">Bearbeiten</a>
+        </ul>
+        <ul class="nav-view unselectable">
+            <a onclick="loadWeek(); closeMenu()">Wochenübersicht</a>
+            <a onclick="loadDay(); closeMenu()">Tagesübersicht</a>
+            <a onclick="loadCarousel(); closeMenu()">Karussell Ansicht</a>
+        </ul>
+        <ul class="nav-base unselectable">
+            <a onclick="expandList('modules')">Module</a>
+            <div id="modules">
+                <a class="indented">Speiseplan Karussell</a>
+                <a class="indented">Speiseplan Tag</a>
+                <a class="indented">Speiseplan Woche</a>
+                <a class="indented">Wetter</a>
+            </div>
+            <a onclick="expandList('settings')">Einstellungen</a>
+            <div id="settings">
+                    <a onclick="toggleTheme()" class="indented">Nachtmodus</a>
+                    <a class="indented">Language</a>
+                    <a class="indented">Geschwindigkeit</a>
+                </div>
+            </ul>
+    </nav>
+        
+    <div id="nav-open" class="unselectable hidden" onclick="closeMenu()" style="width:100%"></div>
+        
+    <div id="app">
+        {{ message }}
+    </div>
+        
+    <div id="content"></div>
+    
+    <script src="vue.js"></script>
+    <script src="theme.js"></script>
+    <script src="navigation.js"></script>
+</body>
 </html>
