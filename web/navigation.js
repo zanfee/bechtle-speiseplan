@@ -66,9 +66,6 @@ function setContainerHeight(id) {
   container.classList.add('toggleList');
 }
 
-setContainerHeight('modules');
-setContainerHeight('settings');
-
 function expandList(id) {
   var container = document.getElementById(id);
   if (id === 'modules') {
@@ -125,8 +122,6 @@ function tick() {
   window.setTimeout("tick();", 1000);
 }
 
-window.onload = tick;
-
 /* Content Loading */
 
 function setContentPath(path) {
@@ -142,11 +137,16 @@ function loadWeek() {
 }
 
 function loadDay() {
-  setContentPath('./Speiseplan/viewDay/day.html"></iframe>');
+  setContentPath('./Speiseplan/viewDay/day.html">');
 }
 
 function loadCarousel() {
-  setContentPath('./Speiseplan/viewCarousel/carousel.html"></iframe>');
+  setContentPath('./Speiseplan/viewCarousel/carousel.html">');
 }
+
+tick();
+
+setContainerHeight('modules');
+setContainerHeight('settings');
 
 loadCarousel();

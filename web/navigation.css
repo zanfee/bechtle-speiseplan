@@ -47,14 +47,16 @@ a {
     position: absolute;
 }
 
+
 #nav-button:hover {
-    background-color: #f5f5f5;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 #nav-button:focus {
-    background-color: #f5f5f5;
+    background-color: rgba(0, 0, 0, 0.1);
     outline: 0px;
 }
+
 
 .bar {
     width: 18px;
