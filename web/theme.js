@@ -2,7 +2,6 @@ if (parseInt(localStorage.getItem('theme') !== 1 || 2)) {
   localStorage.setItem('theme', 1);
 }
 var theme = parseInt(localStorage.getItem('theme'));
-alert(theme);
 
 var light1 = '#ffffff';
 var light2 = '#f5f5f5';
