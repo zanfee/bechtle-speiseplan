@@ -70,14 +70,17 @@ function setContainerHeight(id) {
   container.classList.add('toggleList');
 }
 
+setContainerHeight('modules');
+setContainerHeight('settings');
+
 function expandList(id) {
   var container = document.getElementById(id);
 
   if (id === 'modules') {
-    var height = heightModules;
+    var height = 24 + heightModules;
   }
   else if (id === 'settings') {
-    var height = heightSettings;
+    var height = 24 + heightSettings;
   }
 
   if (container.classList.contains('open')) {
@@ -152,9 +155,6 @@ function loadDay() {
 function loadCarousel() {
   setContentPath('./Speiseplan/viewCarousel/carousel.html');
 }
-
-setContainerHeight('modules');
-setContainerHeight('settings');
 
 tick();
 

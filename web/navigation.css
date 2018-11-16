@@ -19,10 +19,18 @@ a {
     color: #3c3c3c;
     display: block;
     margin-block-start: 1em;
-    margin-block-end: 1em;
+    margin-block-end: 0em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     cursor: pointer;
+}
+
+.menuPoint {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 
 /* navigation header */
@@ -147,6 +155,16 @@ a {
 .nav-base {
     list-style: none;
     font-weight: 700;
+}
+
+#modules {
+    margin: 0;
+    padding: 0;
+}
+
+#settings {
+    margin: 0;
+    padding: 0;
 }
 
 .indented {

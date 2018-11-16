@@ -30,23 +30,23 @@
 
     <nav id="nav-body" class="go-left">
         <ul class="nav-admin unselectable">
-            <a onclick="loadAdmin()" style="color: darkred;">Bearbeiten</a>
+            <a class="menuPoint" onclick="loadAdmin()" style="color: darkred;">Bearbeiten</a>
         </ul>
         <ul class="nav-view unselectable">
-            <a onclick="loadWeek()">Wochenübersicht</a>
-            <a onclick="loadDay()">Tagesübersicht</a>
-            <a onclick="loadCarousel()">Karussell Ansicht</a>
+            <a class="menuPoint" onclick="loadWeek()">Wochenübersicht</a>
+            <a class="menuPoint" onclick="loadDay()">Tagesübersicht</a>
+            <a class="menuPoint" onclick="loadCarousel()">Karussell Ansicht</a>
         </ul>
         <ul class="nav-base unselectable">
             <a onclick="expandList('modules')">Module</a>
-            <div id="modules">
+            <div class="menuPoint" id="modules">
                 <a class="indented">Speiseplan Karussell</a>
                 <a class="indented">Speiseplan Tag</a>
                 <a class="indented">Speiseplan Woche</a>
                 <a class="indented">Wetter</a>
             </div>
             <a onclick="expandList('settings')">Einstellungen</a>
-            <div id="settings">
+            <div class="menuPoint" id="settings">
                     <a onclick="toggleTheme()" class="indented">Nachtmodus</a>
                     <a class="indented">Language</a>
                     <a class="indented">Geschwindigkeit</a>
