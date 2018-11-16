@@ -164,8 +164,8 @@ a {
     background-color: white;
     height: 100%;
     overflow: hidden;
-    -webkit-transition: height 1s ease-in-out;
-    transition: height 1s ease-in-out;
+    -webkit-transition: height 0.2s ease-in-out;
+    transition: height 0.2s ease-in-out;
   }
   
 /* content */

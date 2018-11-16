@@ -106,7 +106,7 @@ function moveForeward() {
 
 function moveBackward() {
   progressbar.style.backgroundImage = "linear-gradient(90deg, #008451 " + barGradient + "% , #f76b20)";
-  
+
   if (barGradient > -200) {
     barGradient -= 5;
     window.requestAnimationFrame(moveBackward);
@@ -133,7 +133,8 @@ function tick() {
 
 function setContentPath(path) {
   closeMenu();
-  content.innerHTML = '<iframe type="text/html" id="page-object" class="fullscreen" frameborder="0" src="' + path + '"></iframe>'
+  // content.innerHTML = '<iframe type="text/html" id="page-object" class="fullscreen" frameborder="0" src="' + path + '"></iframe>'
+  $("#content").load(path);
 }
 
 function loadAdmin() {

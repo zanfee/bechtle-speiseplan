@@ -1,5 +1,4 @@
-var theme = localStorage.getItem('theme') || 1;
-//localStorage.setItem("theme", theme);
+var theme = parseInt(localStorage.getItem('theme')) | 1;
 
 var light1 = '#ffffff';
 var light2 = '#f5f5f5';
@@ -13,7 +12,7 @@ var light_dark3_c   = document.querySelectorAll('h5, h6, h7, h8');
 var light_dark3_b   = document.querySelectorAll('div.bar');
 var light_light2_b  = document.querySelectorAll('#nav-body, #modules, #settings');
 var light_light1_b  = document.querySelectorAll('body');
-  
+
 var dark_light1_c   = document.querySelectorAll('h1, h3, h4, a');
 var dark_dark2_c    = document.querySelectorAll('h2');
 var dark_light3_c   = document.querySelectorAll('h5, h6, h7, h8');
@@ -42,7 +41,7 @@ function loadTheme() {
     for (var i=0; i < light_light1_b.length; i++) {
       light_light1_b[i].style.backgroundColor = light1;
     }
-    }
+  }
   else if (theme === 2) {
     for (var i=0; i < dark_light1_c.length; i++) {
       dark_light1_c[i].style.color = light1;
@@ -71,10 +70,11 @@ function loadTheme() {
 }
 
 function toggleTheme() {
+
   if (theme === 1) {
     theme = 2;
   }
-  else {
+  else if (theme === 2) {
     theme = 1;
   }
   loadTheme();
