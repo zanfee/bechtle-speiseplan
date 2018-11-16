@@ -1,9 +1,5 @@
-function test() {
-    alert(theme);
-}
-
-var theme = 1;
-localStorage.setItem("theme", theme);
+var theme = localStorage.getItem('theme') || 1;
+//localStorage.setItem("theme", theme);
 
 var light1 = '#ffffff';
 var light2 = '#f5f5f5';
@@ -26,53 +22,63 @@ var dark_dark2_b    = document.querySelectorAll('#nav-body, #modules, #settings'
 var dark_dark1_b    = document.querySelectorAll('body');
 
 function loadTheme() {
-    if (theme === 1) {
-        for (i=0; i < light_dark1_c.length; i++) {
-            light_dark1_c[i].style.color = dark1;
-        }
-        for (i=0; i < light_dark3_c.length; i++) {
-            light_dark3_c[i].style.color = dark3;
-        }
-        for (i=0; i < light_dark3_b.length; i++) {
-            light_dark3_b[i].style.backgroundColor = dark3;
-        }
-        for (i=0; i < light_light2_b.length; i++) {
-            light_light2_b[i].style.backgroundColor = light2;
-        }
-        for (i=0; i < light_light1_b.length; i++) {
-            light_light1_b[i].style.backgroundColor = light1;
-        }
+  if (theme === 1) {
+    for (var i=0; i < light_dark1_c.length; i++) {
+      light_dark1_c[i].style.color = dark1;
     }
-    else if (theme === 2) {
-        for (i=0; i < dark_light1_c.length; i++) {
-            dark_light1_c[i].style.color = light1;
-        }
-        for (i=0; i < dark_dark2_c.length; i++) {
-            dark_dark2_c[i].style.color = dark2;
-        }
-        for (i=0; i < dark_light3_c.length; i++) {
-            dark_light3_c[i].style.color = light3;
-        }
-        for (i=0; i < dark_light3_b.length; i++) {
-            dark_light3_b[i].style.backgroundColor = light3;
-        }
-        for (i=0; i < dark_dark2_b.length; i++) {
-            dark_dark2_b[i].style.backgroundColor = dark2;
-        }
-        for (i=0; i < dark_dark1_b.length; i++) {
-            dark_dark1_b[i].style.backgroundColor = dark1;
-        }
+
+    for (var i=0; i < light_dark3_c.length; i++) {
+      light_dark3_c[i].style.color = dark3;
     }
+
+    for (var i=0; i < light_dark3_b.length; i++) {
+      light_dark3_b[i].style.backgroundColor = dark3;
+    }
+
+    for (var i=0; i < light_light2_b.length; i++) {
+      light_light2_b[i].style.backgroundColor = light2;
+    }
+
+    for (var i=0; i < light_light1_b.length; i++) {
+      light_light1_b[i].style.backgroundColor = light1;
+    }
+    }
+  else if (theme === 2) {
+    for (var i=0; i < dark_light1_c.length; i++) {
+      dark_light1_c[i].style.color = light1;
+    }
+
+    for (var i=0; i < dark_dark2_c.length; i++) {
+      dark_dark2_c[i].style.color = dark2;
+    }
+
+    for (var i=0; i < dark_light3_c.length; i++) {
+      dark_light3_c[i].style.color = light3;
+    }
+
+    for (var i=0; i < dark_light3_b.length; i++) {
+      dark_light3_b[i].style.backgroundColor = light3;
+    }
+
+    for (var i=0; i < dark_dark2_b.length; i++) {
+      dark_dark2_b[i].style.backgroundColor = dark2;
+    }
+
+    for (var i=0; i < dark_dark1_b.length; i++) {
+      dark_dark1_b[i].style.backgroundColor = dark1;
+    }
+  }
 }
 
 function toggleTheme() {
-    if (theme === 1) {
-      theme = 2;
-    }
-    else {
-      theme = 1;
-    }
-    loadTheme();
+  if (theme === 1) {
+    theme = 2;
+  }
+  else {
+    theme = 1;
+  }
+  loadTheme();
+  localStorage.setItem('theme', theme);
 }
 
 loadTheme();
