@@ -40,7 +40,7 @@ body{
 .day{
   height: 50px;
   width: 50px;  
-  margin: 0 0 10px 10px;
+  margin: 0 0 15px 15px;
 
   background-color: #000000;
 
@@ -66,14 +66,15 @@ h1{
   color: #ffffff;
 }
 
-.row{
-  height: 50px;
+.innerCard{
+  height: 70%;
   width: 500px;
-  margin-top: 70px;
+  margin-top: -30px;
+  padding-top: 30px;
   border-radius: 20px;
-
-  background-color: #4a4a4a;
   
+  background-color: #4a4a4a;
+
   grid-area: overlap;
   z-index: 2;
   
