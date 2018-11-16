@@ -24,6 +24,7 @@ function toggleMenu() {
       navOpen.classList.add('shown');
       navOpen.classList.remove('hidden');
     }
+
     else {
       navBody.classList.add('go-left');
       navBody.classList.remove('go-right');
@@ -43,6 +44,7 @@ var KEYCODE_SPACE = 32;
 var KEYCODE_ENTER = 13;
 
 navButton.addEventListener('click', toggleMenu);
+
 navButton.addEventListener("keyup", function(event) {
   if (event.keyCode === KEYCODE_ENTER || event.keyCode === KEYCODE_SPACE) {
     navButton.click();
@@ -56,18 +58,21 @@ var heightSettings = 0;
 
 function setContainerHeight(id) {
   var container = document.getElementById(id);
+
   if (id === 'modules') {
     heightModules = container.offsetHeight;
   }
   else if (id === 'settings') {
     heightSettings = container.offsetHeight;
   }
+
   container.style.height = '0px';
   container.classList.add('toggleList');
 }
 
 function expandList(id) {
   var container = document.getElementById(id);
+
   if (id === 'modules') {
     var height = heightModules;
   }
@@ -89,6 +94,7 @@ function expandList(id) {
 
 function moveForeward() {
   progressbar.style.backgroundImage = "linear-gradient(90deg, #008451 " + barGradient + "% , #f76b20)";
+
   if (barGradient < 120) {
     barGradient += 1;
     window.requestAnimationFrame(moveForeward);
@@ -100,6 +106,7 @@ function moveForeward() {
 
 function moveBackward() {
   progressbar.style.backgroundImage = "linear-gradient(90deg, #008451 " + barGradient + "% , #f76b20)";
+  
   if (barGradient > -200) {
     barGradient -= 5;
     window.requestAnimationFrame(moveBackward);
@@ -125,6 +132,7 @@ function tick() {
 /* Content Loading */
 
 function setContentPath(path) {
+  closeMenu();
   content.innerHTML = '<iframe type="text/html" id="page-object" class="fullscreen" frameborder="0" src="' + path + '"></iframe>'
 }
 
@@ -137,16 +145,16 @@ function loadWeek() {
 }
 
 function loadDay() {
-  setContentPath('./Speiseplan/viewDay/day.html">');
+  setContentPath('./Speiseplan/viewDay/day.html');
 }
 
 function loadCarousel() {
-  setContentPath('./Speiseplan/viewCarousel/carousel.html">');
+  setContentPath('./Speiseplan/viewCarousel/carousel.html');
 }
-
-tick();
 
 setContainerHeight('modules');
 setContainerHeight('settings');
+
+tick();
 
 loadCarousel();

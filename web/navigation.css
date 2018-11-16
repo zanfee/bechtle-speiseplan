@@ -11,7 +11,6 @@ h6 {
     font-family: 'Source Sans Pro';
     font-weight: 400;
     color: #757575;
-    
 }
 
 a {
@@ -49,11 +48,11 @@ a {
 
 
 #nav-button:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(127, 127, 127, 0.2);
 }
 
 #nav-button:focus {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(127, 127, 127, 0.3);
     outline: 0px;
 }
 
@@ -148,10 +147,6 @@ a {
 .nav-base {
     list-style: none;
     font-weight: 700;
-}
-
-#modules {
-    
 }
 
 .indented {
