@@ -1,5 +1,32 @@
 # Speiseplan
 
+### Instructions to get started
+
+**IMPORTANT: Make sure you have the following installed**:
+
+1. Node.js (https://nodejs.org/en/)
+2. Git (https://git-scm.com/downloads)
+3. NPM - Comes with node! - (https://www.npmjs.com/)
+
+---
+
+Then run the following commands in a terminal:
+
+1. Clone this repo.
+   > `git clone https://github.com/xSuffix/BechtleSpeiseplan.git`
+2. Install dependencies.
+   > `npm install`
+3. Start the app
+   > `npm run serve`
+
+To generate a production build run this command:
+
+> `npm run build`
+
+---
+
+### Project
+
 - Wochenübersicht
 - Tagesübersicht
 - TV-Ansicht
