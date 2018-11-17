@@ -136,8 +136,7 @@ function tick() {
 
 function setContentPath(path) {
   closeMenu();
-  // content.innerHTML = '<iframe type="text/html" id="page-object" class="fullscreen" frameborder="0" src="' + path + '"></iframe>'
-  $("#content").load(path);
+  content.innerHTML = '<iframe type="text/html" id="page-object" class="fullscreen" frameborder="0" src="' + path + '"></iframe>'
 }
 
 function loadAdmin() {
