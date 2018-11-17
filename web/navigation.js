@@ -18,19 +18,17 @@ var content = document.getElementById('content');
 
 /* Navigation */
 function toggleMenu() {
-    if (navBody.classList.contains('go-left')) {
-      navBody.classList.add('go-right');
-      navBody.classList.remove('go-left');
-      navOpen.classList.add('shown');
-      navOpen.classList.remove('hidden');
-    }
-
-    else {
-      navBody.classList.add('go-left');
-      navBody.classList.remove('go-right');
-      navOpen.classList.add('hidden');
-      navOpen.classList.remove('shown');
-    }
+  if (navBody.classList.contains('go-left')) {
+    navBody.classList.add('go-right');
+    navBody.classList.remove('go-left');
+    navOpen.classList.add('shown');
+    navOpen.classList.remove('hidden');
+  } else {
+    navBody.classList.add('go-left');
+    navBody.classList.remove('go-right');
+    navOpen.classList.add('hidden');
+    navOpen.classList.remove('shown');
+  }
 }
 
 function closeMenu() {
@@ -45,7 +43,7 @@ var KEYCODE_ENTER = 13;
 
 navButton.addEventListener('click', toggleMenu);
 
-navButton.addEventListener("keyup", function(event) {
+navButton.addEventListener("keyup", function (event) {
   if (event.keyCode === KEYCODE_ENTER || event.keyCode === KEYCODE_SPACE) {
     navButton.click();
   }
@@ -61,8 +59,7 @@ function setContainerHeight(id) {
 
   if (id === 'modules') {
     heightModules = container.offsetHeight;
-  }
-  else if (id === 'settings') {
+  } else if (id === 'settings') {
     heightSettings = container.offsetHeight;
   }
 
@@ -78,16 +75,14 @@ function expandList(id) {
 
   if (id === 'modules') {
     var height = 24 + heightModules;
-  }
-  else if (id === 'settings') {
+  } else if (id === 'settings') {
     var height = 24 + heightSettings;
   }
 
   if (container.classList.contains('open')) {
     container.classList.remove('open');
     container.style.height = '0px';
-  }
-  else {
+  } else {
     container.classList.add('open');
     container.style.height = height + 'px';
   }
@@ -101,8 +96,7 @@ function moveForeward() {
   if (barGradient < 120) {
     barGradient += 1;
     window.requestAnimationFrame(moveForeward);
-  }
-  else {
+  } else {
     window.requestAnimationFrame(moveBackward);
   }
 }
@@ -113,8 +107,7 @@ function moveBackward() {
   if (barGradient > -200) {
     barGradient -= 5;
     window.requestAnimationFrame(moveBackward);
-  }
-  else {
+  } else {
     window.requestAnimationFrame(moveForeward);
   }
 }
@@ -126,7 +119,9 @@ function tick() {
   var currentTime = new Date();
   clock.innerHTML = currentTime.toLocaleTimeString();
 
-  var weekDay = currentTime.toLocaleDateString("de-DE", { weekday: "long" });
+  var weekDay = currentTime.toLocaleDateString("de-DE", {
+    weekday: "long"
+  });
   date.innerHTML = weekDay.bold() + ", " + currentTime.toLocaleDateString("de-DE");
 
   window.setTimeout("tick();", 1000);

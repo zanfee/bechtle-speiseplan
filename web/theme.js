@@ -1,5 +1,4 @@
 function Theme(opposite) {
-
   this.opposite = opposite;
 
   this.colors = {
@@ -20,15 +19,15 @@ function Theme(opposite) {
     }, this);
   }
 
-  this.addMapping = function(selector, updatedStyles) {
+  this.addMapping = function (selector, updatedStyles) {
     this.selectorStyleMap[selector] = updatedStyles;
   }
 
-  this.activate = function() {
+  this.activate = function () {
     Object.keys(this.selectorStyleMap).forEach(function (selector) {
       var elements = document.querySelectorAll(selector);
 
-      elements.forEach(function(element) {
+      elements.forEach(function (element) {
         var stylesToUpdate = this.selectorStyleMap[selector];
 
         Object.keys(stylesToUpdate).forEach(function (styleToUpdate) {
@@ -96,7 +95,7 @@ var ThemeService = {
     Dark: new DarkTheme(),
   },
 
-  getStored: function() {
+  getStored: function () {
     var storedKey = localStorage.getItem(this.LOCALSTORAGE_KEY);
 
     if (!this.validateThemeName(storedKey)) {
@@ -107,7 +106,7 @@ var ThemeService = {
     return this.getThemeFromName(storedKey);
   },
 
-  setStored: function(theme) {
+  setStored: function (theme) {
     if (typeof theme !== "string") {
       theme = this.getNameFromTheme(theme)
     }
@@ -120,7 +119,7 @@ var ThemeService = {
   },
 
   toggleCurrent: function () {
-    var theme = new (this.getStored().opposite)();
+    var theme = new(this.getStored().opposite)();
     this.setStored(theme);
     theme.activate();
   },
@@ -133,7 +132,7 @@ var ThemeService = {
     return this.Themes[name];
   },
 
-  getNameFromTheme: function(theme) {
+  getNameFromTheme: function (theme) {
     var name = Object.keys(this.Themes).find(function (name) {
       return this.Themes[name].constructor === theme.constructor;
     }, this);
@@ -145,9 +144,11 @@ var ThemeService = {
     return name;
   },
 
-  validateThemeName: function(nameToValidate) {
+  validateThemeName: function (nameToValidate) {
     return !(nameToValidate == undefined ||
-           !Object.keys(this.Themes).find(function (name) { return nameToValidate === name }))
+      !Object.keys(this.Themes).find(function (name) {
+        return nameToValidate === name
+      }))
   }
 };
 
