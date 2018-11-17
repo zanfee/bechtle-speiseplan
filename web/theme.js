@@ -1,87 +1,156 @@
-if (parseInt(localStorage.getItem('theme') !== 1 || 2)) {
-  localStorage.setItem('theme', 1);
-}
-var theme = parseInt(localStorage.getItem('theme'));
+function Theme(opposite) {
 
-var light1 = '#ffffff';
-var light2 = '#f5f5f5';
-var light3 = '#BDBDBD';
-var dark1 = '#3c3c3c';
-var dark2 = '#505050';
-var dark3 = '#757575';
+  this.opposite = opposite;
 
-var light_dark1_c   = document.querySelectorAll('h1, h2, h3, h4, a');
-var light_dark3_c   = document.querySelectorAll('h5, h6, h7, h8');
-var light_dark3_b   = document.querySelectorAll('div.bar');
-var light_light2_b  = document.querySelectorAll('#nav-body, #modules, #settings');
-var light_light1_b  = document.querySelectorAll('body');
+  this.colors = {
+    light1: '#ffffff',
+    light2: '#f5f5f5',
+    light3: '#BDBDBD',
 
-var dark_light1_c   = document.querySelectorAll('h1, h3, h4, a');
-var dark_dark2_c    = document.querySelectorAll('h2');
-var dark_light3_c   = document.querySelectorAll('h5, h6, h7, h8');
-var dark_light3_b   = document.querySelectorAll('div.bar');
-var dark_dark2_b    = document.querySelectorAll('#nav-body, #modules, #settings');
-var dark_dark1_b    = document.querySelectorAll('body');
+    dark1: '#3c3c3c',
+    dark2: '#505050',
+    dark3: '#757575',
+  };
 
-function loadTheme() {
-  if (theme === 1) {
-    for (var i=0; i < light_dark1_c.length; i++) {
-      light_dark1_c[i].style.color = dark1;
-    }
+  this.selectorStyleMap = {};
 
-    for (var i=0; i < light_dark3_c.length; i++) {
-      light_dark3_c[i].style.color = dark3;
-    }
-
-    for (var i=0; i < light_dark3_b.length; i++) {
-      light_dark3_b[i].style.backgroundColor = dark3;
-    }
-
-    for (var i=0; i < light_light2_b.length; i++) {
-      light_light2_b[i].style.backgroundColor = light2;
-    }
-
-    for (var i=0; i < light_light1_b.length; i++) {
-      light_light1_b[i].style.backgroundColor = light1;
-    }
+  this.addMappings = function (mappings) {
+    Object.keys(mappings).forEach(function (key) {
+      this.addMapping(key, mappings[key]);
+    }, this);
   }
-  else if (theme === 2) {
-    for (var i=0; i < dark_light1_c.length; i++) {
-      dark_light1_c[i].style.color = light1;
-    }
 
-    for (var i=0; i < dark_dark2_c.length; i++) {
-      dark_dark2_c[i].style.color = dark2;
-    }
+  this.addMapping = function(selector, updatedStyles) {
+    this.selectorStyleMap[selector] = updatedStyles;
+  }
 
-    for (var i=0; i < dark_light3_c.length; i++) {
-      dark_light3_c[i].style.color = light3;
-    }
+  this.activate = function() {
+    Object.keys(this.selectorStyleMap).forEach(function (selector) {
+      var elements = document.querySelectorAll(selector);
 
-    for (var i=0; i < dark_light3_b.length; i++) {
-      dark_light3_b[i].style.backgroundColor = light3;
-    }
+      elements.forEach(function(element) {
+        var stylesToUpdate = this.selectorStyleMap[selector];
 
-    for (var i=0; i < dark_dark2_b.length; i++) {
-      dark_dark2_b[i].style.backgroundColor = dark2;
-    }
-
-    for (var i=0; i < dark_dark1_b.length; i++) {
-      dark_dark1_b[i].style.backgroundColor = dark1;
-    }
+        Object.keys(stylesToUpdate).forEach(function (styleToUpdate) {
+          element.style[styleToUpdate] = stylesToUpdate[styleToUpdate];
+        }, this);
+      }, this);
+    }, this);
   }
 }
 
-function toggleTheme() {
+function LightTheme() {
+  Theme.call(this, DarkTheme);
 
-  if (theme === 1) {
-    theme = 2;
-  }
-  else if (theme === 2) {
-    theme = 1;
-  }
-  loadTheme();
-  localStorage.setItem('theme', theme);
+  this.addMappings({
+    'h1, h2, h3, h4, a': {
+      'color': this.colors.dark1
+    },
+    'h5, h6, h7, h8': {
+      'color': this.colors.dark3
+    },
+
+    'body': {
+      'background-color': this.colors.light1
+    },
+    'div.bar': {
+      'background-color': this.colors.dark3
+    },
+    '#nav-body, #modules, #settings': {
+      'background-color': this.colors.light2
+    },
+  })
 }
 
-loadTheme();
+function DarkTheme() {
+  Theme.call(this, LightTheme);
+
+  this.addMappings({
+    'h1, h3, h4, a': {
+      'color': this.colors.light1
+    },
+    'h2': {
+      'color': this.colors.dark2
+    },
+    'h5, h6, h7, h8': {
+      'color': this.colors.light3
+    },
+
+    'div.bar': {
+      'background-color': this.colors.light3
+    },
+    '#nav-body, #modules, #settings': {
+      'background-color': this.colors.dark2
+    },
+    'body': {
+      'background-color': this.colors.dark1
+    }
+  })
+}
+
+var ThemeService = {
+  LOCALSTORAGE_KEY: "current-theme",
+
+  Themes: {
+    Light: new LightTheme(),
+    Dark: new DarkTheme(),
+  },
+
+  getStored: function() {
+    var storedKey = localStorage.getItem(this.LOCALSTORAGE_KEY);
+
+    if (!this.validateThemeName(storedKey)) {
+      localStorage.setItem(this.LOCALSTORAGE_KEY, Object.keys(this.Themes)[0]);
+      return this.getStored();
+    }
+
+    return this.getThemeFromName(storedKey);
+  },
+
+  setStored: function(theme) {
+    if (typeof theme !== "string") {
+      theme = this.getNameFromTheme(theme)
+    }
+
+    localStorage.setItem(this.LOCALSTORAGE_KEY, theme);
+  },
+
+  applyCurrent: function () {
+    this.getStored().activate();
+  },
+
+  toggleCurrent: function () {
+    var theme = new (this.getStored().opposite)();
+    this.setStored(theme);
+    theme.activate();
+  },
+
+  getThemeFromName: function (name) {
+    if (!this.validateThemeName(name)) {
+      this.getStoredTheme();
+    }
+
+    return this.Themes[name];
+  },
+
+  getNameFromTheme: function(theme) {
+    var name = Object.keys(this.Themes).find(function (name) {
+      return this.Themes[name].constructor === theme.constructor;
+    }, this);
+
+    if (!this.validateThemeName(name)) {
+      return this.getNameFromTheme(this.getStored());
+    }
+
+    return name;
+  },
+
+  validateThemeName: function(nameToValidate) {
+    return !(nameToValidate == undefined ||
+           !Object.keys(this.Themes).find(function (name) { return nameToValidate === name }))
+  }
+};
+
+(function () {
+  ThemeService.applyCurrent();
+})();
