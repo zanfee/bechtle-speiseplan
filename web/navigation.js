@@ -21,11 +21,13 @@ function toggleMenu() {
   if (navBody.classList.contains('go-left')) {
     navBody.classList.add('go-right');
     navBody.classList.remove('go-left');
+
     navOpen.classList.add('shown');
     navOpen.classList.remove('hidden');
   } else {
     navBody.classList.add('go-left');
     navBody.classList.remove('go-right');
+
     navOpen.classList.add('hidden');
     navOpen.classList.remove('shown');
   }
@@ -127,29 +129,28 @@ function tick() {
   window.setTimeout("tick();", 1000);
 }
 
-/* Content Loading */
-
-function setContentPath(path) {
-  closeMenu();
-  content.innerHTML = '<iframe type="text/html" id="page-object" class="fullscreen" frameborder="0" src="' + path + '"></iframe>'
-}
-
-function loadAdmin() {
-  setContentPath('./admin/adminTool.html')
-}
-
-function loadWeek() {
-  setContentPath('./Speiseplan/viewWeek/week.html');
-}
-
-function loadDay() {
-  setContentPath('./Speiseplan/viewDay/day.html');
-}
-
-function loadCarousel() {
-  setContentPath('./Speiseplan/viewCarousel/carousel.html');
-}
-
 tick();
 
-loadCarousel();
+/* Navigation */
+
+var NavigationService = {
+  setRawContentPath: function (path) {
+    closeMenu();
+    content.innerHTML = '<iframe type="text/html" id="page-object" class="fullscreen" frameborder="0" src="' + path + '"></iframe>'
+  },
+
+  loadAdminPage: function () {
+    this.setRawContentPath('./admin/adminTool.html')
+  },
+  loadWeekPage: function () {
+    this.setRawContentPath('./Speiseplan/viewWeek/week.html');
+  },
+  loadDayPage: function () {
+    this.setRawContentPath('./Speiseplan/viewDay/day.html');
+  },
+  loadCarouselPage: function () {
+    this.setRawContentPath('./Speiseplan/viewCarousel/carousel.html');
+  },
+};
+
+NavigationService.loadCarouselPage();
