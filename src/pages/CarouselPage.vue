@@ -1,6 +1,6 @@
 <template>
 <div>
-  <h1 style="text-align: center">5,80€</h1>
+  <h5 class="item">A</h5>
 </div>
 </template>
 
@@ -8,5 +8,9 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
+.item {
+  text-align: center;
+  font-size: 250%;
+}
 </style>

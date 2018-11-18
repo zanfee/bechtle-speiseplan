@@ -1,90 +1,101 @@
-function Theme(opposite) {
-  this.opposite = opposite;
+/**
+ * BUG:
+ * With the current implementation only the element that are on the screen will be themed.
+ * This is a problem when elements are dynamically created. Since they will not be colored.
+ * The best option is probably to integrate theming into vue.
+ */
 
-  this.colors = {
-    light1: '#ffffff',
-    light2: '#f5f5f5',
-    light3: '#BDBDBD',
+class Theme {
+  constructor(isLight, counterpart) {
+    this.counterpart = counterpart;
+    this.isLight = isLight;
 
-    dark1: '#3c3c3c',
-    dark2: '#505050',
-    dark3: '#757575',
-  };
+    this.colors = {
+      light1: '#ffffff',
+      light2: '#f5f5f5',
+      light3: '#BDBDBD',
+      dark1: '#3c3c3c',
+      dark2: '#505050',
+      dark3: '#757575',
+    };
 
-  this.selectorStyleMap = {};
-
-  this.addMappings = function (mappings) {
-    Object.keys(mappings).forEach(function (key) {
-      this.addMapping(key, mappings[key]);
-    }, this);
+    this.selectorStyleMap = {};
   }
 
-  this.addMapping = function (selector, updatedStyles) {
+  addMappings(mappings) {
+    for (var key in mappings) {
+      this.addMapping(key, mappings[key]);
+    }
+  }
+
+  addMapping(selector, updatedStyles) {
     this.selectorStyleMap[selector] = updatedStyles;
   }
 
-  this.activate = function () {
-    Object.keys(this.selectorStyleMap).forEach(function (selector) {
-      var elements = document.querySelectorAll(selector);
-
-      elements.forEach(function (element) {
+  activate() {
+    for (var selector in this.selectorStyleMap) {
+      for (var element of document.querySelectorAll(selector)) {
         var stylesToUpdate = this.selectorStyleMap[selector];
 
-        Object.keys(stylesToUpdate).forEach(function (styleToUpdate) {
+        for (var styleToUpdate in stylesToUpdate) {
           element.style[styleToUpdate] = stylesToUpdate[styleToUpdate];
-        }, this);
-      }, this);
-    }, this);
+        }
+      }
+    }
   }
 }
 
-function LightTheme() {
-  Theme.call(this, DarkTheme);
+class LightTheme extends Theme {
+  constructor() {
+    super(true, DarkTheme);
 
-  this.addMappings({
-    'h1, h2, h3, h4, a': {
-      'color': this.colors.dark1
-    },
-    'h5, h6, h7, h8': {
-      'color': this.colors.dark3
-    },
+    this.addMappings({
+      'h1, h2, h3, h4, a': {
+        'color': this.colors.dark1
+      },
+      'h5, h6, h7, h8': {
+        'color': this.colors.dark3
+      },
 
-    'body': {
-      'background-color': this.colors.light1
-    },
-    'div.bar': {
-      'background-color': this.colors.dark3
-    },
-    '#nav-body, #modules, #settings': {
-      'background-color': this.colors.light2
-    },
-  })
+      'body': {
+        'background-color': this.colors.light1
+      },
+      'div.bar': {
+        'background-color': this.colors.dark3
+      },
+      '#nav-body, #modules, #settings': {
+        'background-color': this.colors.light2
+      },
+    });
+  }
 }
 
-function DarkTheme() {
-  Theme.call(this, LightTheme);
+class DarkTheme extends Theme {
+  constructor() {
+    super(false, LightTheme);
 
-  this.addMappings({
-    'h1, h3, h4, a': {
-      'color': this.colors.light1
-    },
-    'h2': {
-      'color': this.colors.dark2
-    },
-    'h5, h6, h7, h8': {
-      'color': this.colors.light3
-    },
+    this.addMappings({
+      'h1, h3, h4, a': {
+        'color': this.colors.light1
+      },
+      'h2': {
+        'color': this.colors.dark2
+      },
+      'h5, h6, h7, h8': {
+        'color': this.colors.light3
+      },
 
-    'div.bar': {
-      'background-color': this.colors.light3
-    },
-    '#nav-body, #modules, #settings': {
-      'background-color': this.colors.dark2
-    },
-    'body': {
-      'background-color': this.colors.dark1
-    }
-  })
+      'div.bar': {
+        'background-color': this.colors.light3
+      },
+      '#nav-body, #modules, #settings': {
+        'background-color': this.colors.dark2
+      },
+      'body': {
+        'background-color': this.colors.dark1
+      }
+    })
+  }
 }
 
 export const ThemeService = {
@@ -95,7 +106,7 @@ export const ThemeService = {
     Dark: new DarkTheme(),
   },
 
-  getStored: function () {
+  getStored() {
     var storedKey = localStorage.getItem(this.LOCALSTORAGE_KEY);
 
     if (!this.validateThemeName(storedKey)) {
@@ -106,7 +117,7 @@ export const ThemeService = {
     return this.getThemeFromName(storedKey);
   },
 
-  setStored: function (theme) {
+  setStored(theme) {
     if (typeof theme !== "string") {
       theme = this.getNameFromTheme(theme)
     }
@@ -114,17 +125,17 @@ export const ThemeService = {
     localStorage.setItem(this.LOCALSTORAGE_KEY, theme);
   },
 
-  applyCurrent: function () {
+  applyCurrent() {
     this.getStored().activate();
   },
 
-  toggleCurrent: function () {
-    var theme = new(this.getStored().opposite)();
+  toggleCurrent() {
+    var theme = new(this.getStored().counterpart)();
     this.setStored(theme);
     theme.activate();
   },
 
-  getThemeFromName: function (name) {
+  getThemeFromName(name) {
     if (!this.validateThemeName(name)) {
       this.getStoredTheme();
     }
@@ -132,10 +143,10 @@ export const ThemeService = {
     return this.Themes[name];
   },
 
-  getNameFromTheme: function (theme) {
-    var name = Object.keys(this.Themes).find(function (name) {
+  getNameFromTheme(theme) {
+    var name = Object.keys(this.Themes).find(name => {
       return this.Themes[name].constructor === theme.constructor;
-    }, this);
+    });
 
     if (!this.validateThemeName(name)) {
       return this.getNameFromTheme(this.getStored());
@@ -144,14 +155,7 @@ export const ThemeService = {
     return name;
   },
 
-  validateThemeName: function (nameToValidate) {
-    return !(nameToValidate == undefined ||
-      !Object.keys(this.Themes).find(function (name) {
-        return nameToValidate === name
-      }))
+  validateThemeName(nameToValidate) {
+    return nameToValidate !== undefined && Object.keys(this.Themes).includes(nameToValidate);
   }
-};
-
-(function () {
-  ThemeService.applyCurrent();
-})();
+}

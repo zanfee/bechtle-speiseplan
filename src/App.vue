@@ -1,5 +1,5 @@
 <template>
-<div>
+<div @click.native="$store.commit('closeSidebar')">
   <Navigation />
 
   <CarouselPage v-if="$store.state.currentPage === 'carousel'" />
@@ -9,11 +9,13 @@
 </template>
 
 <script>
-import Navigation from "./components/Navigation";
+import Navigation from "./components/Navigation/Navigation";
 
 import CarouselPage from "./pages/CarouselPage";
 import WeekPage from "./pages/WeekPage";
 import DayPage from "./pages/DayPage";
+
+import { ThemeService } from "./services/ThemeService";
 
 export default {
   components: {
@@ -21,6 +23,9 @@ export default {
     CarouselPage,
     WeekPage,
     DayPage
+  },
+  mounted() {
+    ThemeService.applyCurrent();
   }
 };
 </script>

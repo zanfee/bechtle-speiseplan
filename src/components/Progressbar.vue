@@ -6,7 +6,8 @@
 export default {
   data() {
     return {
-      progress: 0
+      progress: 0,
+      velocity: 1
     };
   },
   computed: {
@@ -15,25 +16,21 @@ export default {
     }
   },
   methods: {
-    moveForeward() {
-      if (this.progress < 120) {
-        this.progress += 1;
-        window.requestAnimationFrame(this.moveForeward);
-      } else {
-        window.requestAnimationFrame(this.moveBackward);
+    move() {
+      this.progress += this.velocity;
+
+      if (this.progress > 120) {
+        this.$emit("elapsed");
+        this.velocity = -3;
+      } else if (this.progress < -200) {
+        this.velocity = 0.7;
       }
-    },
-    moveBackward() {
-      if (this.progress > -200) {
-        this.progress -= 5;
-        window.requestAnimationFrame(this.moveBackward);
-      } else {
-        window.requestAnimationFrame(this.moveForeward);
-      }
+
+      window.requestAnimationFrame(this.move);
     }
   },
   mounted() {
-    window.requestAnimationFrame(this.moveForeward);
+    window.requestAnimationFrame(this.move);
   }
 };
 </script>
