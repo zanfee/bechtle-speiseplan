@@ -13,7 +13,7 @@
 *.userprefs
 
 # Build results
-out/
+dist/
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
