@@ -87,7 +87,7 @@ function DarkTheme() {
   })
 }
 
-var ThemeService = {
+export const ThemeService = {
   LOCALSTORAGE_KEY: "current-theme",
 
   Themes: {

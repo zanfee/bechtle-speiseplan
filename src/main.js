@@ -1,13 +1,16 @@
 import Vue from "vue";
 import App from "./App.vue";
 
-import "../web/theme.js";
+import {
+  ThemeService
+} from "./services/ThemeService.js";
 
-import "../web/stylesheet.css";
-import "../web/navigation.css";
-
-import "../web/navigation.js";
+import store from './store';
 
 new Vue({
-  render: h => h(App),
+  store,
+  beforeMount() {
+    ThemeService.applyCurrent();
+  },
+  render: h => h(App)
 }).$mount("#app");
