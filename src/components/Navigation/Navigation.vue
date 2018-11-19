@@ -16,6 +16,7 @@
   <Sidebar />
 
   <div
+    v-on:click="$store.commit('closeSidebar')"
     class="nav-open"
     :class="{
       'shown': $store.state.isSidebarOpen,

@@ -17,6 +17,7 @@ class Theme {
       dark1: '#3c3c3c',
       dark2: '#505050',
       dark3: '#757575',
+      darkred: 'darkred',
     };
 
     this.selectorStyleMap = {};

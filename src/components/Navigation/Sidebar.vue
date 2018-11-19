@@ -1,7 +1,7 @@
 <template>
 <nav id="nav-body" :class="{ 'go-right': $store.state.isSidebarOpen, 'go-left': !$store.state.isSidebarOpen }">
   <ul class="nav-admin unselectable">
-    <a class="menu-point" style="color: darkred;">Bearbeiten</a>
+    <a class="menu-point">Bearbeiten</a>
   </ul>
 
   <ul class="nav-view unselectable">
@@ -13,9 +13,9 @@
   <ul class="nav-base unselectable">
 
     <SidebarList title="Module">
-      <SidebarListItem @click.native="setContentPage('week')">Speiseplan Woche</SidebarListItem>
-      <SidebarListItem @click.native="setContentPage('day')">Speiseplan Tag</SidebarListItem>
-      <SidebarListItem @click.native="setContentPage('carousel')">Speiseplan Karussell</SidebarListItem>
+      <SidebarListItem>Speiseplan Woche</SidebarListItem>
+      <SidebarListItem>Speiseplan Tag</SidebarListItem>
+      <SidebarListItem>Speiseplan Karussell</SidebarListItem>
       <SidebarListItem>Wetter</SidebarListItem>
     </SidebarList>
 
@@ -107,5 +107,4 @@ export default {
   font-weight: 700;
 }
 
-/* content */
 </style>
