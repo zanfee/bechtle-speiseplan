@@ -93,13 +93,13 @@ export default {
 
 .nav-admin {
   list-style: none;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #757575;
   font-weight: 700;
 }
 
 .nav-view {
   list-style: none;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #757575;
 }
 
 .nav-base {

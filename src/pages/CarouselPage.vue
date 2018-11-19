@@ -1,6 +1,6 @@
 <template>
 <div>
-  <h1 class="item">A</h1>
+  <h1 class="price">3,40€</h1>
 </div>
 </template>
 
@@ -9,8 +9,7 @@ export default {};
 </script>
 
 <style scoped>
-.item {
+.price {
   text-align: center;
-  font-size: 250%;
 }
 </style>
