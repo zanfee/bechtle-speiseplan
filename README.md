@@ -42,6 +42,19 @@ To generate a production build run this command:
 - **Phenomena** : (Bold)
 - **Source Sans Pro** : (Bold | Regular | Light)
 
+### Colors
+
+Orange:	f9ad46	
+Hellgrün:	aed581
+Dunkelgrün:	388e3c
+Bechtlegrün:	008451
+Blau:		1976d2
+Dunkelgrau:	3c3c3c
+Grau:		505050
+Grau2:		757575
+Hellgrau:	f5f5f5
+Weiß:		ffffff
+
 ### Icons
 
 **Vegetarisch**
