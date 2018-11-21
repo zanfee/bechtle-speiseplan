@@ -5,6 +5,8 @@
   <CarouselPage v-if="$store.state.currentPage === 'carousel'" />
   <DayPage v-if="$store.state.currentPage === 'day'" />
   <WeekPage v-if="$store.state.currentPage === 'week'" />
+
+  <Footer></Footer>
 </div>
 </template>
 
@@ -15,6 +17,8 @@ import CarouselPage from "./pages/CarouselPage";
 import WeekPage from "./pages/WeekPage";
 import DayPage from "./pages/DayPage";
 
+import Footer from "./components/Footer";
+
 import { ThemeService } from "./services/ThemeService";
 
 export default {
@@ -22,7 +26,8 @@ export default {
     Navigation,
     CarouselPage,
     WeekPage,
-    DayPage
+    DayPage,
+    Footer
   },
   mounted() {
     ThemeService.applyCurrent();

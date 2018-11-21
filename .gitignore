@@ -342,3 +342,5 @@ yarn-error.log*
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+src/assets/Phenomena-Bold\.otf

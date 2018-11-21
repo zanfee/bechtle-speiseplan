@@ -51,10 +51,10 @@ class LightTheme extends Theme {
     super(true, DarkTheme);
 
     this.addMappings({
-      'h1, h2, h3, h4, a': {
+      '.priceBig, .titleBig, .dazuBig, a': {
         'color': this.colors.dark1
       },
-      'h5, h6, h7, h8': {
+      'h5, h6, .descriptionBig': {
         'color': this.colors.dark3
       },
 
@@ -63,6 +63,9 @@ class LightTheme extends Theme {
       },
       'div.bar': {
         'background-color': this.colors.dark3
+      },
+      'div.footer': {
+        'background-color': this.colors.light2
       },
       '#nav-body, #modules, #settings': {
         'background-color': this.colors.light2
@@ -76,18 +79,21 @@ class DarkTheme extends Theme {
     super(false, LightTheme);
 
     this.addMappings({
-      'h1, h3, h4, a': {
+      '.priceBig, .dazuBig, a': {
         'color': this.colors.light1
       },
-      'h2': {
+      '.titleBig': {
         'color': this.colors.dark2
       },
-      'h5, h6, h7, h8': {
+      'h5, h6, .descriptionBig': {
         'color': this.colors.light3
       },
 
       'div.bar': {
         'background-color': this.colors.light3
+      },
+      'div.footer': {
+        'background-color': this.colors.dark2
       },
       '#nav-body, #modules, #settings': {
         'background-color': this.colors.dark2
