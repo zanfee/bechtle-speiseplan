@@ -1,5 +1,12 @@
 # Speiseplan
 
+### Todo
+
+  - Raspberry Proxy Konfiguration
+  - Phenomena richtig implementieren
+  - Karusell Animation
+  - Wochenübersicht Design
+
 ### Instructions to get started
 
 **IMPORTANT: Make sure you have the following installed**:
@@ -49,11 +56,24 @@ Hellgrün:	aed581
 Dunkelgrün:	388e3c
 Bechtlegrün:	008451
 Blau:		1976d2
-Dunkelgrau:	3c3c3c
-Grau:		505050
-Grau2:		757575
-Hellgrau:	f5f5f5
-Weiß:		ffffff
+.light1 {
+  color: white;
+}
+.light2 {
+  color: #f5f5f5;
+}
+.light3 {
+  color: #bdbdbd;
+}
+.dark1 {
+  color: #3c3c3c;
+}
+.dark2 {
+  color: #505050;
+}
+.dark3 {
+  color: #757575;
+}
 
 ### Icons
 
