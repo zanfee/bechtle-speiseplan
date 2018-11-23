@@ -45,28 +45,4 @@ body {
 ::selection {
   background-color: rgba(34, 140, 211, 0.5);
 }
-
-.light1 {
-  color: white;
-}
-
-.light2 {
-  color: #f5f5f5;
-}
-
-.light3 {
-  color: #bdbdbd;
-}
-
-.dark1 {
-  color: #3c3c3c;
-}
-
-.dark2 {
-  color: #505050;
-}
-
-.dark3 {
-  color: #757575;
-}
 </style>
