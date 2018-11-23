@@ -1,12 +1,28 @@
 <template>
-<div>
-  <h1 class="priceBig">4,50€</h1>
-  <div class="typeBig">
-    <h2 class="titleBig">Frische Rigatoni Funghi</h2>
+<div class="page">
+  <div class="center">
+    <h1 class="priceBig">5,20€</h1>
+    <div class="typeBig"></div>
+    <h2 class="titleBig">Zucchinischnitzel in Pankokruste</h2>
+    <h3 class="prepositionBig">dazu</h3>
+    <h4 class="descriptionBig">handgemachter Kartoffel-Vogerlsalat und Lemonen Mayonnaise</h4>
   </div>
-  <h3 class="dazuBig">dazu</h3>
-  <h4 class="descriptionBig">Grana Padano Schaum, Kirschtomate, Champignon, frittierter Winterlauch, laktosefrei!</h4>
-  
+
+  <div class="left">
+    <h1 class="price">5,60€</h1>
+    <div class="type"></div>
+    <h2 class="title">Hausgemachte Nudel</h2>
+    <h3 class="preposition">dazu</h3>
+    <h4 class="description">Zitronenbutter, Rauke, Parmesanflakes und Grillhühnchen</h4>
+  </div>
+
+  <div class="right">
+    <h1 class="price">6,20€</h1>
+    <div class="type"></div>
+    <h2 class="title">Swiss Burger</h2>
+    <h3 class="preposition">mit</h3>
+    <h4 class="description">Hacksteak vom Hohenloher Rind, Apfel, Bergkäse, Röstzwiebel, Gurkenrelish, Rucola und Kartoffelrösti</h4>
+  </div>
 </div>
 </template>
 
@@ -15,6 +31,23 @@ export default {};
 </script>
 
 <style scoped>
+.left {
+  align-content: center;
+  right: 70%;
+  top: 504px;
+  position: absolute;
+  width: 30%;
+}
+
+.right {
+  align-content: center;
+  left: 70%;
+  top: 504px;
+  position: absolute;
+  width: 30%;
+  overflow: hidden;
+}
+
 .priceBig {
   text-align: center;
   margin: 0;
@@ -27,24 +60,57 @@ export default {};
   margin: 0;
   margin-top: 8px;
   box-shadow: 0px 0px 8px 1px rgba(60,60,60,0.5);
+  position: absolute;
 }
 
 .titleBig {
   text-align: center;
   margin: 0;
+  margin-top: 13px;
   white-space: nowrap;
   overflow: hidden;
+  position: relative;
 }
 
-.dazuBig {
+.prepositionBig {
   text-align: center;
   margin: 0;
-  margin-top: 32px;
+  margin-top: 37px;
 }
 
 .descriptionBig {
   max-width: 656px;
   text-align: center;
   margin: 0 auto;
+}
+
+.price {
+  font-size: 64px;
+  text-align: center;
+  margin: 0;
+}
+
+.type {
+  background-color:#1f7de7;
+  width: 292px;
+  height: 1px;
+  margin: 4px auto;
+}
+
+.title {
+  font-size: 42px;
+  text-align: center;
+  margin: 0;
+}
+
+.preposition {
+  display: none;
+}
+
+.description {
+  font-size: 36px;
+  max-width: 560px;
+  text-align: center;
+  margin: 16px auto;
 }
 </style>

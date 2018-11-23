@@ -27,7 +27,7 @@ export default {
   height: 128px;
   background-color: #F5F5F5;
   bottom: 0;
-  position: absolute;
+  position: fixed;
 }
 
 </style>

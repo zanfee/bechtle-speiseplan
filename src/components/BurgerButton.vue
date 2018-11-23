@@ -1,5 +1,5 @@
 <template>
-<div class="burger-button">
+<div class="burger-button" tabindex="1">
   <div class="burger-bar"></div>
   <div class="burger-bar"></div>
   <div class="burger-bar"></div>

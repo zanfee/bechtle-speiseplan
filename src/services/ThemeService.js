@@ -51,10 +51,10 @@ class LightTheme extends Theme {
     super(true, DarkTheme);
 
     this.addMappings({
-      '.priceBig, .titleBig, .dazuBig, a': {
+      '.priceBig, .price, .titleBig, .prepositionBig, .description, a': {
         'color': this.colors.dark1
       },
-      'h5, h6, .descriptionBig': {
+      'h5, h6, .title, .descriptionBig': {
         'color': this.colors.dark3
       },
 
@@ -79,13 +79,13 @@ class DarkTheme extends Theme {
     super(false, LightTheme);
 
     this.addMappings({
-      '.priceBig, .dazuBig, a': {
+      '.priceBig, .price, .prepositionBig, .description, a': {
         'color': this.colors.light1
       },
       '.titleBig': {
         'color': this.colors.dark2
       },
-      'h5, h6, .descriptionBig': {
+      'h5, h6, .title, .descriptionBig': {
         'color': this.colors.light3
       },
 
