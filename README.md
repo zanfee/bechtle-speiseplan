@@ -1,5 +1,12 @@
 # Speiseplan
 
+### Todo
+
+  - Raspberry Proxy Konfiguration
+  - Phenomena richtig implementieren
+  - Karusell Animation
+  - Wochenübersicht Design
+
 ### Instructions to get started
 
 **IMPORTANT: Make sure you have the following installed**:
