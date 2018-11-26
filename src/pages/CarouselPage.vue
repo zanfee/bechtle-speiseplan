@@ -2,16 +2,20 @@
 <div class="page">
   <div class="center">
     <h1 class="priceBig">5,20€</h1>
-    <div class="typeBig"></div>
-    <h2 class="titleBig">Zucchinischnitzel in Pankokruste</h2>
+    <div class="typeBig">
+      <h2 class="titleBig">Zucchinischnitzel in Pankokruste</h2>
+    </div>
+    <div></div>
     <h3 class="prepositionBig">dazu</h3>
     <h4 class="descriptionBig">handgemachter Kartoffel-Vogerlsalat und Lemonen Mayonnaise</h4>
   </div>
 
   <div class="left">
     <h1 class="price">5,60€</h1>
-    <div class="type"></div>
-    <h2 class="title">Hausgemachte Nudel</h2>
+    <div class="type">
+      <h2 class="title">Hausgemachte Nudel</h2>
+    </div>
+    
     <h3 class="preposition">dazu</h3>
     <h4 class="description">Zitronenbutter, Rauke, Parmesanflakes und Grillhühnchen</h4>
   </div>
@@ -49,9 +53,8 @@ export default {
 .left {
   align-content: center;
   right: 70%;
-  top: 504px;
-  position: absolute;
   width: 30%;
+  top: 0;
   word-wrap: break-word;
 }
 
@@ -89,21 +92,18 @@ export default {
 
 .typeBig {
   background-color:#aed581;
-  width: 100%;
-  height: 172px;
+  padding: 8px;
   margin: 0;
   margin-top: 8px;
   box-shadow: 0px 0px 8px 1px rgba(60,60,60,0.5);
-  position: absolute;
 }
 
 .titleBig {
   text-align: center;
   margin: 0;
-  margin-top: 13px;
+  margin-top: 0px;
   white-space: nowrap;
   overflow: hidden;
-  position: relative;
 }
 
 .prepositionBig {
@@ -113,7 +113,7 @@ export default {
 }
 
 .descriptionBig {
-  max-width: 34%;
+  max-width: 36%;
   text-align: center;
   margin: 0 auto;
   word-wrap: break-word;
@@ -125,10 +125,15 @@ export default {
   margin: 0;
 }
 
-.type {
-  background-color:#1f7de7;
-  width: 292px;
+.type::before {
+  content:'';
+  display: block;
+  background-color: #1f7de7;
   height: 1px;
+}
+
+.type {
+  width: 292px;
   margin: 4px auto;
 }
 
@@ -144,7 +149,6 @@ export default {
 
 .description {
   font-size: 36px;
-  max-width: 560px;
   text-align: center;
   margin: 16px auto;
 }
