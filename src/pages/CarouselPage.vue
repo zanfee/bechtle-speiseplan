@@ -27,7 +27,22 @@
 </template>
 
 <script>
-export default {};
+export default {
+  events: {
+    slideForeward: function() {
+      alert('HI');//this.slideForeward();
+    }
+  },
+  methods: {
+     slideForeward() {
+      var isLeft = document.getElementsByClassName('left');
+      alert(isLeft.length);
+      isLeft[0].classList.remove('left');
+      isLeft[0].classList.add('exit');
+
+    }
+  }
+};
 </script>
 
 <style scoped>
@@ -37,6 +52,11 @@ export default {};
   top: 504px;
   position: absolute;
   width: 30%;
+  word-wrap: break-word;
+}
+
+.center {
+  
 }
 
 .right {
@@ -46,6 +66,20 @@ export default {};
   position: absolute;
   width: 30%;
   overflow: hidden;
+  word-wrap: break-word;
+}
+
+.exit {
+  animation-name: exitAnimation;
+}
+
+@keyframes exitAnimation {
+  from {
+    background-color: yellow;
+  }
+  to {
+    background-color: green;
+  }
 }
 
 .priceBig {
@@ -79,9 +113,10 @@ export default {};
 }
 
 .descriptionBig {
-  max-width: 656px;
+  max-width: 34%;
   text-align: center;
   margin: 0 auto;
+  word-wrap: break-word;
 }
 
 .price {

@@ -20,7 +20,7 @@ export default {
       this.progress += this.velocity;
       if (this.progress > 120) {
         // this.$store.commit('slideForeward')
-        this.$store.commit('toggleSidebar');
+        this.pages.$CarouselPage.slideForeward();
         this.$emit("elapsed");
         this.velocity = -3;
       } else if (this.progress < -200) {
