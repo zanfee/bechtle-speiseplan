@@ -79,13 +79,13 @@ export default {
 
 #nav-body {
   background: #f5f5f5;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px -2px 2px rgba(0, 0, 0, 0.2);
   height: calc(100vh - 60px);
+  top: 60;
   width: 260px;
   line-height: 1.2em;
   overflow: hidden;
   position: fixed;
-  top: 60px;
   transition: left 0.2s cubic-bezier(0.4, 0, 1, 1);
   transform: translateZ(0);
   z-index: 3;

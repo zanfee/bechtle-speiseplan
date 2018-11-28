@@ -9,10 +9,9 @@
       <h6 v-html="clock" id="clock"></h6>
       <h6 v-html="date" id="date"></h6>
     </div>
-
     <Progressbar />
   </div>
-
+  <div style="height: 60px"></div>
   <Sidebar />
 
   <div
@@ -69,8 +68,8 @@ export default {
   height: 60px;
   width: 100%;
   display: inline-block;
-  position: relative;
-  z-index: 3;
+  position: fixed;
+  z-index: 4;
 }
 
 .nav-open {
