@@ -161,6 +161,7 @@ export default {
   font-size: 36px;
   text-align: center;
   margin: 16px auto;
+  width: 96%;
   position: relative;
 }
 </style>

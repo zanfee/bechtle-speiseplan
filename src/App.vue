@@ -1,12 +1,10 @@
 <template>
 <div @click.native="$store.commit('closeSidebar')">
   <Navigation />
-<Footer></Footer>
+  <Footer />
   <CarouselPage v-if="$store.state.currentPage === 'carousel'" />
   <DayPage v-if="$store.state.currentPage === 'day'" />
   <WeekPage v-if="$store.state.currentPage === 'week'" />
-
-  
 </div>
 </template>
 

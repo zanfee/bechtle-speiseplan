@@ -55,6 +55,15 @@ a {
   cursor: pointer;
 }
 
+::-webkit-scrollbar {
+  background-color: rgba(0,0,0,0);
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(127, 127, 127, 0.3);
+}
+
 .unselectable {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
