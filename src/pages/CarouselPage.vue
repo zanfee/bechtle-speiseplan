@@ -12,7 +12,7 @@
   </div>
 
   <div class="left">
-    <h1 class="price">5,60€</h1>
+    <h1 class="price" @click="slideForeward">5,60€</h1>
     <div class="type">
       <h2 class="title">Hausgemachte Nudel</h2>
     </div>
@@ -31,23 +31,19 @@
       <h4 class="description">Hacksteak vom Hohenloher Rind, Apfel, Bergkäse, Röstzwiebel, Gurkenrelish, Rucola und Kartoffelrösti</h4>
     </div>
   </div>
+
 </div>
 </template>
 
 <script>
 export default {
-  events: {
-    slideForeward: function() {
-      alert('HI');//this.slideForeward();
-    }
-  },
   methods: {
      slideForeward() {
       var isLeft = document.getElementsByClassName('left');
-      alert(isLeft.length);
-      isLeft[0].classList.remove('left');
-      isLeft[0].classList.add('exit');
-
+      for (var i = 0; i < isLeft.length; i++) {
+        isLeft[i].classList.add('exit');
+        isLeft[i].classList.remove('left');
+      }
     }
   }
 };
@@ -56,7 +52,6 @@ export default {
 <style scoped>
 .left {
   align-content: center;
-  right: 70%;
   width: 30%;
   word-wrap: break-word;
   float: left;
@@ -65,7 +60,6 @@ export default {
 
 .right {
   align-content: center;
-  left: 70%;
   width: 30%;
   margin: 0;
   overflow: hidden;
@@ -75,21 +69,30 @@ export default {
 }
 
 .exit {
+  align-content: center;
+  width: 30%;
+  word-wrap: break-word;
+  float: left;
+  margin-top: 32px;
   animation-name: exitAnimation;
+  animation-duration: 2s;
 }
 
 @keyframes exitAnimation {
   from {
-    background-color: yellow;
+    background-color: yellowgreen;
+    right: 70%;
   }
   to {
-    background-color: green;
+    background-color: transparent;
+    right: 80%;
   }
 }
 
 .priceBig {
   text-align: center;
   margin: 0;
+  text-shadow: 4px 4px 24px rgba(0, 0, 0, 0.5);
 }
 
 .typeBig {
@@ -106,6 +109,7 @@ export default {
   margin-top: 0px;
   white-space: nowrap;
   overflow: hidden;
+  text-shadow: 4px 4px 12px rgba(0,0,0,0.4);
 }
 
 .menuBodyBig {
@@ -118,7 +122,7 @@ export default {
   text-align: center;
   margin: 0;
   margin-top: 37px;
-  
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
 }
 
 .descriptionBig {
@@ -126,6 +130,7 @@ export default {
   margin: 0 auto;
   word-wrap: break-word;
   left: 32%;
+  text-shadow: 0px 0px 4px rgba(0,0,0,0.4);
 }
 
 .price {
@@ -133,6 +138,7 @@ export default {
   text-align: center;
   margin: 0;
   position: relative;
+  text-shadow: 0px 0px 8px rgba(0,0,0,0.2);
 }
 
 .type::before {
@@ -151,6 +157,8 @@ export default {
   text-align: center;
   margin: 0;
   position: relative;
+  max-width: 96%;
+  text-shadow: 0px 0px 8px rgba(0,0,0,0.3);
 }
 
 .preposition {
@@ -163,5 +171,6 @@ export default {
   margin: 16px auto;
   width: 96%;
   position: relative;
+  text-shadow: 0px 0px 4px rgba(0,0,0,0.4);
 }
 </style>

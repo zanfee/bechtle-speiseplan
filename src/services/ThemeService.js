@@ -65,11 +65,14 @@ class LightTheme extends Theme {
         'background-color': this.colors.dark3
       },
       'div.footer': {
-        'background-color': this.colors.light2
+        'background-color': 'rgba(238, 238, 238, 0.6)'
       },
       '#nav-body, #modules, #settings': {
         'background-color': this.colors.light2
       },
+      '.header': {
+        'background-color': 'rgba(255, 255, 255, 0.7)'
+      }
     });
   }
 }
@@ -93,13 +96,16 @@ class DarkTheme extends Theme {
         'background-color': this.colors.light3
       },
       'div.footer': {
-        'background-color': this.colors.dark2
+        'background-color': 'rgba(86, 86, 86, 0.7)'
       },
       '#nav-body, #modules, #settings': {
         'background-color': this.colors.dark2
       },
       'body': {
         'background-color': this.colors.dark1
+      },
+      '.header': {
+        'background-color': 'rgba(60, 60, 60, 0.8)'
       }
     })
   }

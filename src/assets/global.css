@@ -3,42 +3,42 @@
 }
 
 h1 {
-  font-size: 192px;
+  font-size: 12em;
   font-family: "Source Sans Pro", "sans-serif";
   font-weight: 700;
   color: #3c3c3c;
 }
 
 h2 {
-  font-size: 128px;
+  font-size: 8em;
   font-family: "Source Sans Pro", "sans-serif";
   font-weight: 700;
   color: #3c3c3c;
 }
 
 h3 {
-  font-size: 48px;
+  font-size: 3em;
   font-weight: 700;
   font-family: "Phenomena";
   src: url("Phenomena-Bold.woff");
 }
 
 h4 {
-  font-size: 48px;
+  font-size: 3em;
   font-weight: 700;
   font-family: "Phenomena";
   src: url("Phenomena-Bold.woff");
 }
 
 h5 {
-  font-size: 40px;
+  font-size: 2.5em;
   font-family: "Source Sans Pro", "sans-serif";
   font-weight: 200;
   color: #757575;
 }
 
 h6 {
-  font-size: 32px;
+  font-size: 2em;
   font-family: "Source Sans Pro", "sans-serif";
   font-weight: 400;
   color: #757575;
@@ -46,7 +46,7 @@ h6 {
 
 a {
   font-family: "Source Sans Pro", "sans-serif";
-  font-size: 16pt;
+  font-size: 1.35em;
   color: #3c3c3c;
   display: block;
   margin: 1em;
@@ -56,12 +56,12 @@ a {
 }
 
 ::-webkit-scrollbar {
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(127, 127, 127, 0.1);
   width: 12px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(127, 127, 127, 0.3);
+  background-color: rgba(127, 127, 127, 0.2);
 }
 
 .unselectable {

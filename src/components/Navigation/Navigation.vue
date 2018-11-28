@@ -11,7 +11,7 @@
     </div>
     <Progressbar />
   </div>
-  <div style="height: 60px"></div>
+  <div class="header"></div>
   <Sidebar />
 
   <div
