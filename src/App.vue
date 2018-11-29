@@ -20,6 +20,8 @@ import Footer from "./components/Footer";
 
 import { ThemeService } from "./services/ThemeService";
 
+var KEYCODE_N = 110;
+
 export default {
   components: {
     Navigation,
@@ -30,6 +32,12 @@ export default {
   },
   mounted() {
     ThemeService.applyCurrent();
+    window.addEventListener("keypress", e => {
+      if (e.keyCode === KEYCODE_N) {
+        //this.$store.commit('toggleTheme');
+        ThemeService.toggleCurrent();
+      }
+    });
   }
 };
 </script>

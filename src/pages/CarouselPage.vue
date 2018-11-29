@@ -130,7 +130,7 @@ export default {
   margin: 0 auto;
   word-wrap: break-word;
   left: 32%;
-  text-shadow: 0px 0px 4px rgba(0,0,0,0.4);
+  text-shadow: 0px 0px 4px rgba(0,0,0,0.2);
 }
 
 .price {
@@ -150,6 +150,7 @@ export default {
   width: 88%;
   margin: 4px auto;
   position: relative;
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
 }
 
 .title {
@@ -158,7 +159,7 @@ export default {
   margin: 0;
   position: relative;
   max-width: 96%;
-  text-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+  text-shadow: 0px 0px 2px rgba(0,0,0,0.4);
 }
 
 .preposition {
@@ -171,6 +172,6 @@ export default {
   margin: 16px auto;
   width: 96%;
   position: relative;
-  text-shadow: 0px 0px 4px rgba(0,0,0,0.4);
+  text-shadow: 0px 0px 2px rgba(0,0,0,0.4);
 }
 </style>
