@@ -2,6 +2,7 @@
 <div @click.native="$store.commit('closeSidebar')">
   <Navigation />
   
+  <AdminPage v-if="$store.state.currentPage === 'admin'" />
   <CarouselPage v-if="$store.state.currentPage === 'carousel'" />
   <DayPage v-if="$store.state.currentPage === 'day'" />
   <WeekPage v-if="$store.state.currentPage === 'week'" />
@@ -11,6 +12,8 @@
 
 <script>
 import Navigation from "./components/Navigation/Navigation";
+
+import AdminPage from "./pages/AdminPage";
 
 import CarouselPage from "./pages/CarouselPage";
 import WeekPage from "./pages/WeekPage";
@@ -25,6 +28,7 @@ var KEYCODE_N = 110;
 export default {
   components: {
     Navigation,
+    AdminPage,
     CarouselPage,
     WeekPage,
     DayPage,

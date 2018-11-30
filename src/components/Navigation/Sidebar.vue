@@ -1,7 +1,7 @@
 <template>
 <nav id="nav-body" :class="{ 'go-right': $store.state.isSidebarOpen, 'go-left': !$store.state.isSidebarOpen }">
   <ul class="nav-admin unselectable">
-    <a class="menu-point">Bearbeiten</a>
+    <SidebarList title="Bearbeiten" @click.native="setContentPage('admin')"></SidebarList>
   </ul>
 
   <ul class="nav-view unselectable">
