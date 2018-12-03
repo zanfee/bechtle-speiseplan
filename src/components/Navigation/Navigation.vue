@@ -48,7 +48,7 @@ export default {
   methods: {
     tickClock() {
       var currentTime = new Date();
-      this.clock = currentTime.toLocaleTimeString("de-DE");
+      this.clock = currentTime.toLocaleTimeString("de-DE") + " Uhr";
 
       var weekday = currentTime.toLocaleDateString("de-DE", { weekday: "long" });
       this.date = weekday.bold() + ", " + currentTime.toLocaleDateString("de-DE");

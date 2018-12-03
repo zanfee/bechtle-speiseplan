@@ -54,12 +54,18 @@ class LightTheme extends Theme {
       '.priceBig, .price, .titleBig, .prepositionBig, .description, a': {
         'color': this.colors.dark1
       },
-      'h5, h6, .title, .descriptionBig': {
+      '.pointer': {
+        'color': this.colors.dark2
+      },
+      'h5, h6, .title, .descriptionBig, p': {
         'color': this.colors.dark3
       },
 
       'body': {
         'background-color': this.colors.light1
+      },
+      '.containerHeader, .row1':{
+        'background-color': this.colors.light3
       },
       'div.bar': {
         'background-color': this.colors.dark3
@@ -67,7 +73,7 @@ class LightTheme extends Theme {
       'div.footer': {
         'background-color': 'rgba(238, 238, 238, 0.6)'
       },
-      '#nav-body, #modules, #settings': {
+      '#nav-body, #modules, #settings, .container': {
         'background-color': this.colors.light2
       },
       '.header': {
@@ -88,8 +94,11 @@ class DarkTheme extends Theme {
       '.titleBig': {
         'color': this.colors.dark2
       },
-      'h5, h6, .title, .descriptionBig': {
+      'h5, h6, .title, .descriptionBig, p': {
         'color': this.colors.light3
+      },
+      '.pointer':{
+        'color': this.colors.dark3
       },
 
       'div.bar': {
@@ -98,7 +107,10 @@ class DarkTheme extends Theme {
       'div.footer': {
         'background-color': 'rgba(86, 86, 86, 0.7)'
       },
-      '#nav-body, #modules, #settings': {
+      '.containerHeader, .row1':{
+          'background-color': this.colors.dark3
+      },
+      '#nav-body, #modules, #settings, .container': {
         'background-color': this.colors.dark2
       },
       'body': {
