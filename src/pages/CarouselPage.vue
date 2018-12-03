@@ -1,5 +1,6 @@
 <template>
 <div class="page">
+
   <div class="center">
     <h1 class="priceBig">5,20€</h1>
     <div class="typeBig">
