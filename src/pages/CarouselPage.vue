@@ -3,7 +3,7 @@
   <div class="center">
     <h1 class="priceBig">5,20€</h1>
     <div class="typeBig">
-      <h2 class="titleBig">Zucchinischnitzel in Pankokruste</h2>
+      <h2 class="titleBig">Currywurst</h2>
     </div>
     <div class="menuBodyBig">
       <h3 class="prepositionBig">dazu</h3>
@@ -96,7 +96,7 @@ export default {
 }
 
 .typeBig {
-  background-color:#aed581;
+  background-color: #f9ad46;
   padding: 8px;
   margin: 0;
   margin-top: 8px;

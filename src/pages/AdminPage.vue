@@ -8,7 +8,7 @@
         </div>
         <div class="container" id="station">
             <div class="containerHeader">
-                <h1>Station: one&sup1</h1>
+                <h1>Station: one¹</h1>
             </div>
         </div>
     </div>    
