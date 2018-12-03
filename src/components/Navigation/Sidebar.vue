@@ -24,7 +24,6 @@
       <SidebarListItem>Language</SidebarListItem>
       <SidebarListItem>Geschwindigkeit</SidebarListItem>
     </SidebarList>
-
   </ul>
 </nav>
 </template>
@@ -56,11 +55,6 @@ export default {
       ThemeService.toggleCurrent();
       this.themeMode = this.getThemeMode();
     }
-  },
-  mounted() {
-    $store.on('toggleTheme', () => {
-      console.log('toggleTheme');
-    })
   }
 };
 </script>
