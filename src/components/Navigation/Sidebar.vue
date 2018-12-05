@@ -1,5 +1,5 @@
 <template>
-<nav id="nav-body" :class="{ 'go-right': $store.state.isSidebarOpen, 'go-left': !$store.state.isSidebarOpen}">
+<nav id="nav-body" :class="{ 'go-right': $store.state.isSidebarOpen, 'go-left': !$store.state.isSidebarOpen }">
   <ul class="nav-admin unselectable">
     <SidebarList title="Bearbeiten" @click.native="setContentPage('admin')"></SidebarList>
   </ul>
@@ -20,7 +20,7 @@
     </SidebarList>
 
     <SidebarList title="Einstellungen">
-      <SidebarListItem @click.native="toggleTheme">{{ themeMode }}</SidebarListItem>
+      <SidebarListItem @click.native="toggleTheme">{{ this.$store.state.themeName }}</SidebarListItem>
       <SidebarListItem>Language</SidebarListItem>
       <SidebarListItem>Geschwindigkeit</SidebarListItem>
     </SidebarList>
@@ -41,20 +41,27 @@ export default {
   },
   data() {
     return {
-      themeMode: this.getThemeMode()
+      themeMode: this.$store.state.themeName
     };
   },
   methods: {
-    getThemeMode() {
-      return this.$store.state.theme === 2 ? "Nachtmodus" : "Tagmodus";
-    },
     setContentPage(page) {
       this.$store.commit("setPage", page);
     },
     toggleTheme() {
       this.$store.commit("toggleTheme");
-      this.themeMode = this.getThemeMode();
+      //this.themeMode = this.$store.state.themeName;
+    },
+    loadTheme() {
+      let theme = parseInt(localStorage.getItem("current-theme")) - 1;
+      for (var i = 0; i < theme; i++) {
+        this.toggleTheme();
+      }
+      this.$store.commit("loadThemeName");
     }
+  },
+  mounted() {
+    this.loadTheme();
   }
 };
 </script>

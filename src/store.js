@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     currentPage: "carousel",
     isSidebarOpen: false,
-    theme: 2
+    theme: 1,
+    themeName: "Tagmodus"
   },
   mutations: {
     setPage(state, payload) {
@@ -24,6 +25,21 @@ export default new Vuex.Store({
     },
     toggleTheme(state) {
       state.theme === 2 /* amount of themes */ ? state.theme = 1 : state.theme++;
+      localStorage.setItem("current-theme", state.theme.toString());
+      switch(state.theme) {
+        case 1: state.themeName = "Nachtmodus";
+          break;
+        default: state.themeName = "Tagmodus";
+          break;
+      }
+    },
+    loadThemeName(state) {
+      switch(state.theme) {
+        case 1: state.themeName = "Nachtmodus";
+          break;
+        default: state.themeName = "Tagmodus";
+          break;
+      }
     }
   },
   actions: {

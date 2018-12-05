@@ -34,10 +34,9 @@ export default {
     Footer
   },
   mounted() {
-    //ThemeService.applyCurrent();
     window.addEventListener("keypress", e => {
       if (e.keyCode === KEYCODE_N) {
-        ThemeService.toggleCurrent();
+        this.$store.commit("toggleTheme");
       }
     });
   }
