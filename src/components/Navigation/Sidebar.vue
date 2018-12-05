@@ -1,5 +1,5 @@
 <template>
-<nav id="nav-body" :class="{ 'go-right': $store.state.isSidebarOpen, 'go-left': !$store.state.isSidebarOpen }">
+<nav id="nav-body" :class="{ 'go-right': $store.state.isSidebarOpen, 'go-left': !$store.state.isSidebarOpen}">
   <ul class="nav-admin unselectable">
     <SidebarList title="Bearbeiten" @click.native="setContentPage('admin')"></SidebarList>
   </ul>
@@ -46,13 +46,13 @@ export default {
   },
   methods: {
     getThemeMode() {
-      return ThemeService.getStored().isLight ? "Nachtmodus" : "Tagmodus";
+      return this.$store.state.theme === 2 ? "Nachtmodus" : "Tagmodus";
     },
     setContentPage(page) {
       this.$store.commit("setPage", page);
     },
     toggleTheme() {
-      ThemeService.toggleCurrent();
+      this.$store.commit("toggleTheme");
       this.themeMode = this.getThemeMode();
     }
   }

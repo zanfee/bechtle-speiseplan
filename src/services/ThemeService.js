@@ -136,6 +136,7 @@ export const ThemeService = {
     }
 
     localStorage.setItem(this.LOCALSTORAGE_KEY, theme);
+    console.log(localStorage.getItem(this.LOCALSTORAGE_KEY))
   },
 
   applyCurrent() {

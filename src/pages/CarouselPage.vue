@@ -2,13 +2,13 @@
 <div class="page">
 
   <div class="center">
-    <h1 class="priceBig">5,20€</h1>
+    <h1 class="priceBig">?,??€</h1>
     <div class="typeBig">
       <h2 class="titleBig">Currywurst</h2>
     </div>
     <div class="menuBodyBig">
       <h3 class="prepositionBig">dazu</h3>
-      <h4 class="descriptionBig">handgemachter Kartoffel-Vogerlsalat und Lemonen Mayonnaise</h4>
+      <h4 class="descriptionBig">POMMES!!!!</h4>
     </div>
   </div>
 

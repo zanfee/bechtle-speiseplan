@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     currentPage: "carousel",
     isSidebarOpen: false,
+    theme: 2
   },
   mutations: {
     setPage(state, payload) {
@@ -20,6 +21,9 @@ export default new Vuex.Store({
     },
     toggleSidebar(state) {
       state.isSidebarOpen = !state.isSidebarOpen;
+    },
+    toggleTheme(state) {
+      state.theme === 2 /* amount of themes */ ? state.theme = 1 : state.theme++;
     }
   },
   actions: {
