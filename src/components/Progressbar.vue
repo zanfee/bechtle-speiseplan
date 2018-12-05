@@ -25,7 +25,6 @@ export default {
       } else if (this.progress < -200) {
         this.velocity = 0.7;
       }
-
       window.requestAnimationFrame(this.move);
     }
   },

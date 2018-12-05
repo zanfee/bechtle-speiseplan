@@ -6,7 +6,8 @@
   <CarouselPage v-if="$store.state.currentPage === 'carousel'" />
   <DayPage v-if="$store.state.currentPage === 'day'" />
   <WeekPage v-if="$store.state.currentPage === 'week'" />
-  <Footer @click.native="removeStyle('', 'css')"/>
+
+  <Footer />
 </div>
 </template>
 
@@ -22,7 +23,6 @@ import DayPage from "./pages/DayPage";
 import Footer from "./components/Footer";
 
 var KEYCODE_N = 110;
-var LOCALSTORAGE_KEY = "current-theme";
 
 export default {
   components: {

@@ -32,8 +32,6 @@
 import SidebarList from "./SidebarList";
 import SidebarListItem from "./SidebarListItem";
 
-import { ThemeService } from "../../services/ThemeService.js";
-
 export default {
   components: {
     SidebarList,
@@ -112,5 +110,4 @@ export default {
   list-style: none;
   font-weight: 700;
 }
-
 </style>
