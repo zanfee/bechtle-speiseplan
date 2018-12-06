@@ -29,5 +29,4 @@ export default {
   bottom: 0;
   position: fixed;
 }
-
 </style>

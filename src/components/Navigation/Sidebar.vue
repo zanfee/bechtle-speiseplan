@@ -20,7 +20,7 @@
     </SidebarList>
 
     <SidebarList title="Einstellungen">
-      <SidebarListItem @click.native="toggleTheme">{{ themeMode }}</SidebarListItem>
+      <SidebarListItem @click.native="toggleTheme">{{ this.$store.state.themeName }}</SidebarListItem>
       <SidebarListItem>Language</SidebarListItem>
       <SidebarListItem>Geschwindigkeit</SidebarListItem>
     </SidebarList>
@@ -32,8 +32,6 @@
 import SidebarList from "./SidebarList";
 import SidebarListItem from "./SidebarListItem";
 
-import { ThemeService } from "../../services/ThemeService.js";
-
 export default {
   components: {
     SidebarList,
@@ -41,20 +39,27 @@ export default {
   },
   data() {
     return {
-      themeMode: this.getThemeMode()
+      themeMode: this.$store.state.themeName
     };
   },
   methods: {
-    getThemeMode() {
-      return ThemeService.getStored().isLight ? "Nachtmodus" : "Tagmodus";
-    },
     setContentPage(page) {
       this.$store.commit("setPage", page);
     },
     toggleTheme() {
-      ThemeService.toggleCurrent();
-      this.themeMode = this.getThemeMode();
+      this.$store.commit("toggleTheme");
+      //this.themeMode = this.$store.state.themeName;
+    },
+    loadTheme() {
+      let theme = parseInt(localStorage.getItem("current-theme")) - 1;
+      for (var i = 0; i < theme; i++) {
+        this.toggleTheme();
+      }
+      this.$store.commit("loadThemeName");
     }
+  },
+  mounted() {
+    this.loadTheme();
   }
 };
 </script>
@@ -105,5 +110,4 @@ export default {
   list-style: none;
   font-weight: 700;
 }
-
 </style>
