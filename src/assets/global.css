@@ -100,10 +100,13 @@ a {
 .light div.bar {
   background-color: #757575;
 }
+.light .background {
+  background-color: #ffffff;
+}
 .light div.footer {
   background-color: rgba(238, 238, 238, 0.6);
 }
-.light .header {
+.light header {
     background-color: rgba(255, 255, 255, 0.7);
 }
 
@@ -129,10 +132,10 @@ a {
   background-color: #757575;
 }
 .dark #nav-body, .dark #modules, .dark #settings, .dark .container {
- background-color: #505050;
+  background-color: #505050;
 }
-.dark body {
- background-color: #3c3c3c;
+.dark .background {
+  background-color: #3c3c3c;
 }
 .dark div.footer {
   background-color: rgba(86, 86, 86, 0.7);

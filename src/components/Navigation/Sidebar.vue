@@ -90,7 +90,7 @@ export default {
   line-height: 1.2em;
   overflow: hidden;
   position: fixed;
-  transition: left 0.2s cubic-bezier(0.4, 0, 1, 1);
+  transition: left 0.1s cubic-bezier(0.4, 0, 1, 1);
   transform: translateZ(0);
   z-index: 3;
 }
