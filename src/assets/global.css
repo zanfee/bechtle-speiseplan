@@ -58,15 +58,16 @@ a {
   cursor: pointer;
 }
 
-::-webkit-scrollbar {
+/*
+::-webkit-scrollbar .dark {
   background-color: rgba(127, 127, 127, 0.1);
   width: 12px;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: rgba(127, 127, 127, 0.2);
+::-webkit-scrollbar-thumb .dark {
+  background-color: rgba(127, 127, 127, 0.8);
 }
-
+*/
 .unselectable {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -106,7 +107,7 @@ a {
 .light div.footer {
   background-color: rgba(238, 238, 238, 0.6);
 }
-.light header {
+.light .header {
     background-color: rgba(255, 255, 255, 0.7);
 }
 
@@ -140,7 +141,7 @@ a {
 .dark div.footer {
   background-color: rgba(86, 86, 86, 0.7);
 }
-.dark header {
+.dark .header {
   background-color: rgba(60, 60, 60, 0.8);
 }
 

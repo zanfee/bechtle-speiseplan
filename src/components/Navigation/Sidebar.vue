@@ -48,7 +48,6 @@ export default {
     },
     toggleTheme() {
       this.$store.commit("toggleTheme");
-      //this.themeMode = this.$store.state.themeName;
     },
     loadTheme() {
       let theme = parseInt(localStorage.getItem("current-theme")) - 1;
