@@ -68,6 +68,7 @@ a {
   background-color: rgba(127, 127, 127, 0.8);
 }
 */
+
 .unselectable {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -144,58 +145,3 @@ a {
 .dark .header {
   background-color: rgba(60, 60, 60, 0.8);
 }
-
-/*
-this.addMappings({ LIGHT
-      '.priceBig, .price, .titleBig, .prepositionBig, .description, a': {
-        'color': this.colors.dark1
-      },
-      'h5, h6, .title, .descriptionBig': {
-        'color': this.colors.dark3
-      },
-
-      'body': {
-        'background-color': this.colors.light1
-      },
-      'div.bar': {
-        'background-color': this.colors.dark3
-      },
-      'div.footer': {
-        'background-color': 'rgba(238, 238, 238, 0.6)'
-      },
-      '#nav-body, #modules, #settings': {
-        'background-color': this.colors.light2
-      },
-      '.header': {
-        'background-color': 'rgba(255, 255, 255, 0.7)'
-      }
-    });
-
-this.addMappings({ DARK
-  '.priceBig, .price, .prepositionBig, .description, a': {
-    'color': this.colors.light1
-  },
-  '.titleBig': {
-    'color': this.colors.dark2
-  },
-  'h5, h6, .title, .descriptionBig': {
-    'color': this.colors.light3
-  },
-
-  'div.bar': {
-    'background-color': this.colors.light3
-  },
-  'div.footer': {
-    'background-color': 'rgba(86, 86, 86, 0.7)'
-  },
-  '#nav-body, #modules, #settings': {
-    'background-color': this.colors.dark2
-  },
-  'body': {
-    'background-color': this.colors.dark1
-  },
-  '.header': {
-    'background-color': 'rgba(60, 60, 60, 0.8)'
-  }
-})
-*/
