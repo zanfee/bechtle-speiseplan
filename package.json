@@ -5,9 +5,12 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "gh-pages -d dist"
   },
+  "homepage": "https://xsuffix.github.io/BechtleSpeiseplan",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "vue": "^2.5.17",
     "vuex": "^3.0.1"
   },
