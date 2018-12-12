@@ -8,7 +8,7 @@
     </div>
     <div class="menuBodyBig">
       <h3 class="prepositionBig">dazu</h3>
-      <h4 class="descriptionBig">Butterbrezel und Laugenbrötchen mit Grünkohl Räuchertofu</h4>
+      <h4 class="descriptionBig">ausverkauft</h4>
     </div>
   </div>
 
