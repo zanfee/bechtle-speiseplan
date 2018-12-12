@@ -98,9 +98,11 @@ export default {
 
 .typeBig {
   background-color: #f9ad46;
-  padding: 8px;
+  padding: 0.5em;
+  padding: 0.42vw;
   margin: 0;
   margin-top: 8px;
+  margin-top: 0.42vw;
   box-shadow: 0px 0px 8px 1px rgba(60,60,60,0.5);
 }
 
@@ -135,7 +137,8 @@ export default {
 }
 
 .price {
-  font-size: 64px;
+  font-size: 4em;
+  font-size: 3.3vw;
   text-align: center;
   margin: 0;
   position: relative;
@@ -155,7 +158,8 @@ export default {
 }
 
 .title {
-  font-size: 42px;
+  font-size: 2.625em;
+  font-size: 2.1875vw;
   text-align: center;
   margin: 0;
   position: relative;
