@@ -128,7 +128,7 @@ a {
   color: #757575;
 }
 .dark .titleBig {
-  color: #505050;
+  color: #3c3c3c;
 }
   /* background-color */
 .dark div.bar {
@@ -148,4 +148,8 @@ a {
 }
 .dark .header {
   background-color: rgba(60, 60, 60, 0.8);
+}
+
+.nav-admin a {
+  color: red;
 }

@@ -2,34 +2,34 @@
 <div class="page">
 
   <div class="center">
-    <h1 class="priceBig">0,00€</h1>
+    <h1 class="priceBig">4,50€</h1>
     <div class="typeBig">
-      <h2 class="titleBig">Eduard's Geburtstagskuchen</h2>
+      <h2 class="titleBig">Blumenkohlgulasch</h2>
     </div>
     <div class="menuBodyBig">
       <h3 class="prepositionBig">dazu</h3>
-      <h4 class="descriptionBig">ausverkauft</h4>
+      <h4 class="descriptionBig">Parmesan und gedämpfter Kräuterreis, laktosefrei!</h4>
     </div>
   </div>
 
   <div class="left">
-    <h1 class="price" @click="slideForeward">5,60€</h1>
+    <h1 class="price" @click="slideForeward">5,40€</h1>
     <div class="type">
-      <h2 class="title">Hausgemachte Nudel</h2>
+      <h2 class="title">Backfrische FitPizza</h2>
     </div>
     <div>
       <h3 class="preposition">dazu</h3>
-      <h4 class="description">Zitronenbutter, Rauke, Parmesanflakes und Grillhühnchen</h4>
+      <h4 class="description">Tomatensugo, Salami vom Hohenloher Rind, Gemüsepaprika, Mozzarella und Tomatensalat mit Zwiebel</h4>
     </div>
   </div>
 
   <div class="right">
-    <h1 class="price">6,20€</h1>
+    <h1 class="price">3,40€</h1>
     <div class="type"></div>
-    <h2 class="title">Swiss Burger</h2>
+    <h2 class="title">Penne Rigate</h2>
     <div>
-      <h3 class="preposition">mit</h3>
-      <h4 class="description">Hacksteak vom Hohenloher Rind, Apfel, Bergkäse, Röstzwiebel, Gurkenrelish, Rucola und Kartoffelrösti</h4>
+      <h3 class="preposition">dazu</h3>
+      <h4 class="description">Käsesoße und Tomatentopping</h4>
     </div>
   </div>
 
@@ -97,7 +97,7 @@ export default {
 }
 
 .typeBig {
-  background-color: #f9ad46;
+  background-color: #388e3c;
   padding: 0.5em;
   padding: 0.42vw;
   margin: 0;
@@ -148,7 +148,7 @@ export default {
 .type::before {
   content:'';
   display: block;
-  background-color: #1f7de7;
+  background-color: #f9ad46;
   height: 1px;
   max-width: 292px;
   width: 88%;
@@ -172,7 +172,8 @@ export default {
 }
 
 .description {
-  font-size: 36px;
+  font-size: 2.25em;
+  font-size: 1.875vw;
   text-align: center;
   margin: 16px auto;
   width: 96%;
