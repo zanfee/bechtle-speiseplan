@@ -38,10 +38,10 @@ export default {
   },
   mounted() {
     window.addEventListener("keypress", e => {
-      if (e.keyCode === KEYCODE_N) {
+      if (e.keyCode === KEYCODE_N && this.$store.state.shortcuts) {
         this.$store.commit("toggleTheme");
       }
-      if (e.keyCode === KEYCODE_M) {
+      if (e.keyCode === KEYCODE_M && this.$store.state.shortcuts) {
         this.$store.commit("toggleSidebar");
       }
     });

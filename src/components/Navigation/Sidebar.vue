@@ -23,6 +23,8 @@
       <SidebarListItem @click.native="toggleTheme">{{ this.$store.state.themeName }}</SidebarListItem>
       <SidebarListItem>Language</SidebarListItem>
       <SidebarListItem>Geschwindigkeit</SidebarListItem>
+      <SidebarListBox command="toggleShortcuts">Shortcuts</SidebarListBox>
+      <SidebarListBox>Shortcuts</SidebarListBox>
     </SidebarList>
   </ul>
 </nav>
@@ -31,16 +33,13 @@
 <script>
 import SidebarList from "./SidebarList";
 import SidebarListItem from "./SidebarListItem";
+import SidebarListBox from "./SidebarListBox";
 
 export default {
   components: {
     SidebarList,
-    SidebarListItem
-  },
-  data() {
-    return {
-      themeMode: this.$store.state.themeName
-    };
+    SidebarListItem,
+    SidebarListBox
   },
   methods: {
     setContentPage(page) {
@@ -48,17 +47,10 @@ export default {
     },
     toggleTheme() {
       this.$store.commit("toggleTheme");
-    },
-    loadTheme() {
-      let theme = parseInt(localStorage.getItem("current-theme")) - 1;
-      for (var i = 0; i < theme; i++) {
-        this.toggleTheme();
-      }
-      this.$store.commit("loadThemeName");
     }
   },
   mounted() {
-    this.loadTheme();
+    this.$store.commit("loadThemeName");
   }
 };
 </script>

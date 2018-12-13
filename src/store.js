@@ -7,8 +7,9 @@ export default new Vuex.Store({
   state: {
     currentPage: "carousel",
     isSidebarOpen: false,
-    theme: 1,
-    themeName: "Tagmodus"
+    theme: parseInt(localStorage.getItem("current-theme")),
+    themeName: "Tagmodus",
+    shortcuts: localStorage.getItem('shortcuts') !== "false"
   },
   mutations: {
     setPage(state, payload) {
@@ -39,6 +40,16 @@ export default new Vuex.Store({
           break;
         default: state.themeName = "Tagmodus";
           break;
+      }
+    },
+    toggleShortcuts(state) {
+      if (state.shortcuts) {
+        state.shortcuts = false;
+        localStorage.setItem("shortcuts", "false");
+      }
+      else {
+        state.shortcuts = true;
+        localStorage.setItem("shortcuts", "true");
       }
     }
   },
