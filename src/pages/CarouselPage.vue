@@ -97,7 +97,7 @@ export default {
 }
 
 .typeBig {
-  background-color: #388e3c;
+  background-color: #f9ad46;
   padding: 0.5em;
   margin: 0;
   margin-top: 8px;
@@ -154,7 +154,7 @@ export default {
 .type::before {
   content:'';
   display: block;
-  background-color: #f9ad46;
+  background-color: #1976d2;
   height: 1px;
   max-width: 292px;
   width: 88%;
