@@ -33,32 +33,45 @@
 
 h1 {
   font-size: 12em;
-  font-size: 10vw;
   font-family: "Source Sans Pro", "sans-serif";
   font-weight: 700;
   color: #3c3c3c;
+}
+
+.fit h1 {
+  font-size: 10vw;
+  color: red;
 }
 
 h2 {
   font-size: 8em;
-  font-size: 6.7vw;
   font-family: "Source Sans Pro", "sans-serif";
   font-weight: 700;
   color: #3c3c3c;
 }
 
+.fit h2 {
+  font-size: 6.7vw;
+}
+
 h3 {
   font-size: 3em;
-  font-size: 2.5vw;
   font-weight: 700;
   font-family: "Phenomena";
 }
 
+.fit h3 {
+  font-size: 2.5vw;
+}
+
 h4 {
   font-size: 3em;
-  font-size: 2.5vw;
   font-weight: 700;
   font-family: "Phenomena";
+}
+
+.fit h4 {
+  font-size: 2.5vw;
 }
 
 h5 {

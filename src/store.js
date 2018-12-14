@@ -9,6 +9,7 @@ export default new Vuex.Store({
     isSidebarOpen: false,
     theme: parseInt(localStorage.getItem("current-theme")),
     themeName: "Tagmodus",
+    fit: localStorage.getItem('fit') !== "false",
     shortcuts: localStorage.getItem('shortcuts') !== "false"
   },
   mutations: {
@@ -40,6 +41,16 @@ export default new Vuex.Store({
           break;
         default: state.themeName = "Tagmodus";
           break;
+      }
+    },
+    toggleFit(state) {
+      if (state.fit) {
+        state.fit = false;
+        localStorage.setItem("fit", "false")
+      }
+      else {
+        state.fit = true;
+        localStorage.setItem("fit", "true");
       }
     },
     toggleShortcuts(state) {

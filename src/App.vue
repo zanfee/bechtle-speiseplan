@@ -1,5 +1,5 @@
 <template>
-<div @click.native="$store.commit('closeSidebar')" v-bind:class="{ 'light': $store.state.theme === 1, 'dark': $store.state.theme === 2 }">
+<div @click.native="$store.commit('closeSidebar')" v-bind:class="{ 'light': $store.state.theme === 1, 'dark': $store.state.theme === 2, 'fit': $store.state.fit }">
   <div class="background">
     <Navigation />
     

@@ -23,6 +23,7 @@
       <SidebarListItem @click.native="toggleTheme">{{ this.$store.state.themeName }}</SidebarListItem>
       <SidebarListItem>Language</SidebarListItem>
       <SidebarListItem>Geschwindigkeit</SidebarListItem>
+      <SidebarListBox command="toggleFit">Responsive</SidebarListBox>
       <SidebarListBox command="toggleShortcuts">Shortcuts</SidebarListBox>
     </SidebarList>
   </ul>
@@ -78,7 +79,8 @@ export default {
   top: 60;
   width: 260px;
   line-height: 1.2em;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
   position: fixed;
   transition: left 0.1s cubic-bezier(0.4, 0, 1, 1);
   transform: translateZ(0);
@@ -99,5 +101,14 @@ export default {
 .nav-base {
   list-style: none;
   font-weight: 700;
+}
+
+::-webkit-scrollbar {
+  background-color: rgba(127, 127, 127, 0);
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(127, 127, 127, 0.3);
 }
 </style>

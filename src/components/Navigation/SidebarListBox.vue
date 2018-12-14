@@ -22,8 +22,11 @@ export default {
   },
   mounted() {
     this.id = this._uid
+    var checkbox = this.$el.children[0];
     if (this.command === "toggleShortcuts") {
-      this.$el.children[0].checked = this.$store.state.shortcuts;
+      checkbox.checked = this.$store.state.shortcuts;
+    } else if (this.command === "toggleFit") {
+      checkbox.checked = this.$store.state.fit;
     }
   }
 };
