@@ -22,11 +22,8 @@ export default {
   },
   mounted() {
     this.id = this._uid
-    console.log("this "+this.id)
-    var checkbox = document.getElementsByTagName("input")[0];
-    console.log(checkbox)
     if (this.command === "toggleShortcuts") {
-      checkbox.checked = true;
+      this.$el.children[0].checked = this.$store.state.shortcuts;
     }
   }
 };
@@ -43,7 +40,7 @@ export default {
   margin-left: 1em;
 }
 
-/* [type="checkbox"] {
+[type="checkbox"] {
   position: absolute;
   left: -9999px;
   visibility: hidden;
@@ -63,12 +60,13 @@ export default {
 }
 [type="checkbox"]:not(:checked):disabled+label:before {
   border:none;
-  background-color:rgba(0,0,0,0.26)
+  background-color:rgba(0,0,0,0.5)
 }
 
 [type="checkbox"]:checked+label:before {
   top: -6px;
-  width: 12px;
+  left: -6px;
+  width: 10px;
   height: 22px;
   vertical-align: middle;
   border-top: 2px solid transparent;
@@ -80,9 +78,9 @@ export default {
   transform-origin: 100% 100%
 }
 
-[type="checkbox"]:checked:disabled+label:before{
-  border-right: 2px solid rgba(0,0,0,0.5);
-  border-bottom: 2px solid rgba(0,0,0,0.5)
+[type="checkbox"]:checked:disabled+label:before {
+  border-right: 2px solid rgba(0,0,0,0.25);
+  border-bottom: 2px solid rgba(0,0,0,0.25)
 }
 
 [type="checkbox"]+label {
@@ -92,5 +90,5 @@ export default {
     display: inline-block;
     height: 25px;
     line-height: 25px;
-} */
+} 
 </style>

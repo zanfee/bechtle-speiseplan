@@ -24,7 +24,6 @@
       <SidebarListItem>Language</SidebarListItem>
       <SidebarListItem>Geschwindigkeit</SidebarListItem>
       <SidebarListBox command="toggleShortcuts">Shortcuts</SidebarListBox>
-      <SidebarListBox>Shortcuts</SidebarListBox>
     </SidebarList>
   </ul>
 </nav>
