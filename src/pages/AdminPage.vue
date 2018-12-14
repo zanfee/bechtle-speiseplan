@@ -2,46 +2,13 @@
 <div class="page">
     <div class="center">
         <div class="container" id="calendar">
-            <div class="containerHeader">
+          <Day></Day>
+            <!--<div class="containerHeader">
                 <h1>Month</h1>
             </div>
             <a class="day1"><div class="day"><p>1</p><p class="WeekDay">Montag</p></div></a>
-            <a><div class="day"><p>2</p><p class="WeekDay">Dienstag</p></div></a>
-            <a><div class="day"><p>3</p><p class="WeekDay">Mittwoch</p></div></a>
-            <a><div class="day"><p>4</p><p class="WeekDay">Donnerstag</p></div></a>
-            <a><div class="day"><p>5</p><p class="WeekDay">Freitag</p></div></a>
-            <a><div class="day"><p>6</p><p class="WeekDay">Samstag</p></div></a>
-            <a><div class="day"><p>7</p><p class="WeekDay">Sonntag</p></div></a>
             <div class="pointer">▲</div>
-            <div class="row1"></div>
-            <a><div class="day"><p>8</p><p class="WeekDay">Montag</p></div></a>
-            <a><div class="day"><p>9</p><p class="WeekDay">Dienstag</p></div></a>
-            <a><div class="day"><p>10</p><p class="WeekDay">Mittwoch</p></div></a>
-            <a><div class="day"><p>11</p><p class="WeekDay">Donnerstag</p></div></a>
-            <a><div class="day"><p>12</p><p class="WeekDay">Freitag</p></div></a>
-            <a><div class="day"><p>13</p><p class="WeekDay">Samstag</p></div></a>
-            <a><div class="day"><p>14</p><p class="WeekDay">Sonntag</p></div></a>
-            <a><div class="day"><p>15</p><p class="WeekDay">Montag</p></div></a>
-            <a><div class="day"><p>16</p><p class="WeekDay">Dienstag</p></div></a>
-            <a><div class="day"><p>17</p><p class="WeekDay">Mittwoch</p></div></a>
-            <a><div class="day"><p>18</p><p class="WeekDay">Donnerstag</p></div></a>
-            <a><div class="day"><p>19</p><p class="WeekDay">Freitag</p></div></a>
-            <a><div class="day"><p>20</p><p class="WeekDay">Samstag</p></div></a>
-            <a><div class="day"><p>21</p><p class="WeekDay">Sonntag</p></div></a>
-            <a><div class="day"><p>22</p><p class="WeekDay">Montag</p></div></a>
-            <a><div class="day"><p>23</p><p class="WeekDay">Dienstag</p></div></a>
-            <a><div class="day"><p>24</p><p class="WeekDay">Mittwoch</p></div></a>
-            <a><div class="day"><p>25</p><p class="WeekDay">Donnerstag</p></div></a>
-            <a><div class="day"><p>26</p><p class="WeekDay">Freitag</p></div></a>
-            <a><div class="day"><p>27</p><p class="WeekDay">Samstag</p></div></a>
-            <a><div class="day"><p>28</p><p class="WeekDay">Sonntag</p></div></a>
-            <a><div class="day"><p>29</p><p class="WeekDay">Montag</p></div></a>
-            <a><div class="day"><p>30</p><p class="WeekDay">Dienstag</p></div></a>
-            <a><div class="day"><p>31</p><p class="WeekDay">Mittwoch</p></div></a>
-            <a><div class="day"><p>1</p><p class="WeekDay">Donnerstag</p></div></a>
-            <a><div class="day"><p>2</p><p class="WeekDay">Freitag</p></div></a>
-            <a><div class="day"><p>3</p><p class="WeekDay">Samstag</p></div></a>
-            <a><div class="day"><p>4</p><p class="WeekDay">Sonntag</p></div></a>
+            <div class="row1"></div>-->
         </div>
         <div class="container" id="station">
             <div class="containerHeader">
@@ -53,14 +20,27 @@
 </template>
 
 <script>
+import Day from "../components/Day";
+
 export default {
+  components: {
+    Day
+  },
   data() {
     return {
     };
   },
   methods: {
+      getDays() {
+        var day = "";
+        for (var i=1; i < 32; i++) {
+          day += "<Day></Day>";
+        }   
+        document.getElementById("calendar").innerHTML = day;
+      }
   },
   mounted() {
+    this.getDays();
   }
 };
 </script>
