@@ -52,8 +52,5 @@ export default new Vuex.Store({
         localStorage.setItem("shortcuts", "true");
       }
     }
-  },
-  actions: {
-
   }
 })

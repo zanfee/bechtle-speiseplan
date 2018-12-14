@@ -22,7 +22,9 @@ export default {
   },
   mounted() {
     this.id = this._uid
-    var checkbox = document.getElementById(this.id);
+    console.log("this "+this.id)
+    var checkbox = document.getElementsByTagName("input")[0];
+    console.log(checkbox)
     if (this.command === "toggleShortcuts") {
       checkbox.checked = true;
     }
