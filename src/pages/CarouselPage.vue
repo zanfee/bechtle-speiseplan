@@ -1,35 +1,34 @@
 <template>
 <div class="page">
-
   <div class="center">
-    <h1 class="priceBig">5,50€</h1>
+    <h1 class="priceBig">4,50€</h1>
     <div class="typeBig">
-      <h2 class="titleBig">Rindergeschnetzeltes</h2>
+      <h2 class="titleBig">Blumenkohlgulasch</h2>
     </div>
     <div class="menuBodyBig">
       <h3 class="prepositionBig">dazu</h3>
-      <h4 class="descriptionBig">Stroganoff vom Hohenloher Rund und hausgemachte Nudel</h4>
+      <h4 class="descriptionBig">Parmesan und gedämpfter Kräuterreis, laktosefrei!</h4>
     </div>
   </div>
 
   <div class="left">
-    <h1 class="price" @click="slideForeward">4,50€</h1>
+    <h1 class="price" @click="slideForeward">5,40€</h1>
     <div class="type">
-      <h2 class="title">Hähnchen Döner</h2>
+      <h2 class="title">Backfrische FitPizza</h2>
     </div>
     <div>
       <h3 class="preposition">dazu</h3>
-      <h4 class="description">scharfe Joghurtsoße, Ajvarreis und Krautsalat</h4>
+      <h4 class="description">Tomatensugo, Salami vom Hohenloher Rind, Gemüsepaprika, Mozzarella und Tomatensalat mit Zwiebel</h4>
     </div>
   </div>
 
   <div class="right">
     <h1 class="price">3,40€</h1>
     <div class="type"></div>
-    <h2 class="title">Panierter Alaska Seelachs</h2>
+    <h2 class="title">Penne Rigate</h2>
     <div>
       <h3 class="preposition">dazu</h3>
-      <h4 class="description">Kräuterquark und Petersilienkartoffel</h4>
+      <h4 class="description">Käsesoße und Tomatentopping</h4>
     </div>
   </div>
 
@@ -94,19 +93,17 @@ export default {
   text-align: center;
   margin: 0;
   text-shadow: 4px 4px 24px rgba(0, 0, 0, 0.5);
+  margin-top: 0.42vw;
 }
 
 .typeBig {
   background-color: #f9ad46;
   padding: 0.5em;
+  padding: 0.42vw;
   margin: 0;
   margin-top: 8px;
-  box-shadow: 0px 0px 8px 1px rgba(60,60,60,0.5);
-}
-
-.fit .typeBig {
-  padding: 0.42vw;
   margin-top: 0.42vw;
+  box-shadow: 0px 0px 8px 1px rgba(60,60,60,0.5);
 }
 
 .titleBig {
@@ -141,14 +138,11 @@ export default {
 
 .price {
   font-size: 4em;
+  font-size: 3.3vw;
   text-align: center;
   margin: 0;
   position: relative;
   text-shadow: 0px 0px 8px rgba(0,0,0,0.2);
-}
-
-.fit .price {
-  font-size: 3.3vw;
 }
 
 .type::before {
@@ -165,15 +159,12 @@ export default {
 
 .title {
   font-size: 2.625em;
+  font-size: 2.1875vw;
   text-align: center;
   margin: 0;
   position: relative;
   max-width: 96%;
   text-shadow: 0px 0px 2px rgba(0,0,0,0.4);
-}
-
-.fit .title {
-  font-size: 2.1875vw;
 }
 
 .preposition {
@@ -182,14 +173,11 @@ export default {
 
 .description {
   font-size: 2.25em;
+  font-size: 1.875vw;
   text-align: center;
   margin: 16px auto;
   width: 96%;
   position: relative;
   text-shadow: 0px 0px 2px rgba(0,0,0,0.4);
-}
-
-.fit .description {
-  font-size: 1.875vw;
 }
 </style>

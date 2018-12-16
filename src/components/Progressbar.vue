@@ -39,5 +39,6 @@ export default {
   height: 2px;
   width: 100%;
   position: absolute;
+  display: inline-block;
 }
 </style>

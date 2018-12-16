@@ -1,8 +1,6 @@
 <template>
 <div class="burger-button">
-  <div class="burger-bar"></div>
-  <div class="burger-bar"></div>
-  <div class="burger-bar"></div>
+  <span class="material unselectable">menu</span>
 </div>
 </template>
 
@@ -14,8 +12,9 @@ export default {};
 .burger-button {
   display: inline-block;
   cursor: pointer;
-  padding: 21px;
-  position: absolute;
+  width: 60px;
+  text-align: center;
+  margin: 0;
 }
 
 .burger-button:hover {
@@ -25,6 +24,17 @@ export default {};
 .burger-button:focus {
   background-color: rgba(127, 127, 127, 0.3);
   outline: 0px;
+}
+
+.material {
+  vertical-align: middle;
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  
 }
 
 .burger-bar {

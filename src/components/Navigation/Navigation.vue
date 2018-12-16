@@ -1,18 +1,13 @@
 <template>
-<div>
+<nav>
   <div class="nav-header">
-    <div class="header">
-      <BurgerButton @click.native="$store.commit('toggleSidebar')" />
-
-      <h5 class="pagename"><strong>Bechtle</strong> Speiseplan</h5>
-
-      <h6 v-html="clock" id="clock"></h6>
-      <h6 v-html="date" id="date"></h6>
-    </div>
-    <Progressbar />
+    <BurgerButton @click.native="$store.commit('toggleSidebar')" />
+    <h5 class="pagename"><strong>Bechtle</strong> Speiseplan</h5>
+    <h6 v-html="clock" id="clock"></h6>
+    <h6 v-html="date" id="date"></h6>
+    <Progressbar style="margin-top: 58px;"/>
   </div>
-  <div class="header"></div>
-  <Sidebar />
+  <Sidebar/>
 
   <div
     v-on:click="$store.commit('closeSidebar')"
@@ -22,7 +17,7 @@
       'hidden': !$store.state.isSidebarOpen
     }"
   />
-</div>
+</nav>
 </template>
 
 <script>
@@ -65,11 +60,12 @@ export default {
 
 <style>
 .nav-header {
-  height: 60px;
+  line-height: 58px;
   width: 100%;
-  display: inline-block;
-  position: fixed;
+  position: relative;
   z-index: 4;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
 }
 
 .nav-open {
@@ -80,39 +76,37 @@ export default {
   z-index: 2;
 }
 
-.header {
-  height: 58px;
-}
-
 .pagename {
-  position: absolute;
-  margin: 4px 64px;
-  white-space: nowrap;
+  margin-left: 4px;
+  display: inline-block;
+  vertical-align: middle;  
 }
 
 #clock {
-  text-align: center;
-  padding: 9px 0 9px 0;
-  margin: auto;
+  margin-left: auto;
   font-weight: 700;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
 }
 
 @media only screen and (max-width: 1000px) {
   #clock {
-    visibility: hidden;
+    display: none;
   }
 }
 
 #date {
-  right: 32px;
-  top: 0;
-  position: absolute;
-  margin: 10px 8px 0 0;
+  margin: auto;
+  margin-right: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  right: 1em;
 }
 
 @media only screen and (max-width: 800px) {
   #date {
-    visibility: hidden;
+    display: none;
   }
 }
 </style>
