@@ -62,7 +62,7 @@ export default {
 .nav-header {
   line-height: 58px;
   width: 100%;
-  position: relative;
+  position: fixed;
   z-index: 4;
   background-color: rgba(255, 255, 255, 0.7);
   display: flex;
@@ -72,14 +72,15 @@ export default {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
   z-index: 2;
 }
 
 .pagename {
   margin-left: 4px;
   display: inline-block;
-  vertical-align: middle;  
+  vertical-align: middle;
 }
 
 #clock {

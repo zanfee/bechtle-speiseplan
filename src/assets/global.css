@@ -31,6 +31,10 @@
   display: none;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 h1 {
   font-size: 12em;
   font-family: "Source Sans Pro", "sans-serif";
@@ -116,7 +120,6 @@ h5 {
     font-size: 7vw;
   }
 }
-
 
 h6 {
   font-size: 2em;

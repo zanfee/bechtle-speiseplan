@@ -111,7 +111,6 @@ export default {
   margin: 0;
   margin-top: 0px;
   white-space: nowrap;
-  overflow: hidden;
   text-shadow: 4px 4px 12px rgba(0,0,0,0.4);
 }
 

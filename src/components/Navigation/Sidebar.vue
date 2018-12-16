@@ -75,8 +75,8 @@ export default {
 #nav-body {
   background: #f5f5f5;
   box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.2);
+  margin-top: 60px;
   height: calc(100vh - 60px);
-  top: 60;
   width: 260px;
   line-height: 1.2em;
   overflow-x: hidden;

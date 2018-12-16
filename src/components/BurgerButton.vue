@@ -1,6 +1,6 @@
 <template>
-<div class="burger-button">
-  <span class="material unselectable">menu</span>
+<div class="burger-button unselectable">
+  <span class="material">menu</span>
 </div>
 </template>
 

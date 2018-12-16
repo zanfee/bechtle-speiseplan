@@ -12,7 +12,7 @@
         </div>
         <div class="container" id="station">
             <div class="containerHeader">
-                <h1>Station: one¹</h1>
+                <h1 class="title">Station: one¹</h1>
             </div>
         </div>
     </div>    
@@ -70,7 +70,7 @@ export default {
   float: left;
 }
 
-#calendar a{
+#calendar a {
     margin: 0;
 }
 
@@ -84,32 +84,33 @@ export default {
   border-radius: 20px;
 }
 
-h1 {
+.title {
   text-align: center;
   margin: 0;
-  font-size: 50px;
+  font-size: 3.5em;
+
 }
 
-.day{
+.day {
     height: 60px;
     width: 60px;
     margin: 10px 0 0 10px;
     float: left;
 }
 
-p{
+p {
     text-align: center;
     font-family: 'Source Sans Pro', 'sans serif';
     font-size: 30px;
     margin: 10px 0 0 0;
 }
 
-.WeekDay{
+.WeekDay {
     font-size: 10px;
     margin: 0 0 0 0;
 }
 
-.row1{
+.row1 {
     height: 0;
     width: 100%;
     bottom: 5px;
@@ -118,16 +119,16 @@ p{
     transition: height 0.3s;
 }
 
-#calendar:active .row1{
+#calendar:active .row1 {
     height: 50px;
 }
 
-.pointer{
+.pointer {
     font-size: 20px;
     color: #3c3c3c;
 }
 
-#calendar:active .pointer{
+#calendar:active .pointer { 
     font-size: 20px;
     margin: 0 0 0 30px;
 }
