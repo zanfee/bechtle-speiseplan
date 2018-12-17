@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    currentPage: "carousel",
+    currentPage: localStorage.getItem('page') !== "null" ? localStorage.getItem('page') : "carousel",
     isSidebarOpen: false,
     theme: parseInt(localStorage.getItem("current-theme")),
     themeName: "Tagmodus",
@@ -15,6 +15,7 @@ export default new Vuex.Store({
   mutations: {
     setPage(state, payload) {
       state.currentPage = payload;
+      localStorage.setItem("page", payload);
     },
     openSidebar(state) {
       state.isSidebarOpen = true;
