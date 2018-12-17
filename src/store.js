@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     currentPage: localStorage.getItem('page') == null ? "carousel" : localStorage.getItem('page'),
     isSidebarOpen: false,
-    theme: parseInt(localStorage.getItem("current-theme")),
+    theme: localStorage.getItem('current-theme') == null ? 1: parseInt(localStorage.getItem('current-theme')),
     themeName: "Tagmodus",
     fit: localStorage.getItem('fit') !== "false",
     shortcuts: localStorage.getItem('shortcuts') !== "false"

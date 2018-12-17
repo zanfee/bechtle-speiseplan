@@ -5,9 +5,9 @@
   </ul>
 
   <ul class="nav-view unselectable">
-    <SidebarListItem @click.native="setContentPage('week')">Wochenübersicht</SidebarListItem>
-    <SidebarListItem @click.native="setContentPage('day')">Tagesübersicht</SidebarListItem>
-    <SidebarListItem @click.native="setContentPage('carousel')" style="margin-bottom: 25px">Karussell Ansicht</SidebarListItem>
+    <SidebarListItem @click.native="$store.commit('setPage', 'week')">Wochenübersicht</SidebarListItem>
+    <SidebarListItem @click.native="$store.commit('setPage', 'day')">Tagesübersicht</SidebarListItem>
+    <SidebarListItem @click.native="$store.commit('setPage', 'carousel')" style="margin-bottom: 25px">Karussell Ansicht</SidebarListItem>
   </ul>
 
   <ul class="nav-base unselectable">
@@ -20,7 +20,7 @@
     </SidebarList>
 
     <SidebarList title="Einstellungen">
-      <SidebarListItem @click.native="toggleTheme">{{ this.$store.state.themeName }}</SidebarListItem>
+      <SidebarListItem @click.native="$store.commit('toggleTheme');">{{ this.$store.state.themeName }}</SidebarListItem>
       <SidebarListItem>Language</SidebarListItem>
       <SidebarListItem>Geschwindigkeit</SidebarListItem>
       <SidebarListBox command="toggleFit">Responsive</SidebarListBox>
@@ -40,14 +40,6 @@ export default {
     SidebarList,
     SidebarListItem,
     SidebarListBox
-  },
-  methods: {
-    setContentPage(page) {
-      this.$store.commit("setPage", page);
-    },
-    toggleTheme() {
-      this.$store.commit("toggleTheme");
-    }
   },
   mounted() {
     this.$store.commit("loadThemeName");
