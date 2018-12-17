@@ -1,15 +1,13 @@
 <template>
-<div @click.native="$store.commit('closeSidebar')" v-bind:class="{ 'light': $store.state.theme === 1, 'dark': $store.state.theme === 2, 'fit': $store.state.fit }">
-  <div class="background">
-    <Navigation style="margin-bottom: calc(0.75vh + 58px)"/>
+<div @click.native="$store.commit('closeSidebar')" class="site" v-bind:class="{ 'light': $store.state.theme === 1, 'dark': $store.state.theme === 2, 'fit': $store.state.fit }">
+  <Navigation style="margin-bottom: calc(0.75vh + 58px)"/>
     
-    <AdminPage v-if="$store.state.currentPage === 'admin'" />
-    <CarouselPage v-if="$store.state.currentPage === 'carousel'" />
-    <DayPage v-if="$store.state.currentPage === 'day'" />
-    <WeekPage v-if="$store.state.currentPage === 'week'" />
+  <AdminPage v-if="$store.state.currentPage === 'admin'" />
+  <CarouselPage v-if="$store.state.currentPage === 'carousel'" />
+  <DayPage v-if="$store.state.currentPage === 'day'" />
+  <WeekPage v-if="$store.state.currentPage === 'week'" />
 
-    <Footer />
-  </div>
+  <Footer />
 </div>
 </template>
 
@@ -38,7 +36,7 @@ export default {
   },
   mounted() {
     // eslint-disable-next-line
-    console.log('v0.2.165');
+    console.log('v0.2.168');
     window.addEventListener("keypress", e => {
       if (e.keyCode === KEYCODE_N && this.$store.state.shortcuts) {
         this.$store.commit("toggleTheme");
@@ -62,7 +60,7 @@ body {
   background-color: rgba(34, 140, 211, 0.5);
 }
 
-.background {
+.site {
   position: absolute;
   min-width: 100%;
   min-height: 100%;
