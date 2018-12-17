@@ -92,18 +92,17 @@ export default {
 .priceBig {
   text-align: center;
   margin: 0;
-  text-shadow: 4px 4px 24px rgba(0, 0, 0, 0.5);
-  margin-top: 0.42vw;
+  text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 .typeBig {
   background-color: #f9ad46;
   padding: 0.5em;
-  padding: 0.42vw;
+  padding: 0.75vh;
   margin: 0;
   margin-top: 8px;
-  margin-top: 0.42vw;
-  box-shadow: 0px 0px 8px 1px rgba(60,60,60,0.5);
+  margin-top: 0.75vh;
+  box-shadow: 0px 0px 12px 1px rgba(60,60,60,0.4);
 }
 
 .titleBig {

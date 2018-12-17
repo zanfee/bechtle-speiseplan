@@ -81,6 +81,7 @@ export default {
   margin-left: 4px;
   display: inline-block;
   vertical-align: middle;
+  white-space: nowrap;
 }
 
 #clock {

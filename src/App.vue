@@ -1,7 +1,7 @@
 <template>
 <div @click.native="$store.commit('closeSidebar')" v-bind:class="{ 'light': $store.state.theme === 1, 'dark': $store.state.theme === 2, 'fit': $store.state.fit }">
   <div class="background">
-    <Navigation style="margin-bottom: calc(0.42vw + 58px)"/>
+    <Navigation style="margin-bottom: calc(0.75vh + 58px)"/>
     
     <AdminPage v-if="$store.state.currentPage === 'admin'" />
     <CarouselPage v-if="$store.state.currentPage === 'carousel'" />

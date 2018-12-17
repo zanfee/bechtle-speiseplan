@@ -36,11 +36,4 @@ export default {};
   -webkit-font-smoothing: antialiased;
   
 }
-
-.burger-bar {
-  width: 18px;
-  height: 2px;
-  margin: 3px 0;
-  background-color: rgb(117, 117, 117);
-}
 </style>
