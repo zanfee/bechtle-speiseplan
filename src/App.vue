@@ -37,6 +37,8 @@ export default {
     Footer
   },
   mounted() {
+    // eslint-disable-next-line
+    console.log('v0.2.164');
     window.addEventListener("keypress", e => {
       if (e.keyCode === KEYCODE_N && this.$store.state.shortcuts) {
         this.$store.commit("toggleTheme");
