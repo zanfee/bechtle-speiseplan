@@ -25,15 +25,4 @@ export default {};
   background-color: rgba(127, 127, 127, 0.3);
   outline: 0px;
 }
-
-.material {
-  vertical-align: middle;
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  
-}
 </style>
