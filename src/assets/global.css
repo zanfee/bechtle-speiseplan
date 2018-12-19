@@ -22,6 +22,16 @@ body {
   overflow-x: hidden;
 }
 
+th {
+  font-family: "Source Sans Pro", "sans-serif";
+  font-weight: bold;
+}
+
+td {
+  font-family: "Source Sans Pro", "sans-serif";
+  font-weight: normal;
+}
+
 h1 {
   font-size: 12em;
   font-family: "Source Sans Pro", "sans-serif";
@@ -108,6 +118,7 @@ h5 {
   }
 }
 
+
 h6 {
   font-size: 2em;
   font-family: "Source Sans Pro", "sans-serif";
@@ -149,7 +160,7 @@ a {
 
 /* light theme */
   /* color */
-.light .priceBig, .light .price, .light .titleBig, .light .prepositionBig, .light .description, .light a {
+.light .priceBig, .light .price, .light .titleBig, .light .prepositionBig, .light .description, .light a, .light h1, .light th, .light td {
   color: #3c3c3c;
 }
 .light .pointer {
@@ -189,7 +200,7 @@ a {
 
 /* dark theme */
   /* color */
-.dark .priceBig, .dark .price, .dark .prepositionBig, .dark .description, .dark a {
+.dark .priceBig, .dark .price, .dark .prepositionBig, .dark .description, .dark a, .dark h1, .dark th, .dark td {
   color: #ffffff;
 }
 .dark h5, .dark h6, .dark .title, .dark .descriptionBig, .dark p {
