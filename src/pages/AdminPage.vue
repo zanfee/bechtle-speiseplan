@@ -2,9 +2,14 @@
 <div class="page">
     <div class="center">
         <div class="container" id="calendar">
+<<<<<<< Updated upstream
           <Day></Day>
             <!--<div class="containerHeader">
                 <h1>Month</h1>
+=======
+            <div class="containerHeader">
+                <h1 class="headline">Month</h1>
+>>>>>>> Stashed changes
             </div>
             <a class="day1"><div class="day"><p>1</p><p class="WeekDay">Montag</p></div></a>
             <div class="pointer">▲</div>
@@ -132,4 +137,5 @@ p {
     font-size: 20px;
     margin: 0 0 0 30px;
 }
+
 </style>
