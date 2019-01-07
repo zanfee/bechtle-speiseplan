@@ -1,13 +1,13 @@
 <template>
 <div class="page">
   <div class="center">
-    <h1 class="priceBig">4,50€</h1>
-    <div class="typeBig">
-      <h2 class="titleBig">Blumenkohlgulasch</h2>
+    <h1 class="price">4,50€</h1>
+    <div class="type">
+      <h2 class="title">Blumenkohlgulasch</h2>
     </div>
-    <div class="menuBodyBig">
-      <h3 class="prepositionBig">dazu</h3>
-      <h4 class="descriptionBig">Parmesan und gedämpfter Kräuterreis, laktosefrei!</h4>
+    <div class="menuBody">
+      <h3 class="preposition">dazu</h3>
+      <h4 class="description">Parmesan und gedämpfter Kräuterreis, laktosefrei!</h4>
     </div>
   </div>
 
@@ -16,7 +16,7 @@
     <div class="type">
       <h2 class="title">Backfrische FitPizza</h2>
     </div>
-    <div>
+    <div class="menuBody">
       <h3 class="preposition">dazu</h3>
       <h4 class="description">Tomatensugo, Salami vom Hohenloher Rind, Gemüsepaprika, Mozzarella und Tomatensalat mit Zwiebel</h4>
     </div>
@@ -26,7 +26,7 @@
     <h1 class="price">3,40€</h1>
     <div class="type"></div>
     <h2 class="title">Penne Rigate</h2>
-    <div>
+    <div class="menuBody">
       <h3 class="preposition">dazu</h3>
       <h4 class="description">Käsesoße und Tomatentopping</h4>
     </div>
@@ -89,13 +89,13 @@ export default {
   }
 }
 
-.priceBig {
+.center .price {
   text-align: center;
   margin: 0;
   text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.4);
 }
 
-.typeBig {
+.center .type {
   background-color: #f9ad46;
   padding: 0.5em;
   padding: 0.75vh;
@@ -105,7 +105,7 @@ export default {
   box-shadow: 0px 0px 12px 1px rgba(60,60,60,0.4);
 }
 
-.titleBig {
+.center .title {
   text-align: center;
   margin: 0;
   margin-top: 0px;
@@ -113,28 +113,31 @@ export default {
   text-shadow: 4px 4px 12px rgba(0,0,0,0.4);
 }
 
-.menuBodyBig {
+.center .menuBody {
   position: absolute;
   max-width: 36%;
-  left: 32%;
+  left: 50%;
 }
 
-.prepositionBig {
+.center .preposition {
+  position: relative;
   text-align: center;
   margin: 0;
   margin-top: 37px;
+  left: -50%;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
 }
 
-.descriptionBig {
+.center .description {
+  position: relative;
   text-align: center;
   margin: 0 auto;
   word-wrap: break-word;
-  left: 32%;
+  left: -50%;
   text-shadow: 0px 0px 4px rgba(0,0,0,0.2);
 }
 
-.price {
+.left .price, .right .price {
   font-size: 4em;
   font-size: 3.3vw;
   text-align: center;
@@ -143,7 +146,7 @@ export default {
   text-shadow: 0px 0px 8px rgba(0,0,0,0.2);
 }
 
-.type::before {
+.left .type::before, .right .type::before {
   content:'';
   display: block;
   background-color: #1976d2;
@@ -155,7 +158,7 @@ export default {
   box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
 }
 
-.title {
+.left .title, .right .title {
   font-size: 2.625em;
   font-size: 2.1875vw;
   text-align: center;
@@ -165,11 +168,11 @@ export default {
   text-shadow: 0px 0px 2px rgba(0,0,0,0.4);
 }
 
-.preposition {
+.left .preposition, .right .preposition {
   display: none;
 }
 
-.description {
+.left .description, .right .description {
   font-size: 2.25em;
   font-size: 1.875vw;
   text-align: center;
