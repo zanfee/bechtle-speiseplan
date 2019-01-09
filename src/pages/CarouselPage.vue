@@ -19,6 +19,16 @@
     <div class="menuBody">
       <h3 class="preposition">dazu</h3>
       <h4 class="description">Tomatensugo, Salami vom Hohenloher Rind, Gemüsepaprika, Mozzarella und Tomatensalat mit Zwiebel</h4>
+      <div class="tag">
+        <div class="wellfit">
+          <img src="../assets/wellfit.svg" >
+          <figcaption>Well Fit</figcaption>
+        </div>
+        <div class="wellfit">
+          <img src="../assets/wellfit.svg" >
+          <figcaption>Well Fit</figcaption>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -56,16 +66,18 @@ export default {
   word-wrap: break-word;
   float: left;
   margin-top: 32px;
+  margin-top: 3vh;
+  left: 0;
 }
 
 .right {
   align-content: center;
   width: 30%;
-  margin: 0;
   overflow: hidden;
   word-wrap: break-word;
   float: right;
   margin-top: 32px;
+  margin-top: 3vh;
 }
 
 .exit {
@@ -74,18 +86,18 @@ export default {
   word-wrap: break-word;
   float: left;
   margin-top: 32px;
+  margin-top: 3vh;
+  left: -50px;
   animation-name: exitAnimation;
   animation-duration: 2s;
 }
 
 @keyframes exitAnimation {
   from {
-    background-color: yellowgreen;
-    right: 70%;
+    padding-right: 0;
   }
   to {
-    background-color: transparent;
-    right: 80%;
+    padding-right: 500px;
   }
 }
 
@@ -108,7 +120,6 @@ export default {
 .center .title {
   text-align: center;
   margin: 0;
-  margin-top: 0px;
   white-space: nowrap;
   text-shadow: 4px 4px 12px rgba(0,0,0,0.4);
 }
@@ -137,7 +148,7 @@ export default {
   text-shadow: 0px 0px 4px rgba(0,0,0,0.2);
 }
 
-.left .price, .right .price {
+.left .price, .right .price, .exit .price {
   font-size: 4em;
   font-size: 3.3vw;
   text-align: center;
@@ -146,7 +157,7 @@ export default {
   text-shadow: 0px 0px 8px rgba(0,0,0,0.2);
 }
 
-.left .type::before, .right .type::before {
+.left .type::before, .right .type::before, .exit .type::before {
   content:'';
   display: block;
   background-color: #1976d2;
@@ -158,7 +169,7 @@ export default {
   box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
 }
 
-.left .title, .right .title {
+.left .title, .right .title, .exit .title {
   font-size: 2.625em;
   font-size: 2.1875vw;
   text-align: center;
@@ -168,17 +179,38 @@ export default {
   text-shadow: 0px 0px 2px rgba(0,0,0,0.4);
 }
 
-.left .preposition, .right .preposition {
+.left .menuBody, .right .menuBody, .exit .menuBody {
+  width: 100%;
+}
+
+.left .preposition, .right .preposition, .exit .preposition {
   display: none;
 }
 
-.left .description, .right .description {
+.left .description, .right .description, .exit .description {
   font-size: 2.25em;
   font-size: 1.875vw;
   text-align: center;
-  margin: 16px auto;
+  margin: 10px auto;
+  margin: 1vh auto;
   width: 96%;
   position: relative;
   text-shadow: 0px 0px 2px rgba(0,0,0,0.4);
+}
+
+.tag {
+}
+
+.wellfit {
+  width: 16%;
+  padding-left: 2%;
+  padding-right: 2%;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.wellfit img {
+  width: 100%;
+  display: block;
 }
 </style>

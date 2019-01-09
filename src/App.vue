@@ -36,7 +36,7 @@ export default {
   },
   mounted() {
     // eslint-disable-next-line
-    console.log('v0.2.169 | icon compression');
+    console.log('v0.2.173 | icon tags');
     window.addEventListener("keypress", e => {
       if (e.keyCode === KEYCODE_N && this.$store.state.shortcuts) {
         this.$store.commit("toggleTheme");
