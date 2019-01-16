@@ -36,7 +36,7 @@ export default {
   },
   mounted() {
     // eslint-disable-next-line
-    console.log('v0.2.173 | icon tags');
+    console.log('v0.2.175 | swipe gesture');
     window.addEventListener("keypress", e => {
       if (e.keyCode === KEYCODE_N && this.$store.state.shortcuts) {
         this.$store.commit("toggleTheme");
@@ -45,6 +45,7 @@ export default {
         this.$store.commit("toggleSidebar");
       }
     });
+    
   }
 };
 </script>

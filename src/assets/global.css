@@ -202,7 +202,7 @@ a {
     background-color: rgba(255, 255, 255, 0.7);
 }
 .light .nav-admin a {
-  color: darkred;
+  color: rgb(160, 10, 10);
 }
 .light [type="checkbox"]+label:before {
   border: 2px solid #757575;
@@ -242,7 +242,7 @@ a {
   background-color: rgba(60, 60, 60, 0.8);
 }
 .dark .nav-admin a {
-  color: #d62525;
+  color: rgb(247, 82, 82);
 }
 .dark [type="checkbox"]+label:before {
   border: 2px solid #bdbdbd;
