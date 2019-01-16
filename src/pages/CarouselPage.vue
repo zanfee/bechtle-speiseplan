@@ -7,7 +7,17 @@
     </div>
     <div class="menuBody">
       <h3 class="preposition">dazu</h3>
-      <h4 class="description">Parmesan und gedämpfter Kräuterreis, laktosefrei!</h4>
+      <h4 class="description">Parmesan und gedämpfter Kräuterreis, laktosefrei! Hallolfelflek ijfiejfia ejffjei jafi jfie ieieieiei eie iParmesan und gedämpfter Kräuterreis, laktosefrei!</h4> 
+      <div class="tagContainer">
+        <div class="tag">
+          <img src="../assets/wellfit.svg" >
+          <p class="tagName">Well Fit</p>
+        </div>
+        <div class="tag">
+          <img src="../assets/wellfit.svg" >
+          <p class="tagName">Well Fit</p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -19,14 +29,14 @@
     <div class="menuBody">
       <h3 class="preposition">dazu</h3>
       <h4 class="description">Tomatensugo, Salami vom Hohenloher Rind, Gemüsepaprika, Mozzarella und Tomatensalat mit Zwiebel</h4>
-      <div class="tag">
-        <div class="wellfit">
+      <div class="tagContainer">
+        <div class="tag">
           <img src="../assets/wellfit.svg" >
-          <p class="tagname">Well Fit</p>
+          <p class="tagName">Well Fit</p>
         </div>
-        <div class="wellfit">
+        <div class="tag">
           <img src="../assets/wellfit.svg" >
-          <p class="tagname">Well Fit</p>
+          <p class="tagName">Well Fit</p>
         </div>
       </div>
     </div>
@@ -39,6 +49,16 @@
     <div class="menuBody">
       <h3 class="preposition">dazu</h3>
       <h4 class="description">Käsesoße und Tomatentopping</h4>
+      <div class="tagContainer">
+        <div class="tag">
+          <img src="../assets/wellfit.svg" >
+          <p class="tagName">Well Fit</p>
+        </div>
+        <div class="tag">
+          <img src="../assets/wellfit.svg" >
+          <p class="tagName">Well Fit</p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -127,15 +147,17 @@ export default {
 .center .menuBody {
   position: absolute;
   max-width: 36%;
-  left: 50%;
+  margin: 0 auto;
+  left: 0; 
+  right: 0; 
 }
 
 .center .preposition {
   position: relative;
   text-align: center;
   margin: 0;
-  margin-top: 37px;
-  left: -50%;
+  margin-top: 24px;
+  margin-top: 2vh;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
@@ -144,7 +166,6 @@ export default {
   text-align: center;
   margin: 0 auto;
   word-wrap: break-word;
-  left: -50%;
   text-shadow: 0px 0px 4px rgba(0,0,0,0.2);
 }
 
@@ -198,29 +219,54 @@ export default {
   text-shadow: 0px 0px 2px rgba(0,0,0,0.2);
 }
 
-.tag {
+.tagContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
+  
 }
 
-.wellfit {
-  width: 12%;
+.tag {
+  width: 14%;
   padding-left: 2%;
   padding-right: 2%;
   display: inline-block;
   
 }
 
-.wellfit img {
+.tag img {
   width: 100%;
   display: block;
 }
 
-.tagname {
+.tagName {
   text-align: center;
   margin: 0;
-  font-size: 1vw;
+  font-size: 1.2vw;
   font-weight: bold;
+}
+
+@media screen and (max-aspect-ratio: 11/8) {
+  .center .menuBody {
+    position: relative;
+    max-width: 90%;
+  }
+
+  .center .tag {
+    width: 6%;
+  }
+
+  .left .tag, .right .tag {
+    width: 10%;
+  }
+
+  .left {
+    width: 50%;
+    margin-top: 0;
+  }
+
+  .right {
+    width: 50%;
+    margin-top: 0;
+  }
 }
 </style>

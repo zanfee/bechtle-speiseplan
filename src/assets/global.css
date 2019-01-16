@@ -54,7 +54,7 @@ h1 {
   font-size: 10vw;
 }
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-aspect-ratio: 2.25/1) {
   .fit h1 {
      font-size: 18vh;
   }
@@ -71,7 +71,7 @@ h2 {
   font-size: 6.67vw;
 }
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-aspect-ratio: 2.25/1) {
   .fit h2 {
      font-size: 12vh;
   }
@@ -87,7 +87,7 @@ h3 {
   font-size: 2.5vw;
 }
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-aspect-ratio: 2.25/1) {
   .fit h3 {
      font-size: 4.5vh;
   }
@@ -103,7 +103,7 @@ h4 {
   font-size: 2.5vw;
 }
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-aspect-ratio: 2.25/1) {
   .fit h4 {
      font-size: 4.5vh;
   }
@@ -176,7 +176,7 @@ a {
 .light .pointer {
   color: #505050;
 }
-.light h5, .light h6, .light .left .title, .light .right .title, .light .exit .title, .light .center .description, .light .p, .light .material, .light .tagname {
+.light h5, .light h6, .light .left .title, .light .right .title, .light .exit .title, .light .center .description, .light .p, .light .material, .light .tagName {
   color: #757575;
 }
   /* background-color */
