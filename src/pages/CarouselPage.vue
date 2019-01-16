@@ -22,11 +22,11 @@
       <div class="tag">
         <div class="wellfit">
           <img src="../assets/wellfit.svg" >
-          <figcaption>Well Fit</figcaption>
+          <p class="tagname">Well Fit</p>
         </div>
         <div class="wellfit">
           <img src="../assets/wellfit.svg" >
-          <figcaption>Well Fit</figcaption>
+          <p class="tagname">Well Fit</p>
         </div>
       </div>
     </div>
@@ -104,7 +104,7 @@ export default {
 .center .price {
   text-align: center;
   margin: 0;
-  text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.4);
+  text-shadow: 2px 2px 16px rgba(0, 0, 0, 0.2);
 }
 
 .center .type {
@@ -114,14 +114,14 @@ export default {
   margin: 0;
   margin-top: 8px;
   margin-top: 0.75vh;
-  box-shadow: 0px 0px 12px 1px rgba(60,60,60,0.4);
+  box-shadow: 0px 0px 12px 1px rgba(60,60,60,0.3);
 }
 
 .center .title {
   text-align: center;
   margin: 0;
   white-space: nowrap;
-  text-shadow: 4px 4px 12px rgba(0,0,0,0.4);
+  text-shadow: 4px 4px 12px rgba(0,0,0,0.2);
 }
 
 .center .menuBody {
@@ -136,7 +136,7 @@ export default {
   margin: 0;
   margin-top: 37px;
   left: -50%;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
 .center .description {
@@ -176,7 +176,7 @@ export default {
   margin: 0;
   position: relative;
   max-width: 96%;
-  text-shadow: 0px 0px 2px rgba(0,0,0,0.4);
+  text-shadow: 0px 0px 2px rgba(0,0,0,0.1);
 }
 
 .left .menuBody, .right .menuBody, .exit .menuBody {
@@ -195,22 +195,32 @@ export default {
   margin: 1vh auto;
   width: 96%;
   position: relative;
-  text-shadow: 0px 0px 2px rgba(0,0,0,0.4);
+  text-shadow: 0px 0px 2px rgba(0,0,0,0.2);
 }
 
 .tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wellfit {
-  width: 16%;
+  width: 12%;
   padding-left: 2%;
   padding-right: 2%;
   display: inline-block;
-  margin: 0 auto;
+  
 }
 
 .wellfit img {
   width: 100%;
   display: block;
+}
+
+.tagname {
+  text-align: center;
+  margin: 0;
+  font-size: 1vw;
+  font-weight: bold;
 }
 </style>

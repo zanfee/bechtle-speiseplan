@@ -39,6 +39,10 @@ td {
   font-weight: normal;
 }
 
+p {
+  font-family: "Source Sans Pro", "sans-serif";
+}
+
 h1 {
   font-size: 12em;
   font-family: "Source Sans Pro", "sans-serif";
@@ -172,7 +176,7 @@ a {
 .light .pointer {
   color: #505050;
 }
-.light h5, .light h6, .light .left .title, .light .right .title, .light .exit .title, .light .center .description, .light .p, .light .material {
+.light h5, .light h6, .light .left .title, .light .right .title, .light .exit .title, .light .center .description, .light .p, .light .material, .light .tagname {
   color: #757575;
 }
   /* background-color */

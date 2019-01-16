@@ -342,3 +342,4 @@ yarn-error.log*
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+\.DS_Store
