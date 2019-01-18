@@ -3,6 +3,7 @@
   <Navigation style="margin-bottom: calc(0.75vh + 58px)"/>
     
   <AdminPage v-if="$store.state.currentPage === 'admin'" />
+  <TestPage v-if="$store.state.currentPage === 'test'" />
   <CarouselPage v-if="$store.state.currentPage === 'carousel'" />
   <DayPage v-if="$store.state.currentPage === 'day'" />
   <WeekPage v-if="$store.state.currentPage === 'week'" />
@@ -15,6 +16,8 @@
 import Navigation from "./components/Navigation/Navigation";
 
 import AdminPage from "./pages/AdminPage";
+
+import TestPage from "./pages/TestPage";
 
 import CarouselPage from "./pages/CarouselPage";
 import WeekPage from "./pages/WeekPage";
@@ -29,6 +32,7 @@ export default {
   components: {
     Navigation,
     AdminPage,
+    TestPage,
     CarouselPage,
     WeekPage,
     DayPage,

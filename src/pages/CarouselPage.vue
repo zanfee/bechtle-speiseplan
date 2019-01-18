@@ -121,13 +121,13 @@ export default {
   }
 }
 
-.center .price {
+.primary .price {
   text-align: center;
   margin: 0;
   text-shadow: 2px 2px 16px rgba(0, 0, 0, 0.2);
 }
 
-.center .type {
+.primary .type {
   background-color: #f9ad46;
   padding: 0.5em;
   padding: 0.75vh;
@@ -137,14 +137,14 @@ export default {
   box-shadow: 0px 0px 12px 1px rgba(60,60,60,0.3);
 }
 
-.center .title {
+.primary .title {
   text-align: center;
   margin: 0;
   white-space: nowrap;
   text-shadow: 4px 4px 12px rgba(0,0,0,0.2);
 }
 
-.center .menuBody {
+.primary .menuBody {
   position: absolute;
   max-width: 36%;
   margin: 0 auto;
@@ -152,7 +152,7 @@ export default {
   right: 0; 
 }
 
-.center .preposition {
+.primary .preposition {
   position: relative;
   text-align: center;
   margin: 0;
@@ -161,7 +161,7 @@ export default {
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
-.center .description {
+.primary .description {
   position: relative;
   text-align: center;
   margin: 0 auto;
@@ -246,12 +246,12 @@ export default {
 }
 
 @media screen and (max-aspect-ratio: 11/8) {
-  .center .menuBody {
+  .primary .menuBody {
     position: relative;
     max-width: 90%;
   }
 
-  .center .tag {
+  .primary .tag {
     width: 6%;
   }
 

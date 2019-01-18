@@ -52,7 +52,7 @@ export default {
   left: 50%;
 }
 
-.center {
+.primary {
   width: 1050px;
   float: left;
   position: relative;
