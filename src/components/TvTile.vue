@@ -8,8 +8,8 @@
     <h3 class="preposition">dazu</h3>
     <h4 class="description">{{ description }}</h4> 
     <div class="tagContainer">
-      <div v-for="tag in tags" class="tag">
-        <img :src="getImgUrl(tag)" >
+      <div v-for="tag in tags" class="tag" v-bind:key="tag">
+        <img :src="getImgUrl(tag)">
         <p class="tagName">{{ getTagName(tag) }}</p>
       </div>
     </div>
