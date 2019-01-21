@@ -6,7 +6,7 @@
   <CarouselPage v-if="$store.state.currentPage === 'carousel'" />
   <WeekPage v-if="$store.state.currentPage === 'week'" />
   <DayPage v-if="$store.state.currentPage === 'day'" />
-  <TestPage v-if="$store.state.currentPage === 'test'" />
+  <!-- <TestPage v-if="$store.state.currentPage === 'test'" /> -->
 
   <Footer />
 </div>
@@ -21,7 +21,7 @@ import CarouselPage from "./pages/CarouselPage";
 import DayPage from "./pages/DayPage";
 import WeekPage from "./pages/WeekPage";
 
-import TestPage from "./pages/TestPage";
+// import TestPage from "./pages/TestPage";
 
 import Footer from "./components/Footer";
 
@@ -35,7 +35,7 @@ export default {
     CarouselPage,
     DayPage,
     WeekPage,
-    TestPage,
+    // TestPage,
     Footer
   },
   mounted() {

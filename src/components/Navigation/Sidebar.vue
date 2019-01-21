@@ -8,7 +8,7 @@
     <SidebarListItem @click.native="$store.commit('setPage', 'carousel')">Karussell Ansicht</SidebarListItem>
     <SidebarListItem @click.native="$store.commit('setPage', 'day')">Tagesübersicht</SidebarListItem>
     <SidebarListItem @click.native="$store.commit('setPage', 'week')">Wochenübersicht</SidebarListItem>
-    <SidebarListItem @click.native="$store.commit('setPage', 'test')">Testpage</SidebarListItem>
+    <!-- <SidebarListItem @click.native="$store.commit('setPage', 'test')">Testpage</SidebarListItem> -->
   </ul>
 
   <ul class="nav-base unselectable">
