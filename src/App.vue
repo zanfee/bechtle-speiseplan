@@ -1,15 +1,17 @@
 <template>
-<div @click.native="$store.commit('closeSidebar')" class="site" :class="{ 'light': $store.state.theme === 1, 'dark': $store.state.theme === 2, 'fit': $store.state.fit }">
-  <Navigation />
-    
-  <AdminPage v-if="$store.state.currentPage === 'admin'" />
-  <CarouselPage v-if="$store.state.currentPage === 'carousel'" />
-  <WeekPage v-if="$store.state.currentPage === 'week'" />
-  <DayPage v-if="$store.state.currentPage === 'day'" />
-  <!-- <TestPage v-if="$store.state.currentPage === 'test'" /> -->
+  <div
+    @click.native="$store.commit('closeSidebar')"
+    class="site"
+    :class="{ 'light': $store.state.theme === 1, 'dark': $store.state.theme === 2, 'fit': $store.state.fit }"
+  >
+    <Navigation/>
 
-  <Footer />
-</div>
+    <AdminPage v-if="$store.state.currentPage === 'admin'"/>
+    <CarouselPage v-if="$store.state.currentPage === 'carousel'"/>
+    <WeekPage v-if="$store.state.currentPage === 'week'"/>
+    <DayPage v-if="$store.state.currentPage === 'day'"/>
+    <Footer/>
+  </div>
 </template>
 
 <script>
@@ -20,8 +22,6 @@ import AdminPage from "./pages/AdminPage";
 import CarouselPage from "./pages/CarouselPage";
 import DayPage from "./pages/DayPage";
 import WeekPage from "./pages/WeekPage";
-
-// import TestPage from "./pages/TestPage";
 
 import Footer from "./components/Footer";
 
@@ -35,12 +35,11 @@ export default {
     CarouselPage,
     DayPage,
     WeekPage,
-    // TestPage,
     Footer
   },
   mounted() {
     // eslint-disable-next-line
-    console.log('v0.2.180 | dynamic carousel page');
+    console.log("v0.2.180 | dynamic carousel page");
     window.addEventListener("keypress", e => {
       if (e.keyCode === KEYCODE_N && this.$store.state.shortcuts) {
         this.$store.commit("toggleTheme");
@@ -49,7 +48,6 @@ export default {
         this.$store.commit("toggleSidebar");
       }
     });
-    
   }
 };
 </script>
@@ -73,6 +71,6 @@ body {
 }
 
 nav {
-  margin-bottom: calc(0.75vh + 58px)
+  margin-bottom: calc(0.75vh + 58px);
 }
 </style>
