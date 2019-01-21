@@ -1,34 +1,30 @@
 <template>
-<table>
-  <tr>
-    <th>Montag</th>
-    <th>Dienstag</th>
-    <th>Mittwoch</th> 
-    <th>Donnerstag</th> 
-    <th>Freitag</th> 
-  </tr>
-  <tr>
-    
-    <td>Jill</td>
-    <td>94</td>
-  </tr>
-  <tr>
-    
-    <td>Eve</td>
-    <td>Jackson</td> 
-  </tr>
-  <tr>
-    
-    <td>Eve</td>
-    <td>Jackson</td> 
-  </tr>
-  <tr>
-    
-    <td>Eve</td>
-    <td>Jackson</td> 
-  </tr>
-</table>
-<!-- <div>
+  <table>
+    <tr>
+      <th>Montag</th>
+      <th>Dienstag</th>
+      <th>Mittwoch</th>
+      <th>Donnerstag</th>
+      <th>Freitag</th>
+    </tr>
+    <tr>
+      <td>Jill</td>
+      <td>94</td>
+    </tr>
+    <tr>
+      <td>Eve</td>
+      <td>Jackson</td>
+    </tr>
+    <tr>
+      <td>Eve</td>
+      <td>Jackson</td>
+    </tr>
+    <tr>
+      <td>Eve</td>
+      <td>Jackson</td>
+    </tr>
+  </table>
+  <!-- <div>
   <div class="block station">
     <h1 class="heading">Station</h1>
   </div>
@@ -47,7 +43,7 @@
   <div class="block weekday">
     <h1 class="heading">Freitag</h1>
   </div>
-</div> -->
+  </div>-->
 </template>
 
 <script>
@@ -111,6 +107,5 @@ td {
   text-align: center;
   margin: 0;
   font-size: 3.5em;
-
 }
 </style>

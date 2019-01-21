@@ -1,23 +1,25 @@
 <template>
-<nav>
-  <div class="nav-header">
-    <BurgerButton @click.native="$store.commit('toggleSidebar')" />
-    <h5 class="pagename"><strong>Bechtle</strong> Speiseplan</h5>
-    <h6 v-html="clock" id="clock"></h6>
-    <h6 v-html="date" id="date"></h6>
-    <Progressbar style="margin-top: 58px;"/>
-  </div>
-  <Sidebar/>
+  <nav>
+    <div class="nav-header">
+      <BurgerButton @click.native="$store.commit('toggleSidebar')"/>
+      <h5 class="pagename">
+        <strong>Bechtle</strong> Speiseplan
+      </h5>
+      <h6 v-html="clock" id="clock"></h6>
+      <h6 v-html="date" id="date"></h6>
+      <Progressbar style="margin-top: 58px;"/>
+    </div>
+    <Sidebar/>
 
-  <div
-    v-on:click="$store.commit('closeSidebar')"
-    class="nav-cover"
-    :class="{
+    <div
+      v-on:click="$store.commit('closeSidebar')"
+      class="nav-cover"
+      :class="{
       'shown': $store.state.isSidebarOpen,
       'hidden': !$store.state.isSidebarOpen
     }"
-  />
-</nav>
+    />
+  </nav>
 </template>
 
 <script>
@@ -45,8 +47,11 @@ export default {
       var currentTime = new Date();
       this.clock = currentTime.toLocaleTimeString("de-DE") + " Uhr";
 
-      var weekday = currentTime.toLocaleDateString("de-DE", { weekday: "long" });
-      this.date = weekday.bold() + ", " + currentTime.toLocaleDateString("de-DE");
+      var weekday = currentTime.toLocaleDateString("de-DE", {
+        weekday: "long"
+      });
+      this.date =
+        weekday.bold() + ", " + currentTime.toLocaleDateString("de-DE");
     }
   },
   mounted() {

@@ -1,22 +1,22 @@
 <template>
-<div class="page">
+  <div class="page">
     <div class="center">
-        <div class="container" id="calendar">
-          <Day></Day>
-            <!--<div class="containerHeader">
+      <div class="container" id="calendar">
+        <Day></Day>
+        <!--<div class="containerHeader">
                 <h1>Month</h1>
             </div>
             <a class="day1"><div class="day"><p>1</p><p class="WeekDay">Montag</p></div></a>
             <div class="pointer">▲</div>
-            <div class="row1"></div>-->
+        <div class="row1"></div>-->
+      </div>
+      <div class="container" id="station">
+        <div class="containerHeader">
+          <h1 class="title">Station: one¹</h1>
         </div>
-        <div class="container" id="station">
-            <div class="containerHeader">
-                <h1 class="title">Station: one¹</h1>
-            </div>
-        </div>
-    </div>    
-</div>  
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -27,17 +27,16 @@ export default {
     Day
   },
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
-      getDays() {
-        var day = "";
-        for (var i=1; i < 32; i++) {
-          day += "<Day></Day>";
-        }   
-        document.getElementById("calendar").innerHTML = day;
+    getDays() {
+      var day = "";
+      for (var i = 1; i < 32; i++) {
+        day += "<Day></Day>";
       }
+      document.getElementById("calendar").innerHTML = day;
+    }
   },
   mounted() {
     this.getDays();
@@ -71,7 +70,7 @@ export default {
 }
 
 #calendar a {
-    margin: 0;
+  margin: 0;
 }
 
 #station {
@@ -88,49 +87,47 @@ export default {
   text-align: center;
   margin: 0;
   font-size: 3.5em;
-
 }
 
 .day {
-    height: 60px;
-    width: 60px;
-    margin: 10px 0 0 10px;
-    float: left;
+  height: 60px;
+  width: 60px;
+  margin: 10px 0 0 10px;
+  float: left;
 }
 
 p {
-    text-align: center;
-    font-family: 'Source Sans Pro', 'sans serif';
-    font-size: 30px;
-    margin: 10px 0 0 0;
+  text-align: center;
+  font-family: "Source Sans Pro", "sans serif";
+  font-size: 30px;
+  margin: 10px 0 0 0;
 }
 
 .WeekDay {
-    font-size: 10px;
-    margin: 0 0 0 0;
+  font-size: 10px;
+  margin: 0 0 0 0;
 }
 
 .row1 {
-    height: 0;
-    width: 100%;
-    bottom: 5px;
-    position: relative;
-    -webkit-transition: height 0.3s;
-    transition: height 0.3s;
+  height: 0;
+  width: 100%;
+  bottom: 5px;
+  position: relative;
+  -webkit-transition: height 0.3s;
+  transition: height 0.3s;
 }
 
 #calendar:active .row1 {
-    height: 50px;
+  height: 50px;
 }
 
 .pointer {
-    font-size: 20px;
-    color: #3c3c3c;
+  font-size: 20px;
+  color: #3c3c3c;
 }
 
-#calendar:active .pointer { 
-    font-size: 20px;
-    margin: 0 0 0 30px;
+#calendar:active .pointer {
+  font-size: 20px;
+  margin: 0 0 0 30px;
 }
-
 </style>

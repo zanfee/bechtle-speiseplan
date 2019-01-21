@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     currentPage: localStorage.getItem('page') == null ? "carousel" : localStorage.getItem('page'),
     isSidebarOpen: false,
-    theme: localStorage.getItem('current-theme') == null ? 1: parseInt(localStorage.getItem('current-theme')),
+    theme: localStorage.getItem('current-theme') == null ? 1 : parseInt(localStorage.getItem('current-theme')),
     themeName: "Tagmodus",
     fit: localStorage.getItem('fit') !== "false",
     shortcuts: localStorage.getItem('shortcuts') !== "false"
@@ -29,18 +29,22 @@ export default new Vuex.Store({
     toggleTheme(state) {
       state.theme === 2 /* amount of themes */ ? state.theme = 1 : state.theme++;
       localStorage.setItem("current-theme", state.theme.toString());
-      switch(state.theme) {
-        case 1: state.themeName = "Nachtmodus";
+      switch (state.theme) {
+        case 1:
+          state.themeName = "Nachtmodus";
           break;
-        default: state.themeName = "Tagmodus";
+        default:
+          state.themeName = "Tagmodus";
           break;
       }
     },
     loadThemeName(state) {
-      switch(state.theme) {
-        case 1: state.themeName = "Nachtmodus";
+      switch (state.theme) {
+        case 1:
+          state.themeName = "Nachtmodus";
           break;
-        default: state.themeName = "Tagmodus";
+        default:
+          state.themeName = "Tagmodus";
           break;
       }
     },
@@ -48,8 +52,7 @@ export default new Vuex.Store({
       if (state.fit) {
         state.fit = false;
         localStorage.setItem("fit", "false")
-      }
-      else {
+      } else {
         state.fit = true;
         localStorage.setItem("fit", "true");
       }
@@ -58,8 +61,7 @@ export default new Vuex.Store({
       if (state.shortcuts) {
         state.shortcuts = false;
         localStorage.setItem("shortcuts", "false");
-      }
-      else {
+      } else {
         state.shortcuts = true;
         localStorage.setItem("shortcuts", "true");
       }

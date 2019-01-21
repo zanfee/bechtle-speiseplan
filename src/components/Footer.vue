@@ -1,8 +1,7 @@
 <template>
-<div class="footer">
-  <Progressbar />
-
-</div>
+  <div class="footer">
+    <Progressbar/>
+  </div>
 </template>
 
 <script>
@@ -13,8 +12,7 @@ export default {
     Progressbar
   },
   data() {
-    return {
-    };
+    return {};
   }
 };
 </script>
@@ -25,7 +23,7 @@ export default {
   height: 96px;
   height: 6em;
   height: 10vh;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   bottom: 0;
   position: fixed;
 }

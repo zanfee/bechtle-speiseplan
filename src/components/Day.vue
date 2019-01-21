@@ -1,7 +1,7 @@
 <template>
-<div>
+  <div>
     <p>Hallo</p>
-</div>
+  </div>
 </template>
 
 <script>
@@ -9,5 +9,4 @@ export default {};
 </script>
 
 <style scoped>
-
 </style>

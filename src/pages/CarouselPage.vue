@@ -1,15 +1,15 @@
 <template>
-<div id="page">
-  <div v-for="(item, index) in items" v-bind:key="index">
-    <FoodTile
-      :display="index"
-      :price="item[0]"
-      :name="item[1]"
-      :description="item[2]"
-      :tags="item[3]"
-    ></FoodTile>
+  <div id="page">
+    <div v-for="(item, index) in items" v-bind:key="index">
+      <FoodTile
+        :display="index"
+        :price="item[0]"
+        :name="item[1]"
+        :description="item[2]"
+        :tags="item[3]"
+      ></FoodTile>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -24,7 +24,7 @@ export default {
         ["3,00€", "and another name", "and another description", ["wellfit", "vegetarian", "renewable"]],
         ["4,00€", "one more name", "one more description", ["wellfit", "vegan", "renewable"]]
       ]
-    }
+    };
   },
   components: {
     FoodTile

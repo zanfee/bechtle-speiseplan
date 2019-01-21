@@ -6,7 +6,7 @@ var swiper = {
   touchEndX: 0,
   minSwipePixels: 50,
   detectionZone: undefined,
-  swiperCallback: function() {},
+  swiperCallback: function () {},
 
   init: function (detectionZone, callback) {
     swiper.swiperCallback = callback
@@ -47,6 +47,6 @@ var swiper = {
 }
 
 var gestureZone = document;
-swiper.init(gestureZone, function() {})
+swiper.init(gestureZone, function () {})
 
 export default {};
