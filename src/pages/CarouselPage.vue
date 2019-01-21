@@ -1,17 +1,19 @@
 <template>
 <div id="page">
   <div v-for="(item, index) in items" v-bind:key="index">
-    <TvTile :display="index"
+    <FoodTile
+      :display="index"
       :price="item[0]"
       :name="item[1]"
       :description="item[2]"
-    :tags="item[3]"></TvTile>
+      :tags="item[3]"
+    ></FoodTile>
   </div>
 </div>
 </template>
 
 <script>
-import TvTile from "../components/TvTile";
+import FoodTile from "../components/Tiles/Food/FoodTile";
 
 export default {
   data() {
@@ -25,10 +27,7 @@ export default {
     }
   },
   components: {
-    TvTile
+    FoodTile
   }
 };
 </script>
-
-<style>
-</style>
