@@ -1,25 +1,12 @@
 <template>
 <div id="page">
-  <TvTile :display="getIndex()"
-    price="1,00€"
-    name="some name"
-    description="some description"
-  :tags="['wellfit']"></TvTile>
-  <TvTile :display="getIndex()"
-    price="2,00€"
-    name="some other name" 
-    description="some other description"
-  :tags="['renewable']"></TvTile>
-  <TvTile :display="getIndex()"
-    price="3,00€"
-    name="and another name" 
-    description="and another description"
-  :tags="['wellfit', 'vegetarian', 'renewable']"></TvTile>
-  <TvTile :display="getIndex()"
-    price="4,00€"
-    name="one more name" 
-    description="one more description"
-  :tags="['wellfit', 'vegan', 'renewable']"></TvTile>
+  <div v-for="(item, index) in items" v-bind:key="index">
+    <TvTile :display="index"
+      :price="item[0]"
+      :name="item[1]"
+      :description="item[2]"
+    :tags="item[3]"></TvTile>
+  </div>
 </div>
 </template>
 
@@ -29,12 +16,12 @@ import TvTile from "../components/TvTile";
 export default {
   data() {
     return {
-      index: 0
-    }
-  },
-  methods: {
-    getIndex() {
-      return this.index++;
+      items: [
+        ["1,00€", "some name", "some description", ["wellfit"]],
+        ["2,00€", "some other name", "some other description", ["renewable"]],
+        ["3,00€", "and another name", "and another description", ["wellfit", "vegetarian", "renewable"]],
+        ["4,00€", "one more name", "one more description", ["wellfit", "vegan", "renewable"]]
+      ]
     }
   },
   components: {

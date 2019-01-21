@@ -11,7 +11,7 @@
 
   <div
     v-on:click="$store.commit('closeSidebar')"
-    class="nav-open"
+    class="nav-cover"
     :class="{
       'shown': $store.state.isSidebarOpen,
       'hidden': !$store.state.isSidebarOpen
@@ -68,7 +68,7 @@ export default {
   display: flex;
 }
 
-.nav-open {
+.nav-cover {
   position: fixed;
   width: 100%;
   height: 100%;

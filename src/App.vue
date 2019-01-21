@@ -1,12 +1,12 @@
 <template>
-<div @click.native="$store.commit('closeSidebar')" class="site" v-bind:class="{ 'light': $store.state.theme === 1, 'dark': $store.state.theme === 2, 'fit': $store.state.fit }">
-  <Navigation style="margin-bottom: calc(0.75vh + 58px)"/>
+<div @click.native="$store.commit('closeSidebar')" class="site" :class="{ 'light': $store.state.theme === 1, 'dark': $store.state.theme === 2, 'fit': $store.state.fit }">
+  <Navigation />
     
   <AdminPage v-if="$store.state.currentPage === 'admin'" />
-  <TestPage v-if="$store.state.currentPage === 'test'" />
   <CarouselPage v-if="$store.state.currentPage === 'carousel'" />
-  <DayPage v-if="$store.state.currentPage === 'day'" />
   <WeekPage v-if="$store.state.currentPage === 'week'" />
+  <DayPage v-if="$store.state.currentPage === 'day'" />
+  <TestPage v-if="$store.state.currentPage === 'test'" />
 
   <Footer />
 </div>
@@ -17,11 +17,11 @@ import Navigation from "./components/Navigation/Navigation";
 
 import AdminPage from "./pages/AdminPage";
 
-import TestPage from "./pages/TestPage";
-
 import CarouselPage from "./pages/CarouselPage";
-import WeekPage from "./pages/WeekPage";
 import DayPage from "./pages/DayPage";
+import WeekPage from "./pages/WeekPage";
+
+import TestPage from "./pages/TestPage";
 
 import Footer from "./components/Footer";
 
@@ -32,15 +32,15 @@ export default {
   components: {
     Navigation,
     AdminPage,
-    TestPage,
     CarouselPage,
-    WeekPage,
     DayPage,
+    WeekPage,
+    TestPage,
     Footer
   },
   mounted() {
     // eslint-disable-next-line
-    console.log('v0.2.176 | responsive mobile WIP');
+    console.log('v0.2.180 | dynamic carousel page');
     window.addEventListener("keypress", e => {
       if (e.keyCode === KEYCODE_N && this.$store.state.shortcuts) {
         this.$store.commit("toggleTheme");
@@ -70,5 +70,9 @@ body {
   min-width: 100%;
   min-height: 100%;
   overflow: hidden;
+}
+
+nav {
+  margin-bottom: calc(0.75vh + 58px)
 }
 </style>

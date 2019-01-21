@@ -25,6 +25,15 @@
   display: none;
 }
 
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -45,68 +54,32 @@ p {
 
 h1 {
   font-size: 12em;
+  font-size: 10vw;
   font-family: "Source Sans Pro", "sans-serif";
   font-weight: 700;
   color: #3c3c3c;
-}
-
-.fit h1 {
-  font-size: 10vw;
-}
-
-@media screen and (min-width: 1920px) {
-  .fit h1 {
-     font-size: 18vh;
-  }
 }
 
 h2 {
   font-size: 8em;
+  font-size: 6.67vw;
   font-family: "Source Sans Pro", "sans-serif";
   font-weight: 700;
   color: #3c3c3c;
 }
 
-.fit h2 {
-  font-size: 6.67vw;
-}
-
-@media screen and (min-width: 1920px) {
-  .fit h2 {
-     font-size: 12vh;
-  }
-}
-
 h3 {
   font-size: 3em;
+  font-size: 2.5vw;
   font-weight: normal;
   font-family: "Phenomena";
-}
-
-.fit h3 {
-  font-size: 2.5vw;
-}
-
-@media screen and (min-width: 1920px) {
-  .fit h3 {
-     font-size: 4.5vh;
-  }
 }
 
 h4 {
   font-size: 3em;
+  font-size: 2.5vw;
   font-weight: normal;
   font-family: "Phenomena";
-}
-
-.fit h4 {
-  font-size: 2.5vw;
-}
-
-@media screen and (min-width: 1920px) {
-  .fit h4 {
-     font-size: 4.5vh;
-  }
 }
 
 h5 {
@@ -148,6 +121,24 @@ a {
   cursor: pointer;
 }
 
+@media screen and (min-aspect-ratio: 2/1) {
+  .fit h1 {
+    font-size: 18vh;
+  }
+
+  .fit h2 {
+     font-size: 12vh;
+  }
+
+  .fit h3 {
+    font-size: 4.5vh;
+ }
+
+  .fit h4 {
+    font-size: 4.5vh;
+  }
+}
+
 /*
 ::-webkit-scrollbar .dark {
   background-color: rgba(127, 127, 127, 0.1);
@@ -158,15 +149,6 @@ a {
   background-color: rgba(127, 127, 127, 0.8);
 }
 */
-
-.unselectable {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
 
 /* light theme */
   /* color */

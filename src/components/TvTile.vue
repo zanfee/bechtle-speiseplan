@@ -78,13 +78,6 @@ export default {
       }
       return tagname;
     }
-  },
-  mounted() {
-  },
-  data() {
-    return {
-
-    }
   }
 };
 </script>
@@ -93,7 +86,7 @@ export default {
 .left {
   align-content: center;
   width: 30%;
-  height: 500px;
+  overflow: hidden;
   word-wrap: break-word;
   float: left;
   margin-top: 32px;
