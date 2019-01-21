@@ -170,13 +170,13 @@ a {
 
 /* light theme */
   /* color */
-.light .price, .light .primary .title, .light .preposition, .light .left .description, .light .right .description, .light .exit .description, .light a, .light h1, .light th, .light td {
+.light .price, .light .primary .name, .light .preposition, .light .secondary .description, .light a, .light h1, .light th, .light td {
   color: #3c3c3c;
 }
 .light .pointer {
   color: #505050;
 }
-.light h5, .light h6, .light .left .title, .light .right .title, .light .exit .title, .light .primary .description, .light .p, .light .material, .light .tagName {
+.light h5, .light h6, .light .secondary .name, .light .primary .description, .light .p, .light .material, .light .tagName {
   color: #757575;
 }
   /* background-color */
@@ -210,16 +210,16 @@ a {
 
 /* dark theme */
   /* color */
-.dark .price, .dark .preposition, .dark .left .description, .dark .right .description, .dark .exit .description, .dark a, .dark h1, .dark th, .dark td {
+.dark .price, .dark .preposition, .dark .secondary .description, .dark a, .dark h1, .dark th, .dark td {
   color: #ffffff;
 }
-.dark h5, .dark h6, .dark .left .title, .dark .right .title, .dark .exit .title, .dark .primary .description, .dark p {
+.dark h5, .dark h6, .dark .secondary .name, .dark .primary .description, .dark p {
   color: #bdbdbd;
 }
 .dark .pointer, .dark .material {
   color: #757575;
 }
-.dark .primary .title {
+.dark .primary .name {
   color: #3c3c3c;
 }
   /* background-color */

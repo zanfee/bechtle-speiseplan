@@ -1,13 +1,18 @@
 <template>
-<div :class="display">
+<div :class="getPosition">
   <h1 class="price">{{ price }}</h1>
-  <div class="type" :class="getType">
+  <div class="type" :class="getType()">
     <h2 class="name">{{ name }}</h2>
   </div>
   <div class="tileBody">
     <h3 class="preposition">dazu</h3>
     <h4 class="description">{{ description }}</h4> 
-    <div class="tagContainer"></div>
+    <div class="tagContainer">
+      <div v-for="tag in tags" class="tag">
+        <img :src="getImgUrl(tag)" >
+        <p class="tagName">{{ getTagName(tag) }}</p>
+      </div>
+    </div>
   </div>
 </div>
 </template>
@@ -15,15 +20,34 @@
 <script>
 export default {
   props: {
-    display: String,
+    display: Number,
     price: String,
     name: String,
     description: String,
     tags: Array
   },
   computed: {
-    getType: function () {
-      var type = "none";
+    getPosition: function () {
+      var position = "secondary none";
+      if (this.display === 0) {
+        position = "primary"
+      }
+      else if (this.display === 1) {
+        position = "secondary left"
+      }
+      else if (this.display === 2) {
+        position = "secondary right"
+      }
+      return position;
+    }
+  },
+  methods: {
+    getImgUrl(img) {
+      var images = require.context('../assets/img/', false, /\.svg$/);
+      return images('./' + img + ".svg")
+    },
+    getType(tag) {
+      let type = "none";
       if (this.tags.includes("vegan")) {
         type = "vegan"
       }
@@ -37,13 +61,25 @@ export default {
         type = "wellfit"
       }
       return type;
+    },
+    getTagName(tag) {
+      let tagname = ""
+      if (tag === "vegan") {
+        tagname = "Vegan";
+      }
+      else if (tag === "vegetarian") {
+        tagname = "Vegetarisch";
+      }
+      else if (tag === "renewable") {
+        tagname = "Nachhaltige Fischerei";
+      }
+      else if (tag === "wellfit") {
+        tagname = "Well Fit";
+      }
+      return tagname;
     }
   },
-  methods: {
-    
-  },
   mounted() {
-
   },
   data() {
     return {
@@ -78,13 +114,13 @@ export default {
 }
 
 .none {
+  position: absolute;
+  display: none;
   align-content: center;
   width: 30%;
-  word-wrap: break-word;
-  float: left;
+  left: 100%;
   margin-top: 32px;
   margin-top: 3vh;
-  left: -50px;
   animation-name: exitAnimation;
   animation-duration: 2s;
 }
@@ -117,7 +153,7 @@ export default {
 }
 
 .primary .wellfit {
-  background-color: rgb(230, 144, 88);
+  background-color: rgb(249, 173, 70);
 }
 
 .primary .name {
@@ -152,7 +188,7 @@ export default {
   text-shadow: 0px 0px 4px rgba(0,0,0,0.2);
 }
 
-.price {
+.secondary .price {
   font-size: 4em;
   font-size: 3.3vw;
   text-align: center;
@@ -161,8 +197,7 @@ export default {
   text-shadow: 0px 0px 8px rgba(0,0,0,0.2);
 }
 
-.type::before {
-  background-color: black;
+.secondary .type::before {
   content:'';
   display: block;
   height: 1px;
@@ -171,6 +206,10 @@ export default {
   margin: 4px auto;
   position: relative;
   box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+}
+
+.secondary .type.vegan::before {
+  background-color: rgb(90, 126, 29);
 }
 
 .secondary .type.vegetarian::before {
@@ -182,7 +221,7 @@ export default {
 }
 
 .secondary .type.wellfit::before {
-  background-color: rgb(230, 144, 88);
+  background-color: rgb(249, 173, 70)
 }
 
 .secondary .name {
@@ -191,8 +230,6 @@ export default {
   text-align: center;
   margin: 0;
   position: relative;
-  /* margin-left: 2%; */
-  /* margin-right: 2%; */
   text-shadow: 0px 0px 2px rgba(0,0,0,0.1);
 }
 
@@ -222,22 +259,23 @@ export default {
 }
 
 .tag {
-  width: 14%;
-  padding-left: 2%;
-  padding-right: 2%;
+  width: 16%;
+  padding-left: 1%;
+  padding-right: 1%;
   display: inline-block;
-  
 }
 
 .tag img {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   display: block;
+  padding: 10%;
 }
 
 .tagName {
   text-align: center;
   margin: 0;
-  font-size: 1.2vw;
+  font-size: 0.8vw;
   font-weight: bold;
 }
 
@@ -251,17 +289,12 @@ export default {
     width: 6%;
   }
 
-  .left .tag, .right .tag {
+  .secondary .tag {
     width: 10%;
   }
 
-  .left {
-    width: 50%;
-    margin-top: 0;
-  }
-
-  .right {
-    width: 50%;
+  .secondary {
+    width: 49%;
     margin-top: 0;
   }
 }
