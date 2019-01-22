@@ -18,7 +18,7 @@ export default {
     getTagName(tag) {
       return {
         vegan: "Vegan",
-        vegetarisch: "Vegetarisch",
+        vegetarian: "Vegetarisch",
         renewable: "Nachhaltige Fischerei",
         wellfit: "Well Fit"
       }[tag];
@@ -31,12 +31,11 @@ export default {
 .tagName {
   text-align: center;
   margin: 0;
-  font-size: 0.8vw;
   font-weight: bold;
 }
 
 img {
-  width: 80%;
+  max-width: 50%;
   margin: 0 auto;
   display: block;
   padding: 10%;

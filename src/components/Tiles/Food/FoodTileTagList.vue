@@ -25,8 +25,15 @@ export default {
   justify-content: center;
 }
 
+@media screen and (max-aspect-ratio: 11/8) and (min-aspect-ratio: 9/10) {
+  .primary .tagContainer {
+    width: 48%;
+    margin: 0 auto;
+  }
+}
+
 .tag {
-  width: 16%;
+  max-width: 20%;
   padding-left: 1%;
   padding-right: 1%;
   display: inline-block;

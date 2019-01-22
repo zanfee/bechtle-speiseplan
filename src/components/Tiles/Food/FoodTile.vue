@@ -58,37 +58,26 @@ export default {
 </script>
 
 <style>
-.left {
-  align-content: center;
+.secondary {
   width: 30%;
+  margin: 1%;
+  align-content: center;
   overflow: hidden;
   word-wrap: break-word;
+}
+
+.left {
   float: left;
-  margin-top: 32px;
-  margin-top: 3vh;
-  margin-left: 1vw;
-  margin-right: 1vw;
-  left: 0;
 }
 
 .right {
-  align-content: center;
-  width: 30%;
-  overflow: hidden;
-  word-wrap: break-word;
   float: right;
-  margin-top: 32px;
-  margin-top: 3vh;
 }
 
 .none {
   position: absolute;
   display: none;
-  align-content: center;
-  width: 30%;
   left: 100%;
-  margin-top: 32px;
-  margin-top: 3vh;
   animation-name: exitAnimation;
   animation-duration: 2s;
 }
@@ -103,8 +92,8 @@ export default {
   padding: 0.5em;
   padding: 0.75vh;
   margin: 0;
-  margin-top: 8px;
-  margin-top: 0.75vh;
+  margin-top: 6px;
+  margin-top: 0; /* margin? */
   box-shadow: 0px 0px 12px 1px rgba(60, 60, 60, 0.3);
 }
 
@@ -201,6 +190,10 @@ export default {
   text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
 }
 
+.fit .secondary .name {
+  font-size: calc(1em + 1.5vw);
+}
+
 .secondary .tileBody {
   width: 100%;
 }
@@ -220,23 +213,27 @@ export default {
   text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
 }
 
+.fit .secondary .description {
+  font-size: calc(1em + 1vw);
+}
+
 @media screen and (max-aspect-ratio: 11/8) {
   .primary .tileBody {
     position: relative;
-    max-width: 90%;
-  }
-
-  .primary .tag {
-    width: 6%;
-  }
-
-  .secondary .tag {
-    width: 10%;
+    max-width: 100%;
   }
 
   .secondary {
-    width: 49%;
+    width: 48%;
     margin-top: 0;
+  }
+}
+
+@media screen and (max-aspect-ratio: 9/10) {
+  .secondary {
+    width: 100%;
+    margin: 1% auto;
+    float: none;
   }
 }
 </style>

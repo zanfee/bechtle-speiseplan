@@ -1,13 +1,13 @@
 @font-face {
   font-family: Phenomena;
   font-weight: bold;
-  src: url(Phenomena-Bold.woff) format('woff');
+  src: url(./fonts/Phenomena-Bold.woff) format('woff');
 }
 
 @font-face {
   font-family: Phenomena;
   font-weight: normal;
-  src: url(Phenomena-Regular.woff) format('woff');
+  src: url(./fonts/Phenomena-Regular.woff) format('woff');
 } 
 
 @font-face {
@@ -46,10 +46,6 @@ th {
 td {
   font-family: "Source Sans Pro", "sans-serif";
   font-weight: normal;
-}
-
-p {
-  font-family: "Source Sans Pro", "sans-serif";
 }
 
 h1 {
@@ -121,6 +117,24 @@ a {
   cursor: pointer;
 }
 
+p {
+  font-family: "Source Sans Pro", "sans-serif";
+  font-size: 1em;
+  font-size: 0.8vw;
+}
+
+.fit h3 {
+  font-size: calc(1em + 1.7vw);
+}
+
+.fit h4 {
+  font-size: calc(1em + 1.7vw);
+}
+
+.fit p {
+  font-size: calc(0.7em + 0.25vw);
+}
+
 @media screen and (min-aspect-ratio: 2/1) {
   .fit h1 {
     font-size: 18vh;
@@ -138,6 +152,21 @@ a {
     font-size: 4.5vh;
   }
 }
+
+/*
+@media screen and (max-aspect-ratio: 11/8) {
+  
+}
+
+@media screen and (max-aspect-ratio: 9/10) {
+  .fit h3 {
+    font-size: calc(0.8em + 2.5vw);
+  }
+
+  .fit h4 {
+    font-size: calc(0.4em + 6vw);
+  }
+} */
 
 /*
 ::-webkit-scrollbar .dark {
