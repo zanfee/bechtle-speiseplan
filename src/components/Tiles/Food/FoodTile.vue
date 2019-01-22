@@ -1,24 +1,24 @@
 <template>
-<div :class="getPosition">
-  <h1 class="price">{{ price }}</h1>
-  <div class="type" :class="getType()">
-    <h2 class="name">{{ name }}</h2>
-  </div>
-  <div class="tileBody">
-    <h3 class="preposition">dazu</h3>
-    <h4 class="description">{{ description }}</h4> 
-    <div class="tagContainer">
-      <div v-for="tag in tags" class="tag" v-bind:key="tag">
-        <img :src="getImgUrl(tag)">
-        <p class="tagName">{{ getTagName(tag) }}</p>
-      </div>
+  <div :class="getPosition">
+    <h1 class="price">{{ price }}</h1>
+    <div class="type" :class="getType()">
+      <h2 class="name">{{ name }}</h2>
+    </div>
+    <div class="tileBody">
+      <h3 class="preposition">dazu</h3>
+      <h4 class="description">{{ description }}</h4>
+      <FoodTileTagList :tags="tags"></FoodTileTagList>
     </div>
   </div>
-</div>
 </template>
 
 <script>
+import FoodTileTagList from "./FoodTileTagList";
+
 export default {
+  components: {
+    FoodTileTagList
+  },
   props: {
     display: Number,
     price: String,
@@ -27,56 +27,31 @@ export default {
     tags: Array
   },
   computed: {
-    getPosition: function () {
-      var position = "secondary none";
+    getPosition: function() {
       if (this.display === 0) {
-        position = "primary"
+        return "primary";
+      } else if (this.display === 1) {
+        return "secondary left";
+      } else if (this.display === 2) {
+        return "secondary right";
       }
-      else if (this.display === 1) {
-        position = "secondary left"
-      }
-      else if (this.display === 2) {
-        position = "secondary right"
-      }
-      return position;
+
+      return "secondary none";
     }
   },
   methods: {
-    getImgUrl(img) {
-      var images = require.context('../assets/img/', false, /\.svg$/);
-      return images('./' + img + ".svg")
-    },
-    getType(tag) {
-      let type = "none";
+    getType() {
       if (this.tags.includes("vegan")) {
-        type = "vegan"
+        return "vegan";
+      } else if (this.tags.includes("vegetarian")) {
+        return "vegetarian";
+      } else if (this.tags.includes("renewable")) {
+        return "renewable";
+      } else if (this.tags.includes("wellfit")) {
+        return "wellfit";
       }
-      else if (this.tags.includes("vegetarian")) {
-        type = "vegetarian"
-      }
-      else if (this.tags.includes("renewable")) {
-        type = "renewable"
-      }
-      else if (this.tags.includes("wellfit")) {
-        type = "wellfit"
-      }
-      return type;
-    },
-    getTagName(tag) {
-      let tagname = ""
-      if (tag === "vegan") {
-        tagname = "Vegan";
-      }
-      else if (tag === "vegetarian") {
-        tagname = "Vegetarisch";
-      }
-      else if (tag === "renewable") {
-        tagname = "Nachhaltige Fischerei";
-      }
-      else if (tag === "wellfit") {
-        tagname = "Well Fit";
-      }
-      return tagname;
+
+      return "none";
     }
   }
 };
@@ -130,7 +105,7 @@ export default {
   margin: 0;
   margin-top: 8px;
   margin-top: 0.75vh;
-  box-shadow: 0px 0px 12px 1px rgba(60,60,60,0.3);
+  box-shadow: 0px 0px 12px 1px rgba(60, 60, 60, 0.3);
 }
 
 .primary .vegan {
@@ -153,15 +128,15 @@ export default {
   text-align: center;
   margin: 0;
   white-space: nowrap;
-  text-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+  text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .primary .tileBody {
   position: absolute;
   max-width: 36%;
   margin: 0 auto;
-  left: 0; 
-  right: 0; 
+  left: 0;
+  right: 0;
 }
 
 .primary .preposition {
@@ -170,7 +145,7 @@ export default {
   margin: 0;
   margin-top: 24px;
   margin-top: 2vh;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .primary .description {
@@ -178,7 +153,7 @@ export default {
   text-align: center;
   margin: 0 auto;
   word-wrap: break-word;
-  text-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
 
 .secondary .price {
@@ -187,18 +162,18 @@ export default {
   text-align: center;
   margin: 0;
   position: relative;
-  text-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
 .secondary .type::before {
-  content:'';
+  content: "";
   display: block;
   height: 1px;
   max-width: 292px;
   width: 88%;
   margin: 4px auto;
   position: relative;
-  box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
 
 .secondary .type.vegan::before {
@@ -214,7 +189,7 @@ export default {
 }
 
 .secondary .type.wellfit::before {
-  background-color: rgb(249, 173, 70)
+  background-color: rgb(249, 173, 70);
 }
 
 .secondary .name {
@@ -223,7 +198,7 @@ export default {
   text-align: center;
   margin: 0;
   position: relative;
-  text-shadow: 0px 0px 2px rgba(0,0,0,0.1);
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
 }
 
 .secondary .tileBody {
@@ -242,34 +217,7 @@ export default {
   margin: 1vh auto;
   width: 96%;
   position: relative;
-  text-shadow: 0px 0px 2px rgba(0,0,0,0.2);
-}
-
-.tagContainer {
-  display: flex;
-  justify-content: center;
-  
-}
-
-.tag {
-  width: 16%;
-  padding-left: 1%;
-  padding-right: 1%;
-  display: inline-block;
-}
-
-.tag img {
-  width: 80%;
-  margin: 0 auto;
-  display: block;
-  padding: 10%;
-}
-
-.tagName {
-  text-align: center;
-  margin: 0;
-  font-size: 0.8vw;
-  font-weight: bold;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-aspect-ratio: 11/8) {

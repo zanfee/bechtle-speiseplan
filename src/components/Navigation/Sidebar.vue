@@ -1,34 +1,34 @@
 <template>
-<nav :class="{ 'nav-open': $store.state.isSidebarOpen }" id="nav-body">
-  <ul class="nav-admin unselectable">
-    <SidebarList title="Bearbeiten" @click.native="$store.commit('setPage', 'admin')"></SidebarList>
-  </ul>
+  <nav :class="{ 'nav-open': $store.state.isSidebarOpen }" id="nav-body">
+    <ul class="nav-admin unselectable">
+      <SidebarList title="Bearbeiten" @click.native="$store.commit('setPage', 'admin')"></SidebarList>
+    </ul>
 
-  <ul class="nav-view unselectable">
-    <SidebarListItem @click.native="$store.commit('setPage', 'carousel')">Karussell Ansicht</SidebarListItem>
-    <SidebarListItem @click.native="$store.commit('setPage', 'day')">Tagesübersicht</SidebarListItem>
-    <SidebarListItem @click.native="$store.commit('setPage', 'week')">Wochenübersicht</SidebarListItem>
-    <!-- <SidebarListItem @click.native="$store.commit('setPage', 'test')">Testpage</SidebarListItem> -->
-  </ul>
+    <ul class="nav-view unselectable">
+      <SidebarListItem @click.native="$store.commit('setPage', 'carousel')">Karussell Ansicht</SidebarListItem>
+      <SidebarListItem @click.native="$store.commit('setPage', 'day')">Tagesübersicht</SidebarListItem>
+      <SidebarListItem @click.native="$store.commit('setPage', 'week')">Wochenübersicht</SidebarListItem>
+    </ul>
 
-  <ul class="nav-base unselectable">
+    <ul class="nav-base unselectable">
+      <SidebarList title="Module">
+        <SidebarListItem>Speiseplan Woche</SidebarListItem>
+        <SidebarListItem>Speiseplan Tag</SidebarListItem>
+        <SidebarListItem>Speiseplan Karussell</SidebarListItem>
+        <SidebarListItem>Wetter</SidebarListItem>
+      </SidebarList>
 
-    <SidebarList title="Module">
-      <SidebarListItem>Speiseplan Woche</SidebarListItem>
-      <SidebarListItem>Speiseplan Tag</SidebarListItem>
-      <SidebarListItem>Speiseplan Karussell</SidebarListItem>
-      <SidebarListItem>Wetter</SidebarListItem>
-    </SidebarList>
-
-    <SidebarList title="Einstellungen">
-      <SidebarListItem @click.native="$store.commit('toggleTheme');">{{ this.$store.state.themeName }}</SidebarListItem>
-      <SidebarListItem>Language</SidebarListItem>
-      <SidebarListItem>Geschwindigkeit</SidebarListItem>
-      <SidebarListBox command="toggleFit">Responsive</SidebarListBox>
-      <SidebarListBox command="toggleShortcuts">Shortcuts</SidebarListBox>
-    </SidebarList>
-  </ul>
-</nav>
+      <SidebarList title="Einstellungen">
+        <SidebarListItem
+          @click.native="$store.commit('toggleTheme');"
+        >{{ this.$store.state.themeName }}</SidebarListItem>
+        <SidebarListItem>Language</SidebarListItem>
+        <SidebarListItem>Geschwindigkeit</SidebarListItem>
+        <SidebarListBox command="toggleFit">Responsive</SidebarListBox>
+        <SidebarListBox command="toggleShortcuts">Shortcuts</SidebarListBox>
+      </SidebarList>
+    </ul>
+  </nav>
 </template>
 
 <script>
@@ -50,7 +50,7 @@ export default {
 
 <style scoped>
 #nav-body {
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   margin-top: 60px;
   height: calc(100vh - 60px);
   width: 260px;
@@ -77,7 +77,7 @@ export default {
 .nav-view {
   list-style: none;
   border-bottom: 1px solid #757575;
-  margin-bottom: 25px
+  margin-bottom: 25px;
 }
 
 .nav-base {

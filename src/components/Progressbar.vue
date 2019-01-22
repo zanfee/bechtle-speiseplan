@@ -12,7 +12,11 @@ export default {
   },
   computed: {
     barStyles() {
-      return "background-image: linear-gradient(90deg, #008451 " + this.progress + "% , #f76b20";
+      return (
+        "background-image: linear-gradient(90deg, #008451 " +
+        this.progress +
+        "% , #f76b20"
+      );
     }
   },
   methods: {
