@@ -58,10 +58,6 @@ export default {
 </script>
 
 <style>
-.primary, .left {
-  border-bottom: 1px solid #757575;
-}
-
 .secondary {
   width: 30%;
   margin: 1%;
@@ -242,7 +238,7 @@ export default {
     word-wrap: break-word;
     hyphens: auto;
   }
-
+ 
   .primary .tileBody {
     position: relative;
     max-width: 96%;
@@ -257,6 +253,7 @@ export default {
 @media screen and (max-aspect-ratio: 9/12) {
   .primary {
     padding-bottom: 2.5%;
+    border-bottom: 1px solid #757575;
   }
 
   .secondary {
@@ -265,6 +262,10 @@ export default {
     padding-top: 2.5%;
     padding-bottom: 2.5%;
     float: none;
+  }
+
+  .left {
+    border-bottom: 1px solid #757575;
   }
 
   .right {
