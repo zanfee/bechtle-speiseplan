@@ -34,8 +34,15 @@
   user-select: none;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   overflow-x: hidden;
+  text-decoration: none;
 }
 
 th {
@@ -165,21 +172,6 @@ p {
 }
 
 /*
-@media screen and (max-aspect-ratio: 11/8) {
-  
-}
-
-@media screen and (max-aspect-ratio: 9/10) {
-  .fit h3 {
-    font-size: calc(0.8em + 2.5vw);
-  }
-
-  .fit h4 {
-    font-size: calc(0.4em + 6vw);
-  }
-} */
-
-/*
 ::-webkit-scrollbar .dark {
   background-color: rgba(127, 127, 127, 0.1);
   width: 12px;
@@ -189,6 +181,10 @@ p {
   background-color: rgba(127, 127, 127, 0.8);
 }
 */
+
+::selection {
+  background-color: rgba(34, 140, 211, 0.5);
+}
 
 /* light theme */
   /* color */

@@ -25,7 +25,7 @@ export default {
   justify-content: center;
 }
 
-@media screen and (max-aspect-ratio: 11/8) and (min-aspect-ratio: 9/10) {
+@media screen and (max-aspect-ratio: 11/8) and (min-aspect-ratio: 9/12) {
   .primary .tagContainer {
     width: 48%;
     margin: 0 auto;

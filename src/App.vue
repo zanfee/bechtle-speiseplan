@@ -10,6 +10,7 @@
     <CarouselPage v-if="$store.state.currentPage === 'carousel'"/>
     <WeekPage v-if="$store.state.currentPage === 'week'"/>
     <DayPage v-if="$store.state.currentPage === 'day'"/>
+
     <Footer/>
   </div>
 </template>
@@ -53,20 +54,9 @@ export default {
 </script>
 
 <style>
-body {
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-}
-
-::selection {
-  background-color: rgba(34, 140, 211, 0.5);
-}
-
 .site {
-  min-width: 100%;
   min-height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 nav {

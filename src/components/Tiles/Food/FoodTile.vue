@@ -58,6 +58,10 @@ export default {
 </script>
 
 <style>
+.primary, .left {
+  border-bottom: 1px solid #757575;
+}
+
 .secondary {
   width: 30%;
   margin: 1%;
@@ -250,10 +254,16 @@ export default {
   }
 }
 
-@media screen and (max-aspect-ratio: 9/10) {
+@media screen and (max-aspect-ratio: 9/12) {
+  .primary {
+    padding-bottom: 2.5%;
+  }
+
   .secondary {
     width: 100%;
-    margin: 5% auto;
+    margin: 0 auto;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
     float: none;
   }
 
