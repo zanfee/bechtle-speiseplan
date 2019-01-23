@@ -1,11 +1,4 @@
-# Speiseplan
-
-### Todo
-
-  - Raspberry Proxy Konfiguration
-  - Phenomena richtig implementieren
-  - Karusell Animation
-  - Wochenübersicht Design
+# <a href="https://bechtlespeiseplan.netlify.com/">Speiseplan</a>
 
 ### Instructions to get started
 
