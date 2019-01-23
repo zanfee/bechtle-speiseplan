@@ -21,7 +21,6 @@ export default {
 .footer {
   width: 100%;
   height: 96px;
-  height: 6em;
   height: 10vh;
   background-color: #f5f5f5;
   bottom: 0;

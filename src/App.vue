@@ -71,6 +71,6 @@ body {
 }
 
 nav {
-  margin-bottom: calc(58px); /* margin? */
+  margin-bottom: calc(58px + 0.5vh);
 }
 </style>

@@ -72,6 +72,7 @@ export default {
 
 .right {
   float: right;
+  margin-bottom: 10vh;
 }
 
 .none {
@@ -86,14 +87,16 @@ export default {
   text-align: center;
   margin: 0;
   text-shadow: 2px 2px 16px rgba(0, 0, 0, 0.2);
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .primary .type {
   padding: 0.5em;
-  padding: 0.75vh;
+  padding: 0.5%;
   margin: 0;
   margin-top: 6px;
-  margin-top: 0; /* margin? */
+  margin-top: 0.5vh;
   box-shadow: 0px 0px 12px 1px rgba(60, 60, 60, 0.3);
 }
 
@@ -116,7 +119,6 @@ export default {
 .primary .name {
   text-align: center;
   margin: 0;
-  white-space: nowrap;
   text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -134,6 +136,8 @@ export default {
   margin: 0;
   margin-top: 24px;
   margin-top: 2vh;
+  word-wrap: break-word;
+  hyphens: auto;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -142,6 +146,8 @@ export default {
   text-align: center;
   margin: 0 auto;
   word-wrap: break-word;
+  hyphens: auto;
+  width: 100%;
   text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -151,7 +157,13 @@ export default {
   text-align: center;
   margin: 0;
   position: relative;
+  word-wrap: break-word;
+  hyphens: auto;
   text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+.fit .secondary .price {
+  font-size: calc(1em + 2.5vw);
 }
 
 .secondary .type::before {
@@ -187,6 +199,8 @@ export default {
   text-align: center;
   margin: 0;
   position: relative;
+  word-wrap: break-word;
+  hyphens: auto;
   text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -210,17 +224,24 @@ export default {
   margin: 1vh auto;
   width: 96%;
   position: relative;
+  word-wrap: break-word;
+  hyphens: auto;
   text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
 }
 
 .fit .secondary .description {
-  font-size: calc(1em + 1vw);
+  font-size: calc(1em + 0.8vw);
 }
 
 @media screen and (max-aspect-ratio: 11/8) {
+  .primary .name {
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
   .primary .tileBody {
     position: relative;
-    max-width: 100%;
+    max-width: 96%;
   }
 
   .secondary {
@@ -232,8 +253,12 @@ export default {
 @media screen and (max-aspect-ratio: 9/10) {
   .secondary {
     width: 100%;
-    margin: 1% auto;
+    margin: 5% auto;
     float: none;
+  }
+
+  .right {
+    margin-bottom: 10vh;
   }
 }
 </style>

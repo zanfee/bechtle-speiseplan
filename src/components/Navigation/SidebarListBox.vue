@@ -77,7 +77,6 @@ export default {
   border-right: 2px solid #2e7d32;
   border-bottom: 2px solid #2e7d32;
   transform: rotate(40deg);
-  backface-visibility: hidden;
   transform-origin: 100% 100%;
 }
 

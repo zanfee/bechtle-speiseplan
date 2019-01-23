@@ -4,18 +4,20 @@ var swiper = {
 
   touchStartX: 0,
   touchEndX: 0,
-  minSwipePixels: 50,
+  minSwipePixels: 40,
   detectionZone: undefined,
   swiperCallback: function () {},
 
   init: function (detectionZone, callback) {
     swiper.swiperCallback = callback
     detectionZone.addEventListener('touchstart', function (event) {
-      swiper.touchStartX = event.changedTouches[0].screenX;
+      swiper.touchStartX = event.changedTouches[0].pageX;
     }, false);
     detectionZone.addEventListener('touchend', function (event) {
-      swiper.touchEndX = event.changedTouches[0].screenX;
-      swiper.handleSwipeGesture();
+      swiper.touchEndX = event.changedTouches[0].pageX;
+      if (swiper.touchStartX < document.body.clientWidth / 8 || store.state.isSidebarOpen) {
+        swiper.handleSwipeGesture();
+      }    
     }, false);
   },
 

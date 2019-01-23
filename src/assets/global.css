@@ -115,12 +115,23 @@ a {
   margin-right: 0;
   margin-left: 0;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 p {
   font-family: "Source Sans Pro", "sans-serif";
   font-size: 1em;
   font-size: 0.8vw;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.fit h1 {
+  font-size: calc(0.7em + 9vw);
+}
+
+.fit h2 {
+  font-size: calc(0.7em + 6vw);
 }
 
 .fit h3 {

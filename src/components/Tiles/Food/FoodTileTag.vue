@@ -35,7 +35,7 @@ export default {
 }
 
 img {
-  max-width: 50%;
+  max-width: 45%;
   margin: 0 auto;
   display: block;
   padding: 10%;

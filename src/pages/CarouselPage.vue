@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       items: [
-        ["1,00€", "some name", "some description", ["wellfit"]],
+        ["1,00€", "bechtlespeiseplan.netlify.com", "some description dududuuduud dududuu dudududu dududududuudud udddududu dduudududududuu dududududuuududududuud dudu", ["wellfit", "wellfit", "wellfit", "wellfit"]],
         ["2,00€", "some other name", "some other description", ["renewable"]],
         ["3,00€", "and another name", "and another but this time actually rather unacceptably looooooong description to test its behaviour in case somebody wants to mention pepper here", ["wellfit", "vegetarian", "renewable", "vegan"]],
         ["4,00€", "one more name", "one more description", ["wellfit", "renewable", "vegetarian"]]

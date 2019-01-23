@@ -52,7 +52,7 @@ export default {
 #nav-body {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   margin-top: 60px;
-  height: calc(100vh - 60px);
+  height: calc(100% - 60px);
   width: 260px;
   left: -260px;
   line-height: 1.2em;
