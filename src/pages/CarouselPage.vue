@@ -19,8 +19,8 @@ export default {
   data() {
     return {
       items: [
-        // ["4,80€", "Quinoa Risotto", "Pilz, Tomate, geröstetem Sesam, Zucchini und Ziegenfrischkäse", ["vegan"]],
-        // ["5,20€", "Turkey Burger", "Fries, Truthahn Sous Vide, Speck, grüner Salat, handgemachte Cocktail-sauce, Röstzwiebel, Tomate, Ei", ["renewable"]],
+        ["4,80€", "Quinoa Risotto", "Pilz, Tomate, geröstetem Sesam, Zucchini und Ziegenfrischkäse", []],
+        ["5,20€", "Turkey Burger", "Fries, Truthahn Sous Vide, Speck, grüner Salat, handgemachte Cocktail-sauce, Röstzwiebel, Tomate, Ei", []],
         ["3,40€", "Gebratener Hoki", "Mie Nudel, Zitrone, Chilisoße und Gemüse", ["renewable"]],
         ["4,80€", "Knackiger Blattsalat", "backfrisches Ciabatta, weißer Balsamico, hauchdünn geschnittener Bresaola, gekochtes Ei und Grana Padano", ["wellfit"]],
         ["5,30€", "Ofenfrischer Schweinebraten", "Schupfnudel, Majoransoße und Grünkohl", []]

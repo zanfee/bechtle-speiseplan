@@ -51,7 +51,7 @@ export default {
         return "wellfit";
       }
 
-      return "none";
+      return "notype";
     }
   }
 };
@@ -98,6 +98,7 @@ export default {
   margin-top: 6px;
   margin-top: 0.5vh;
   box-shadow: 0px 0px 12px 1px rgba(60, 60, 60, 0.3);
+  background-color: rgb(192, 70, 249);
 }
 
 .primary .vegan {
@@ -191,6 +192,10 @@ export default {
 
 .secondary .type.wellfit::before {
   background-color: rgb(249, 173, 70);
+}
+
+.secondary .type.notype::before {
+  background-color: rgb(192, 70, 249);
 }
 
 .secondary .name {
