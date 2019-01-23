@@ -3,7 +3,7 @@
     <div class="nav-header">
       <BurgerButton @click.native="$store.commit('toggleSidebar')"/>
       <h5 class="pagename">
-        <strong>Bechtle</strong> Speiseplan
+        <strong><strong>Bechtle</strong></strong> Speiseplan
       </h5>
       <h6 v-html="clock" id="clock"></h6>
       <h6 v-html="date" id="date"></h6>

@@ -39,6 +39,7 @@ export default {
     Footer
   },
   mounted() {
+    console.log("♥");
     // eslint-disable-next-line
     console.log("v0.2.180 | dynamic carousel page");
     window.addEventListener("keypress", e => {
