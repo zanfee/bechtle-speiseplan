@@ -19,10 +19,11 @@ export default {
   data() {
     return {
       items: [
-        ["1,00€", "bechtlespeiseplan.netlify.com", "some description dududuuduuddududuudududududududududuudududddudududduudududududuudududududuuududududuud dudu", ["wellfit"]],
-        ["2,00€", "some other name", "some other description", ["renewable"]],
-        ["3,00€", "and another name", "and another but this time actually rather unacceptably looooooong description to test its behaviour in case somebody wants to mention pepper here", ["wellfit", "vegetarian", "renewable", "vegan"]],
-        ["4,00€", "one more name", "one more description", ["wellfit", "renewable", "vegetarian"]]
+        // ["4,80€", "Quinoa Risotto", "Pilz, Tomate, geröstetem Sesam, Zucchini und Ziegenfrischkäse", ["vegan"]],
+        // ["5,20€", "Turkey Burger", "Fries, Truthahn Sous Vide, Speck, grüner Salat, handgemachte Cocktail-sauce, Röstzwiebel, Tomate, Ei", ["renewable"]],
+        ["3,40€", "Gebratener Hoki", "Mie Nudel, Zitrone, Chilisoße und Gemüse", ["renewable"]],
+        ["4,80€", "Knackiger Blattsalat", "backfrisches Ciabatta, weißer Balsamico, hauchdünn geschnittener Bresaola, gekochtes Ei und Grana Padano", ["wellfit"]],
+        ["5,30€", "Ofenfrischer Schweinebraten", "Schupfnudel, Majoransoße und Grünkohl", []]
       ]
     };
   },
