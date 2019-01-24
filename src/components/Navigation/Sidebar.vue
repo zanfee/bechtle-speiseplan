@@ -26,6 +26,7 @@
         <SidebarListItem>Geschwindigkeit</SidebarListItem>
         <SidebarListBox command="toggleFit">Responsive</SidebarListBox>
         <SidebarListBox command="toggleShortcuts">Shortcuts</SidebarListBox>
+        <SidebarListBox command="toggleSlide">Carousel Slide</SidebarListBox>
       </SidebarList>
     </ul>
   </nav>

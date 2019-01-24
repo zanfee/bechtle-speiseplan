@@ -78,7 +78,7 @@ export default {
 .none {
   position: absolute;
   display: none;
-  left: 100%;
+  /* left: 100%; */
   animation-name: exitAnimation;
   animation-duration: 2s;
 }
@@ -275,6 +275,18 @@ export default {
 
   .right {
     margin-bottom: 10vh;
+  }
+
+  @keyframes exitAnimation {
+    from {
+      left: 0%;
+    }
+
+    to {
+      left: -100%;
+      background-color: red;
+      opacity: 0;
+    }
   }
 }
 </style>

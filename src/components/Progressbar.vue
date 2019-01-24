@@ -10,6 +10,9 @@ export default {
       velocity: 1
     };
   },
+  props: {
+    triggerCarousel: Boolean
+  },
   computed: {
     barStyles() {
       return (
@@ -23,7 +26,9 @@ export default {
     move() {
       this.progress += this.velocity;
       if (this.progress > 120) {
-        // this.$store.commit('slideForeward')
+        if (this.triggerCarousel) {
+          this.$store.commit('slideForeward');
+        }
         this.$emit("elapsed");
         this.velocity = -3;
       } else if (this.progress < -200) {

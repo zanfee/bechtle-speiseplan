@@ -39,9 +39,9 @@ export default {
     Footer
   },
   mounted() {
+    /* eslint-disable */ 
     console.log("♥");
-    // eslint-disable-next-line
-    console.log("v0.2.180 | dynamic carousel page");
+    console.log("v0.2.200 | Implemented trigger for carousel slide");
     window.addEventListener("keypress", e => {
       if (e.keyCode === KEYCODE_N && this.$store.state.shortcuts) {
         this.$store.commit("toggleTheme");

@@ -10,7 +10,8 @@ export default new Vuex.Store({
     theme: localStorage.getItem('current-theme') == null ? 1 : parseInt(localStorage.getItem('current-theme')),
     themeName: "Tagmodus",
     fit: localStorage.getItem('fit') !== "false",
-    shortcuts: localStorage.getItem('shortcuts') !== "false"
+    shortcuts: localStorage.getItem('shortcuts') !== "false",
+    slide: localStorage.getItem('slide') !== "false"
   },
   mutations: {
     setPage(state, payload) {
@@ -49,22 +50,19 @@ export default new Vuex.Store({
       }
     },
     toggleFit(state) {
-      if (state.fit) {
-        state.fit = false;
-        localStorage.setItem("fit", "false")
-      } else {
-        state.fit = true;
-        localStorage.setItem("fit", "true");
-      }
+      state.fit = !state.fit;
+      localStorage.setItem("fit", state.fit.valueOf());
     },
     toggleShortcuts(state) {
-      if (state.shortcuts) {
-        state.shortcuts = false;
-        localStorage.setItem("shortcuts", "false");
-      } else {
-        state.shortcuts = true;
-        localStorage.setItem("shortcuts", "true");
-      }
+      state.shortcuts = !state.shortcuts;
+      localStorage.setItem("shortcuts", state.shortcuts.valueOf());
+    },
+    toggleSlide(state) {
+      state.slide = !state.slide;
+      localStorage.setItem("slide", state.slide.valueOf());
+    },
+    slideForeward() {
+      // console.log("slide")
     }
   }
 })

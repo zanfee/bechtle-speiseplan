@@ -7,7 +7,7 @@
       </h5>
       <h6 v-html="clock" id="clock"></h6>
       <h6 v-html="date" id="date"></h6>
-      <Progressbar style="margin-top: 58px;"/>
+      <Progressbar :triggerCarousel="$store.state.slide" style="margin-top: 58px;"/>
     </div>
     <Sidebar/>
 

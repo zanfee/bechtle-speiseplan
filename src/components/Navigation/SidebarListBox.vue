@@ -27,6 +27,8 @@ export default {
       checkbox.checked = this.$store.state.shortcuts;
     } else if (this.command === "toggleFit") {
       checkbox.checked = this.$store.state.fit;
+    } else if (this.command === "toggleSlide") {
+      checkbox.checked = this.$store.state.slide;
     }
   }
 };
