@@ -7,6 +7,7 @@
         :name="item[1]"
         :description="item[2]"
         :tags="item[3]"
+        :tileLength="items.itemLength"
       ></FoodTile>
     </div>
   </div>

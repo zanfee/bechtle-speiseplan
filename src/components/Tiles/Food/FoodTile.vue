@@ -1,5 +1,5 @@
 <template>
-  <div :class="getPosition">
+  <div :class="getPosition" @slide-foreward="console.log('imAlive')">
     <h1 class="price">{{ price }}</h1>
     <div class="type" :class="getType()">
       <h2 class="name">{{ name }}</h2>
@@ -24,7 +24,8 @@ export default {
     price: String,
     name: String,
     description: String,
-    tags: Array
+    tags: Array,
+    tileLength: Number
   },
   computed: {
     getPosition: function() {
@@ -52,6 +53,10 @@ export default {
       }
 
       return "notype";
+    },
+    swapTiles() {
+      this.display === this.tileLength - 1 ? this.display = 0 : this.display++;
+      console.log(this.name + ": " + this.display)
     }
   }
 };

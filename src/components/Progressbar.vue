@@ -27,9 +27,9 @@ export default {
       this.progress += this.velocity;
       if (this.progress > 120) {
         if (this.triggerCarousel) {
-          this.$store.commit('slideForeward');
+          console.log("emit")
+          this.$emit("slide-foreward");
         }
-        this.$emit("elapsed");
         this.velocity = -3;
       } else if (this.progress < -200) {
         this.velocity = 0.7;

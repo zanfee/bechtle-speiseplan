@@ -60,9 +60,6 @@ export default new Vuex.Store({
     toggleSlide(state) {
       state.slide = !state.slide;
       localStorage.setItem("slide", state.slide.valueOf());
-    },
-    slideForeward() {
-      // console.log("slide")
     }
   }
 })
