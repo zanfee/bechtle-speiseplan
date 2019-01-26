@@ -36,7 +36,7 @@ export default {
       this.items.unshift(this.items[this.items.length - 1]);
       this.items.pop();
       this.items.unshift(this.items[2]);
-      this.items.pop(3);
+      this.items.splice(3, 1);
     })
   }
 };

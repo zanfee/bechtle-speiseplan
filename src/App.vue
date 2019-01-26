@@ -40,8 +40,7 @@ export default {
   },
   mounted() {
     /* eslint-disable */ 
-    console.log("♥");
-    console.log("v0.2.204 | Change carousel direction");
+    console.log("Bechtle Speiseplan ♥ v0.2.205 | Fix typo causing bug in swaping algorithm");
     window.addEventListener("keypress", e => {
       if (e.keyCode === KEYCODE_N && this.$store.state.shortcuts) {
         this.$store.commit("toggleTheme");
