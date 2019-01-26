@@ -27,7 +27,6 @@ export default {
       this.progress += this.velocity;
       if (this.progress > 120) {
         if (this.triggerCarousel) {
-          console.log("emit")
           this.$root.$emit("slide-foreward");
         }
         this.velocity = -3;

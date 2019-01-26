@@ -61,13 +61,13 @@ export default {
     },
     swapTiles() {
       this.display === this.tileLength - 1 ? this.display = 0 : this.display++;
-      console.log(this.name + ": " + this.display)
     }
   },
   mounted() {
-    this.$root.$on('slide-foreward', () => {
-      this.swapTiles();
-    })
+    // console.log("(new) " + this.name)
+    // this.$root.$on('slide-foreward', () => {
+    //   this.swapTiles();
+    // })
   }
 };
 </script>
