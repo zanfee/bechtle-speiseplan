@@ -33,8 +33,10 @@ export default {
   },
   mounted() {
     this.$root.$on('slide-foreward', () => {
-      this.items.unshift(this.items[this.items.length - 1])
-      this.items.pop()
+      this.items.unshift(this.items[this.items.length - 1]);
+      this.items.pop();
+      this.items.unshift(this.items[2]);
+      this.items.pop(3);
     })
   }
 };
