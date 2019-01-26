@@ -41,7 +41,7 @@ export default {
   mounted() {
     /* eslint-disable */ 
     console.log("♥");
-    console.log("v0.2.200 | Implemented trigger for carousel slide");
+    console.log("v0.2.202 | Nudge the carusel");
     window.addEventListener("keypress", e => {
       if (e.keyCode === KEYCODE_N && this.$store.state.shortcuts) {
         this.$store.commit("toggleTheme");

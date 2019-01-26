@@ -19,8 +19,13 @@ export default {
   components: {
     FoodTileTagList
   },
+  data() {
+    return {
+      display: this.index
+    }
+  },
   props: {
-    display: Number,
+    index: Number,
     price: String,
     name: String,
     description: String,
@@ -58,6 +63,11 @@ export default {
       this.display === this.tileLength - 1 ? this.display = 0 : this.display++;
       console.log(this.name + ": " + this.display)
     }
+  },
+  mounted() {
+    this.$root.$on('slide-foreward', () => {
+      this.swapTiles();
+    })
   }
 };
 </script>

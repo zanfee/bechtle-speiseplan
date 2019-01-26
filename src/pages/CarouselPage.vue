@@ -2,12 +2,12 @@
   <div id="page">
     <div v-for="(item, index) in items" v-bind:key="index">
       <FoodTile
-        :display="index"
+        :index="index"
         :price="item[0]"
         :name="item[1]"
         :description="item[2]"
         :tags="item[3]"
-        :tileLength="items.itemLength"
+        :tileLength="items.length"
       ></FoodTile>
     </div>
   </div>
