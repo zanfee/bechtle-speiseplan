@@ -3,10 +3,10 @@
     <div v-for="(item, index) in items" v-bind:key="index">
       <FoodTile
         :index="index"
-        :price="item[0]"
-        :name="item[1]"
-        :description="item[2]"
-        :tags="item[3]"
+        :price="item.price"
+        :name="item.name"
+        :description="item.description"
+        :tags="item.tags"
         :tileLength="items.length"
       ></FoodTile>
     </div>
@@ -15,29 +15,48 @@
 
 <script>
 import FoodTile from "../components/Tiles/Food/FoodTile";
+const DateToUrlFriendlyString = require("../../../shared/Date.js")
+  .DateToUrlFriendlyString;
 
 export default {
   data() {
     return {
-      items: [
-        ["4,80€", "Quinoa Risotto", "Pilz, Tomate, geröstetem Sesam, Zucchini und Ziegenfrischkäse", []],
-        ["5,20€", "Turkey Burger", "Fries, Truthahn Sous Vide, Speck, grüner Salat, handgemachte Cocktail-sauce, Röstzwiebel, Tomate, Ei", []],
-        ["3,40€", "Gebratener Hoki", "Mie Nudel, Zitrone, Chilisoße und Gemüse", ["renewable"]],
-        ["4,80€", "Knackiger Blattsalat", "backfrisches Ciabatta, weißer Balsamico, hauchdünn geschnittener Bresaola, gekochtes Ei und Grana Padano", ["wellfit"]],
-        ["5,30€", "Ofenfrischer Schweinebraten", "Schupfnudel, Majoransoße und Grünkohl", []]
-      ]
+      items: []
     };
   },
   components: {
     FoodTile
   },
   mounted() {
-    this.$root.$on('slide-foreward', () => {
+    this.$root.$on("slide-foreward", () => {
       this.items.unshift(this.items[this.items.length - 1]);
       this.items.pop();
       this.items.unshift(this.items[2]);
       this.items.splice(3, 1);
-    })
+    });
+
+    this.fetchData();
+  },
+  methods: {
+    fetchData() {
+      fetch(
+        "http://localhost:5000/bechtle-speiseplan/us-central1/read?date=" +
+          DateToUrlFriendlyString(new Date())
+      ).then(response => {
+        if (!response.ok || !response.json()) {
+          this.items = [
+            {
+              name: "404",
+              description: "Data not available",
+              price: "ERROR",
+              tags: []
+            }
+          ];
+        } else {
+          this.items = response.json();
+        }
+      });
+    }
   }
 };
 </script>
