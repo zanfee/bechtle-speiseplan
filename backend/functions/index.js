@@ -4,15 +4,6 @@ const DateToUrlFriendlyString = require("../../shared/Date").DateToUrlFriendlySt
 const admin = require('firebase-admin');
 admin.initializeApp();
 
-function MakeFoodObject(name, price, description, tags) {
-  return {
-    name,
-    price,
-    description,
-    tags,
-  }
-}
-
 exports.set = functions.https.onRequest((req, res) => {
   var speiseplan = {};
   speiseplan[DateToUrlFriendlyString(req.body.date)] = req.body.food;
