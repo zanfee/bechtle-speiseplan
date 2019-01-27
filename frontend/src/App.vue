@@ -39,8 +39,9 @@ export default {
     Footer
   },
   mounted() {
-    /* eslint-disable */ 
-    console.log("Bechtle Speiseplan ♥ v0.2.205 | Fix typo causing bug in swaping algorithm");
+    /* eslint-disable */
+
+    console.log("Bechtle Speiseplan ♥ v0.2.205 | Backend integration");
     window.addEventListener("keypress", e => {
       if (e.keyCode === KEYCODE_N && this.$store.state.shortcuts) {
         this.$store.commit("toggleTheme");

@@ -15,8 +15,17 @@
 
 <script>
 import FoodTile from "../components/Tiles/Food/FoodTile";
-const DateToUrlFriendlyString = require("../../../shared/Date.js")
-  .DateToUrlFriendlyString;
+
+function DateToUrlFriendlyString(date) {
+  return (
+    date.getDate() +
+    "_" +
+    date.getMonth() +
+    1 +
+    "_" +
+    date.getFullYear().toString()
+  );
+}
 
 export default {
   data() {
@@ -38,24 +47,53 @@ export default {
     this.fetchData();
   },
   methods: {
+    setErrorData(code) {
+      this.items = [
+        {
+          name: code,
+          description: "Data not available",
+          price: "ERROR",
+          tags: []
+        },
+        {
+          name: code,
+          description: "Data not available",
+          price: "ERROR",
+          tags: []
+        },
+        {
+          name: code,
+          description: "Data not available",
+          price: "ERROR",
+          tags: []
+        },
+        {
+          name: code,
+          description: "Data not available",
+          price: "ERROR",
+          tags: []
+        }
+      ];
+    },
     fetchData() {
       fetch(
-        "http://localhost:5000/bechtle-speiseplan/us-central1/read?date=" +
+        "https://us-central1-bechtle-speiseplan.cloudfunctions.net/read?date=" +
           DateToUrlFriendlyString(new Date())
-      ).then(response => {
-        if (!response.ok || !response.json()) {
-          this.items = [
-            {
-              name: "404",
-              description: "Data not available",
-              price: "ERROR",
-              tags: []
+      )
+        .then(response => {
+          response.json().then(json => {
+            /* eslint-disable */
+            console.log(json);
+            if (!response.ok || !json) {
+              this.setErrorData("404");
+            } else {
+              this.items = json;
             }
-          ];
-        } else {
-          this.items = response.json();
-        }
-      });
+          });
+        })
+        .catch(() => {
+          this.setErrorData("500");
+        });
     }
   }
 };

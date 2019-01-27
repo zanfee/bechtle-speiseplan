@@ -1,10 +1,13 @@
 const functions = require('firebase-functions');
-const DateToUrlFriendlyString = require("../../shared/Date").DateToUrlFriendlyString;
 
 const admin = require('firebase-admin');
 admin.initializeApp();
 
-exports.set = functions.https.onRequest((req, res) => {
+function DateToUrlFriendlyString(date) {
+  return date.getDate() + "_" + date.getMonth() + 1 + "_" + date.getFullYear().toString();
+}
+
+exports.write = functions.https.onRequest((req, res) => {
   var speiseplan = {};
   speiseplan[DateToUrlFriendlyString(req.body.date)] = req.body.food;
   return admin.database().ref("speiseplan").set(speiseplan).then(() => res.sendStatus(200));
