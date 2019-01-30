@@ -53,25 +53,25 @@ export default {
           name: code,
           description: "Data not available",
           price: "ERROR",
-          tags: []
+          tags: ["wellfit"]
         },
         {
           name: code,
           description: "Data not available",
           price: "ERROR",
-          tags: []
+          tags: ["renewable"]
         },
         {
           name: code,
           description: "Data not available",
           price: "ERROR",
-          tags: []
+          tags: ["vegetarian"]
         },
         {
           name: code,
           description: "Data not available",
           price: "ERROR",
-          tags: []
+          tags: ["vegan"]
         }
       ];
     },
