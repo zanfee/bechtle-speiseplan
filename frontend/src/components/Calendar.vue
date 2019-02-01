@@ -1,21 +1,28 @@
 <template>
-    <div class="calendar tool-container">
-        <div class="calendar tool-body">
+  <div class="calendar tool-container">
+    <TitleBar></TitleBar>
+    <div class="calendar tool-body">
 
-        </div>
     </div>
+  </div>
 </template>
+
+<script>
+import TitleBar from "./TitleBar"
+
+export default {
+  components: {
+    TitleBar
+  }
+}
+</script>
 
 <style scoped>
 .calendar {
     
 }
 
-
-</style>
-
-<script>
-export default {
-    
+.title-bar {
+  height: 12%;
 }
-</script>
+</style>

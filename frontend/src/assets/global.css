@@ -185,32 +185,6 @@ p {
   background-color: rgba(34, 140, 211, 0.5);
 }
 
-.tool-container {
-  display: inline-block;
-
-  width: 40%;
-  height: 75%;
-  min-width: 300px;
-  min-height: 400px;
-    
-  overflow: auto;
-  margin: auto;
-
-  background-color: #444444;
-
-  border-radius: 12px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-  overflow: hidden;
-}
-
-.tool-body {
-  background-color: #4a4a4a;
-  width: 100%;
-  height: 90%;
-  margin-top: 15%;
-  border-radius: 16px;
-}
-
 /* light theme */
   /* color */
 .light .price, .light .primary .name, .light .preposition, .light .secondary .description, .light a, .light h1, .light th, .light td {
