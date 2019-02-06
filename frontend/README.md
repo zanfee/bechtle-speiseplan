@@ -70,6 +70,17 @@ Blau:		1976d2
 
 ### Icons
 
+#### Menu
+Carouselansicht: view_carousel
+Tagesansicht:    view_day
+Wochenansicht:   view_week / view_column
+Admin Tool:      edit
+
+Theme ändern:    color_lens
+Sprache:         translate
+Geschwindigkeit: timer
+Carousel Slide: play / pause
+
 **Vegetarisch**
 
 https://www.flaticon.com/free-icon/cabbage_135699#term=vegetarian&page=1&position=41
