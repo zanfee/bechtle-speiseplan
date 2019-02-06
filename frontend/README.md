@@ -71,15 +71,17 @@ Blau:		1976d2
 ### Icons
 
 #### Menu
-Carouselansicht: view_carousel
-Tagesansicht:    view_day
-Wochenansicht:   view_week / view_column
-Admin Tool:      edit
+- Pages:           tv
 
-Theme ändern:    color_lens
-Sprache:         translate
-Geschwindigkeit: timer
-Carousel Slide: play / pause
+- Carouselansicht: view_carousel
+- Tagesansicht:    view_day
+- Wochenansicht:   view_week / view_column
+- Admin Tool:      edit
+
+- Theme ändern:    color_lens
+- Sprache:         translate
+- Geschwindigkeit: timer
+- Carousel Slide: play / pause
 
 **Vegetarisch**
 
