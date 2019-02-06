@@ -18,9 +18,5 @@ export default {
 </script>
 
 <style scoped>
-.title-bar {
-  height: 12%;
-}
-
 </style>
 

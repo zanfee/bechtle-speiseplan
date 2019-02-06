@@ -21,21 +21,16 @@ export default {
 <style scoped>
 .title-bar {
   display: flex;
-  align-items: center; 
+  align-items: center;
+  height: 12%;
 }
 
 div {
   vertical-align: middle;
 }
 
-h1 {
-  font-size: 2vw;
-  margin: 0;
-  text-align: center;
-}
-
-.fit h1 {
-  font-size: 2vw;
+h1, .fit h1 {
+  font-size: calc(0.4em + 1.5vw);
   margin: 0;
   text-align: center;
 }
@@ -45,7 +40,7 @@ h1 {
 }
 
 .title-bar-button {
-  margin-left: 16px;
-  margin-right: 16px;
+  margin-left: 1vw;
+  margin-right: 1vw;
 }
 </style>

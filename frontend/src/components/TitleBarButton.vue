@@ -13,5 +13,7 @@ export default {
 </script>
 
 <style scoped>
-
+.title-bar-button .material {
+  font-size: calc(16px + 2vw);
+}
 </style>

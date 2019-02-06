@@ -22,7 +22,7 @@ export default {
 }
 
 p, .fit p {
-  font-size: 3vw;
+  font-size: calc(0.5em + 2.5vw);
   margin: 0;
 }
 </style>

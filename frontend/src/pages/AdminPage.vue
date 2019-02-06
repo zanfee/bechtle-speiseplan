@@ -21,17 +21,15 @@ export default {
 
 <style>
 .tool-container {
-  display: inline-block;
-
-  width: 42vw;
-  height: 42vw;
+  width: 40vw;
+  height: 40vw;
   max-height: 80%;
     
   overflow: auto;
   margin: auto;
 
   border-radius: 16px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.4);
   overflow: hidden;
 }
 
@@ -39,6 +37,17 @@ export default {
   width: 100%;
   height: 88%;
   border-radius: 16px;
+}
+
+@media screen and (max-aspect-ratio: 9/12) {
+  .tool {
+    flex-direction: column-reverse;
+  }
+
+  .tool-container {
+    width: 100%;
+    height: 45%;
+  }
 }
 </style>
 
