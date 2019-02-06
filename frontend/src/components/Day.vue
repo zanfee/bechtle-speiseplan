@@ -14,7 +14,7 @@ export default {
 
 <style scoped>
 .day {
-  height: 20%;
+  height: 16%;
   width: 14.286%;
   display: inline-flex;
   justify-content: center;

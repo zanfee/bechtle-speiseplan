@@ -1,5 +1,5 @@
 <template>
-  <nav :class="{ 'nav-open': $store.state.isSidebarOpen }" id="nav-body">
+  <nav :class="{ 'nav-open': $store.state.isMenuOpen }" id="nav-body">
     <ul class="nav-admin unselectable">
       <SidebarList title="Bearbeiten" @click.native="$store.commit('setPage', 'admin')"></SidebarList>
     </ul>
@@ -19,9 +19,8 @@
       </SidebarList>
 
       <SidebarList title="Einstellungen">
-        <SidebarListItem
-          @click.native="$store.commit('toggleTheme');"
-        >{{ this.$store.state.themeName }}</SidebarListItem>
+        <SidebarListItem @click.native="$store.commit('toggleTheme');">{{ this.$store.state.themeName }}</SidebarListItem>
+        <SidebarListItem @click.native="$store.commit('toggleMenuType');">{{ this.$store.state.menuType }}</SidebarListItem>
         <SidebarListItem>Language</SidebarListItem>
         <SidebarListItem>Geschwindigkeit</SidebarListItem>
         <SidebarListBox command="toggleFit">Responsive</SidebarListBox>

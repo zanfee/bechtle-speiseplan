@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div class="nav-header">
-      <BurgerButton @click.native="$store.commit('toggleSidebar')"/>
+      <BurgerButton @click.native="$store.commit('toggleMenu')"/>
       <h5 class="pagename">
         <strong><strong>Bechtle</strong></strong> Speiseplan
       </h5>
@@ -10,13 +10,14 @@
       <Progressbar :triggerCarousel="$store.state.slide" style="margin-top: 58px;"/>
     </div>
     <Sidebar/>
+    <MenuRadial/>
 
     <div
-      v-on:click="$store.commit('closeSidebar')"
+      v-on:click="$store.commit('closeMenu')"
       class="nav-cover"
       :class="{
-      'shown': $store.state.isSidebarOpen,
-      'hidden': !$store.state.isSidebarOpen
+      'shown': $store.state.isMenuOpen,
+      'hidden': !$store.state.isMenuOpen
     }"
     />
   </nav>
@@ -87,6 +88,7 @@ export default {
   display: inline-block;
   vertical-align: middle;
   white-space: nowrap;
+  margin-left: 60px;
 }
 
 #clock {

@@ -2,6 +2,11 @@
   <div id="calendar" class="tool-container">
     <TitleBar></TitleBar>
     <div class="calendar tool-body">
+      
+      <!-- <Day v-for="day in days" :day="day" :key="day"></Day> -->
+      <div class="weekdays" v-for="weekday in weekdays" :key="weekday">
+        <p>{{ weekday }}</p>
+      </div>
       <Day day="1"></Day>
       <Day day="2"></Day>
       <Day day="3"></Day>
@@ -51,7 +56,7 @@ export default {
     return {
         today: moment(),
         dateContext: moment(),
-        days: ['M', 'T', 'W', 'T', 'F', 'S', 'S']
+        weekdays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
     }
   },
   mounted() {
@@ -98,4 +103,15 @@ export default {
 </script>
 
 <style scoped>
+.weekdays {
+  display: inline-block;
+  width: 14.286%;
+  text-align: center;
+}
+
+.weekdays p {
+  font-weight: bold;
+  font-size: calc(0.4em + 1vw);
+  color: rgb(27, 155, 240);
+}
 </style>

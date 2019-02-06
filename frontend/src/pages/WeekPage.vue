@@ -8,42 +8,22 @@
       <th>Freitag</th>
     </tr>
     <tr>
-      <td>Jill</td>
-      <td>94</td>
+      <td>Here</td>
+      <td>is</td>
     </tr>
     <tr>
-      <td>Eve</td>
-      <td>Jackson</td>
+      <td>some</td>
+      <td>random</td>
     </tr>
     <tr>
-      <td>Eve</td>
-      <td>Jackson</td>
+      <td>data</td>
+      <td>:)</td>
     </tr>
     <tr>
-      <td>Eve</td>
-      <td>Jackson</td>
+      <td>WIP</td>
+      <td>...</td>
     </tr>
   </table>
-  <!-- <div>
-  <div class="block station">
-    <h1 class="heading">Station</h1>
-  </div>
-  <div class="block weekday">
-    <h1 class="heading">Montag</h1>
-  </div>
-  <div class="block weekday">
-    <h1 class="heading">Dienstag</h1>
-  </div>
-  <div class="block weekday">
-    <h1 class="heading">Mittwoch</h1>
-  </div>
-  <div class="block weekday">
-    <h1 class="heading">Donnerstag</h1>
-  </div>
-  <div class="block weekday">
-    <h1 class="heading">Freitag</h1>
-  </div>
-  </div>-->
 </template>
 
 <script>
@@ -53,7 +33,6 @@ export default {};
 <style>
 table {
   width: 100%;
-  /* table; */
 }
 
 th {

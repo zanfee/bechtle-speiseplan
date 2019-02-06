@@ -1,6 +1,6 @@
 <template>
   <div
-    @click.native="$store.commit('closeSidebar')"
+    @click.native="$store.commit('closeMenu')"
     class="site"
     :class="{ 'light': $store.state.theme === 1, 'dark': $store.state.theme === 2, 'fit': $store.state.fit }"
   >
@@ -47,7 +47,7 @@ export default {
         this.$store.commit("toggleTheme");
       }
       if (e.keyCode === KEYCODE_M && this.$store.state.shortcuts) {
-        this.$store.commit("toggleSidebar");
+        this.$store.commit("toggleMenu");
       }
     });
   }

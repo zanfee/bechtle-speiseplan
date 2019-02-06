@@ -15,7 +15,7 @@ var swiper = {
     }, false);
     detectionZone.addEventListener('touchend', function (event) {
       swiper.touchEndX = event.changedTouches[0].pageX;
-      if (swiper.touchStartX < document.body.clientWidth / 8 || store.state.isSidebarOpen) {
+      if (swiper.touchStartX < document.body.clientWidth / 8 || store.state.isMenuOpen) {
         swiper.handleSwipeGesture();
       }    
     }, false);
@@ -42,8 +42,8 @@ var swiper = {
     ret.direction = direction
     ret.movedPixels = movedPixels
     swiper.swiperCallback(ret)
-    if (direction == "right" ^ store.state.isSidebarOpen) {
-      store.commit('toggleSidebar');
+    if (direction == "right" ^ store.state.isMenuOpen) {
+      store.commit('toggleMenu');
     }
   }
 }

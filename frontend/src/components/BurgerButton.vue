@@ -15,6 +15,7 @@ export default {};
   width: 60px;
   text-align: center;
   margin: 0;
+  position: absolute;
 }
 
 .burger-button:hover {
