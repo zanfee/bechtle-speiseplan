@@ -1,5 +1,5 @@
 <template>
-  <div class="formular tool-container">
+  <div id="formular" class="tool-container">
     <TitleBar></TitleBar>
     <div class="calendar tool-body">
 
@@ -18,10 +18,6 @@ export default {
 </script>
 
 <style scoped>
-.formular {
-
-}
-
 .title-bar {
   height: 12%;
 }

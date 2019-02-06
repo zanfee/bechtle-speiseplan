@@ -1,10 +1,10 @@
 <template>
   <div class="title-bar">
-    <TitleBarButton iconCode="arrow_left"></TitleBarButton>
-    <div class="title-textbox">
+    <TitleBarButton @click.native="this.$parent.prev" iconCode="arrow_left"></TitleBarButton>
+    <div class="calendar-title">
       <h1>Februar 2019</h1>
     </div>
-    <TitleBarButton iconCode="arrow_right"></TitleBarButton>
+    <TitleBarButton @click.native="this.$parent.next" iconCode="arrow_right"></TitleBarButton>
   </div>
 </template>
 
@@ -40,7 +40,7 @@ h1 {
   text-align: center;
 }
 
-.title-textbox {
+.calendar-title {
   flex-grow: 1;
 }
 

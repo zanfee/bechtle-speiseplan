@@ -23,48 +23,32 @@ export default {
 .tool-container {
   display: inline-block;
 
-  width: 40%;
-  height: 75%;
-  min-width: 300px;
-  min-height: 400px;
+  width: 42vw;
+  height: 42vw;
+  max-height: 80%;
     
   overflow: auto;
   margin: auto;
 
-  background-color: #444444;
-
   border-radius: 16px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.4);
   overflow: hidden;
 }
 
 .tool-body {
-  background-color: #4a4a4a;
   width: 100%;
-  height: 90%;
+  height: 88%;
   border-radius: 16px;
 }
 </style>
 
 <style scoped>
-.page {
-  
-}
-
 .tool {
   display: flex;
   position: relative;
-  width: calc(60px + 80%);
+  width: 90%;
   margin: auto;
   height: calc(89.25vh - 60px);
-}
-
-.calendar {
-  vertical-align: middle;
-}
-
-.formular {
-
 }
 </style>
 

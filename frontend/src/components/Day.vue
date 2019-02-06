@@ -1,12 +1,28 @@
 <template>
-  <div>
-    <p>Hallo</p>
+  <div class="day">
+    <p class="unselectable">{{ day }}</p>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    day: Number
+  }
+};
 </script>
 
 <style scoped>
+.day {
+  height: 20%;
+  width: 14.286%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p, .fit p {
+  font-size: 3vw;
+  margin: 0;
+}
 </style>

@@ -170,19 +170,8 @@ p {
   }
 }
 
-/*
-::-webkit-scrollbar .dark {
-  background-color: rgba(127, 127, 127, 0.1);
-  width: 12px;
-}
-
-::-webkit-scrollbar-thumb .dark {
-  background-color: rgba(127, 127, 127, 0.8);
-}
-*/
-
 ::selection {
-  background-color: rgba(34, 140, 211, 0.5);
+  background-color: rgba(34, 140, 211, 0.4);
 }
 
 /* light theme */
@@ -190,20 +179,23 @@ p {
 .light .price, .light .primary .name, .light .preposition, .light .secondary .description, .light a, .light h1, .light th, .light td {
   color: #3c3c3c;
 }
-.light .pointer {
+.light .calendar-title * {
   color: #505050;
 }
-.light h5, .light h6, .light .secondary .name, .light .primary .description, .light .p, .light .material, .light .tagName {
+.light h5, .light h6, .light .secondary .name, .light .primary .description, .light p, .light .material {
   color: #757575;
 }
   /* background-color */
 .light body {
   background-color: #ffffff;
 }
-.light #nav-body, .light #modules, .light #settings {
+.light #nav-body, .light #modules, .light #settings, .light .tool-body {
   background-color: #f5f5f5;
 }
-.light .containerHeader, .light .row {
+.light .tool-container {
+  background-color: #fcfcfc;
+}
+.light .row {
   background-color: #bdbdbd;
 }
 .light div.bar {
@@ -230,10 +222,13 @@ p {
 .dark .price, .dark .preposition, .dark .secondary .description, .dark a, .dark h1, .dark th, .dark td {
   color: #ffffff;
 }
+.dark .calendar-title * {
+  color: #f5f5f5;
+}
 .dark h5, .dark h6, .dark .secondary .name, .dark .primary .description, .dark p {
   color: #bdbdbd;
 }
-.dark .pointer, .dark .material {
+.dark .material {
   color: #757575;
 }
 .dark .primary .name {
@@ -243,11 +238,14 @@ p {
 .dark div.bar {
   background-color: #bdbdbd;
 }
-.dark .containerHeader, .dark .row1 {
-  background-color: #757575;
-}
 .dark #nav-body, .dark #modules, .dark #settings {
   background-color: #505050;
+}
+.dark .tool-body {
+  background-color: #4a4a4a;
+}
+.dark .tool-container {
+  background-color: #444444;
 }
 .dark.site {
   background-color: #3c3c3c;
