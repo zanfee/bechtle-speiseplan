@@ -1,6 +1,7 @@
 <template>
   <nav>
     <div class="nav-header">
+      <MenuRadial/>
       <BurgerButton @click.native="$store.commit('toggleMenu')"/>
       <h5 class="pagename">
         <strong><strong>Bechtle</strong></strong> Speiseplan
@@ -10,15 +11,14 @@
       <Progressbar :triggerCarousel="$store.state.slide" style="margin-top: 58px;"/>
     </div>
     <Sidebar/>
-    <MenuRadial/>
 
     <div
-      v-on:click="$store.commit('closeMenu')"
+      @click="$store.commit('closeMenu')"
       class="nav-cover"
       :class="{
-      'shown': $store.state.isMenuOpen,
-      'hidden': !$store.state.isMenuOpen
-    }"
+        'shown': $store.state.isMenuOpen,
+        'hidden': !$store.state.isMenuOpen
+      }"
     />
   </nav>
 </template>
@@ -27,13 +27,16 @@
 import BurgerButton from "../BurgerButton";
 
 import Sidebar from "./Sidebar";
+import MenuRadial from "./MenuRadial";
+
 import Progressbar from "../Progressbar";
 
 export default {
   components: {
     Progressbar,
     BurgerButton,
-    Sidebar
+    Sidebar,
+    MenuRadial
   },
   data() {
     return {
