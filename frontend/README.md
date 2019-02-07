@@ -72,6 +72,8 @@ Blau:		1976d2
 
 #### Menu
 - Pages:           tv
+- Einstellungen:   settings
+- Pagesettings:    extension
 
 - Carouselansicht: view_carousel
 - Tagesansicht:    view_day
@@ -81,7 +83,7 @@ Blau:		1976d2
 - Theme ändern:    color_lens
 - Sprache:         translate
 - Geschwindigkeit: timer
-- Carousel Slide: play / pause
+- Carousel Slide:  play / pause
 
 **Vegetarisch**
 
