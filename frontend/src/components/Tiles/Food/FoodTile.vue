@@ -1,5 +1,5 @@
 <template>
-  <div :class="getPosition" @slide-foreward="console.log('imAlive')">
+  <div :class="getPosition">
     <h1 class="price">{{ price }}</h1>
     <div class="type" :class="getType()">
       <h2 class="name">{{ name }}</h2>
@@ -58,9 +58,6 @@ export default {
       }
 
       return "notype";
-    },
-    swapTiles() {
-      this.display === this.tileLength - 1 ? this.display = 0 : this.display++;
     }
   }
 };

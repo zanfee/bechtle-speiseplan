@@ -1,6 +1,6 @@
 <template>
-  <div class="burger-button" :class="{ 'open': $store.state.isMenuOpen, 'circle': $store.state.menuType === 'circle' }">
-    <span class="material unselectable">menu</span>
+  <div class="burger-button unselectable" :class="{ 'open': $store.state.isMenuOpen, 'circle': $store.state.menuType === 'circle' }">
+    <span class="material">menu</span>
   </div>
 </template>
 
@@ -14,7 +14,9 @@ export default {};
   text-align: center;
   margin: 0;
   position: absolute;
-  z-index: 121;
+  z-index: 122;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-bottom-right-radius 1s cubic-bezier(0.5, -0.75, 0.05, 1), 1s z-index cubic-bezier(0.5, -0.75, 0.05, 1), 1s box-shadow cubic-bezier(0.5, -0.75, 0.05, 1);
 }
 
 .material {
@@ -27,17 +29,13 @@ export default {};
   outline: 0px;
 }
 
-.circle {
-  transition: border-bottom-right-radius 1s cubic-bezier(0.5, -0.75, 0.05, 1), 1s z-index cubic-bezier(0.5, -0.75, 0.05, 1), 1s box-shadow cubic-bezier(0.5, -0.75, 0.05, 1);
-}
-
 .open.circle {
-  z-index: 141;
+  z-index: 142;
   border-bottom-right-radius: 100%;
   box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
 }
 
-.circle .material {
+.material {
   transition: margin 1s cubic-bezier(0.5, -0.75, 0.05, 1), font-size 1s cubic-bezier(0.5, -0.75, 0.05, 1), line-height 1s cubic-bezier(0.5, -0.75, 0.05, 1);
 }
 

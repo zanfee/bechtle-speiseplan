@@ -27,11 +27,12 @@ export default {
       this.progress += this.velocity;
       if (this.progress > 120) {
         if (this.triggerCarousel) {
-          this.$root.$emit("slide-foreward");
+          this.$root.$emit("progress-full");
         }
         this.velocity = -3;
       } else if (this.progress < -200) {
         this.velocity = 0.7;
+        this.$root.$emit("progress-empty");
       }
       window.requestAnimationFrame(this.move);
     }
@@ -47,6 +48,6 @@ export default {
   height: 2px;
   width: 100%;
   position: absolute;
-  z-index: 122;
+  z-index: 123;
 }
 </style>

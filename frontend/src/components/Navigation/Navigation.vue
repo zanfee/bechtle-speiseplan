@@ -3,13 +3,15 @@
     <div class="nav-header">
       <MenuRadial/>
       <BurgerButton @click.native="$store.commit('toggleMenu')"/>
-      <h5 class="pagename">
-        <strong><strong>Bechtle</strong></strong> Speiseplan
-      </h5>
       <h6 v-html="clock" id="clock"></h6>
-      <h6 v-html="date" id="date"></h6>
-      <Progressbar :triggerCarousel="$store.state.slide" style="margin-top: 58px;"/>
+      <div class="header-text">
+        <h5 class="pagename">
+          <strong><strong>Bechtle</strong></strong> Speiseplan
+        </h5>
+        <h6 v-html="date" id="date"></h6>
+      </div>
     </div>
+    <Progressbar :triggerCarousel="$store.state.slide" style="margin-top: 58px;"/>
     <Sidebar/>
 
     <div
@@ -67,13 +69,20 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .nav-header {
-  line-height: 58px;
+  
   width: 100%;
   position: fixed;
   z-index: 4;
   background-color: rgba(255, 255, 255, 0.7);
+  
+  align-items: center;
+}
+
+.header-text {
+  line-height: 58px;
+  margin-left: 60px;
   display: flex;
 }
 
@@ -81,7 +90,7 @@ export default {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.2);
   transition: 0.15s;
   z-index: 2;
 }
@@ -91,15 +100,15 @@ export default {
   display: inline-block;
   vertical-align: middle;
   white-space: nowrap;
-  margin-left: 60px;
 }
 
 #clock {
-  margin-left: auto;
   font-weight: 700;
   display: inline-block;
+  position: absolute;
   vertical-align: middle;
   text-align: center;
+  margin: auto;
 }
 
 @media only screen and (max-width: 1000px) {

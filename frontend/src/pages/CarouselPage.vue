@@ -37,7 +37,7 @@ export default {
     FoodTile
   },
   mounted() {
-    this.$root.$on("slide-foreward", () => {
+    this.$root.$on("progress-full", () => {
       this.items.unshift(this.items[this.items.length - 1]);
       this.items.pop();
       this.items.unshift(this.items[2]);

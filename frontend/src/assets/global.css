@@ -176,10 +176,10 @@ p {
 
 /* light theme */
   /* color */
-.light .price, .light .primary .name, .light .preposition, .light .secondary .description, .light a, .light h1, .light th, .light td {
+.light .price, .light .primary .name, .light .preposition, .light .secondary .description, .light a, .light h1, .light th, .light td, .light .menu-radial .material.page-settings {
   color: #3c3c3c;
 }
-.light .calendar-title * {
+.light .calendar-title h1, .light .menu-radial .material.settings, .light .menu-radial .material.pages {
   color: #505050;
 }
 .light h5, .light h6, .light .secondary .name, .light .primary .description, .light p, .light .material {
@@ -189,14 +189,17 @@ p {
 .light body, .light .burger-button, .light.site {
   background-color: #ffffff;
 }
-.light #nav-body, .light #modules, .light #settings, .light .tool-body, .light .menu-radial {
+.light #nav-body, .light #modules, .light #settings, .light .tool-body, .light .burger-button:hover {
   background-color: #f5f5f5;
 }
-.light .burger-button.open {
-  background-color: #f7f7f7;
+.light .burger-button.open:not(.circle) {
+  background-color: #F0F0F0;
 }
-.light .tool-container, .light .burger-button:hover {
+.light .tool-container {
   background-color: #fcfcfc;
+}
+.light .menu-radial, .light .open.burger-button:hover {
+  background-color: #e1e1e1;
 }
 .light .row {
   background-color: #bdbdbd;
@@ -222,10 +225,10 @@ p {
 .dark .price, .dark .preposition, .dark .secondary .description, .dark a, .dark h1, .dark th, .dark td {
   color: #ffffff;
 }
-.dark .calendar-title * {
+.dark .calendar-title h1, .dark .menu-radial .material.page-settings {
   color: #f5f5f5;
 }
-.dark h5, .dark h6, .dark .secondary .name, .dark .primary .description, .dark p {
+.dark h5, .dark h6, .dark .secondary .name, .dark .primary .description, .dark p, .dark .menu-radial .material.settings, .dark .menu-radial .material.pages {
   color: #bdbdbd;
 }
 .dark .material {
@@ -235,7 +238,7 @@ p {
   color: #3c3c3c;
 }
   /* background-color */
-.dark .burger-button.open {
+.dark .burger-button.open:not(.circle) {
   background-color: #3b3b3b;
 }
 .dark.site, .dark .burger-button {
@@ -247,14 +250,14 @@ p {
 .dark .tool-body {
   background-color: #4a4a4a;
 }
-.dark #nav-body, .dark #modules, .dark #settings, .dark .menu-radial {
+.dark #nav-body, .dark #modules, .dark #settings, .dark .menu-radial, .dark .open.burger-button:hover {
   background-color: #505050;
 }
 .dark div.bar {
   background-color: #bdbdbd;
 }
 .dark div.footer {
-  background-color: rgba(86, 86, 86, 0.7);
+  background-color: rgba(86, 86, 86, 0.8);
 }
 .dark .nav-header {
   background-color: rgba(60, 60, 60, 0.8);
