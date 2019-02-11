@@ -2,7 +2,7 @@
   <div class="menu-radial unselectable" :class="{ 'open': $store.state.isMenuOpen, 'circle': $store.state.menuType === 'circle' }">
     <span class="material pages">tv</span>
     <div class="menu-center"> 
-      <MenuOption iconCode="extension" :name="pagename" size="42px"></MenuOption>
+      <MenuOption class="page-settings" iconCode="extension" :name="pagename" size="42px"></MenuOption>
     </div>
     <span class="material settings">settings</span>
   </div>
@@ -74,9 +74,8 @@ export default {
 .open .menu-center {
   width: 100%;
   height: 100%;
-  clip-path: polygon(0 0%, 100% 0%, 0% 100%);
+  clip-path: polygon(0 0%, 100% 55%, 55% 100%);
 }
-
 
 :not(.open) .menu-center {
   animation-name: collapse;
@@ -135,9 +134,11 @@ export default {
   top: 5%;
 }
 
-.material.page-settings {
-  left: 48%;
-  top: 43%;
+.page-settings {
+  left: 46%;
+  top: 38%;
+  height: 50px;
+  /* transform: rotate(-45deg); */
 }
 
 .material.settings {

@@ -10,7 +10,7 @@ export default {
   props: {
     iconCode: String,
     name: String,
-    size: Number
+    size: String
   },
   computed: {
     style() {
@@ -22,20 +22,20 @@ export default {
 
 <style scoped>
 .option-element {
-  display: flex;
-  width: 50px;
-  /* line-height: unset; */
-
+  width: 42px;
+  position: relative;
 }
 
 .material {
-  position: absolute;
   z-index: 141;
+  position: absolute;
 }
 
 p, .fit p {
-  font-size: .8em;
+  font-size: .6em;
   margin: 0;
-  /* line-height: unset; */
+  background-color: rgba(60, 60, 60, 0.8);
+  text-align: center;
+  position: absolute;
 }
 </style>
