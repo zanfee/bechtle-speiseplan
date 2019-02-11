@@ -1,12 +1,15 @@
 <template>
   <div class="menu-radial unselectable" :class="{ 'open': $store.state.isMenuOpen, 'circle': $store.state.menuType === 'circle' }">
-    <span class="material pages">tv</span>
+    <!-- <div style="width: 100%; height: 100%; clip-path: polygon(0 0%, 100% 10%, 100% 40%); position: absolute; background-color: rgba(255,0,0,0.5)"></div>
+    <div style="width: 100%; height: 100%; clip-path: polygon(0 0%, 10% 100%, 42% 100%); position: absolute; background-color: rgba(255,0,0,0.5)"></div> -->
     
-    <div class="menu-center"> 
+    <MenuOption class="pages" iconCode="tv" name="Pages" size="32"></MenuOption>
+    <div class="menu-center">
+      <!-- <div style="width: 100%; height: 100%; clip-path: polygon(0 0%, 100% 75%, 75% 100%); position: absolute; background-color: rgba(255,0,0,0.5)"></div> -->
       <MenuOption class="page-settings" iconCode="view_carousel" :name="pagename" size="32"></MenuOption>
     </div>
-    <!-- <div style="width: 100%; height: 100%; clip-path: polygon(0 0%, 100% 80%, 80% 100%); position: absolute; background-color: rgba(255,0,0,0.5)"></div> -->
-    <span class="material settings">settings</span>
+    
+    <MenuOption class="settings" iconCode="settings" name="Settings" size="32"></MenuOption>
   </div>
 </template>
 
@@ -131,20 +134,25 @@ export default {
   z-index: 141;
 }
 
-.material.pages {
-  right: 7%;
-  top: 5%;
+.pages {
+  left: 50%;
+  top: 16%;
+  transform: rotate(-75deg);
+  transform-origin: 50% 0;
 }
 
 .page-settings {
-  left: 40%;
-  top: 43%;
+  left: 32%;
+  top: 47%;
   height: 50px;
-  transform: rotate(315deg);
+  transform: rotate(-45deg);
+  transform-origin: 50% 0;
 }
 
-.material.settings {
-  left: 7%;
-  bottom: 5%;
+.settings {
+  left: 1%;
+  top: 66%;
+  transform: rotate(-15deg);
+  transform-origin: 50% 0;
 }
 </style>

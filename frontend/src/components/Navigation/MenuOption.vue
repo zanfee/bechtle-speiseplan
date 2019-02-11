@@ -17,15 +17,20 @@ export default {
 
 <style scoped>
 .option-element {
-  position: relative;
-  align-items: center;
+  position: absolute;
   text-align: center;
+  opacity: 0;
+  transition: 0.3s opacity;
+  transition-delay: 0.25s;
 }
 
-/* .material {
-} */
+.open .option-element {
+  opacity: 1;
+}
 
 p, .fit p {
   margin: 0;
+  hyphens: auto;
+  word-wrap: break-word;
 }
 </style>
