@@ -77,9 +77,6 @@ export default {
   position: fixed;
   z-index: 4;
   background-color: rgba(255, 255, 255, 0.7);
-  
-  align-items: center;
-  text-align: center;
 }
 
 .header-text {
@@ -108,6 +105,7 @@ export default {
 .clock-box {
   width: 100%;
   position: absolute;
+  text-align: center;
 }
 
 #clock {

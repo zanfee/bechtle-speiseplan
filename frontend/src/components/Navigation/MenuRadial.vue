@@ -1,9 +1,11 @@
 <template>
   <div class="menu-radial unselectable" :class="{ 'open': $store.state.isMenuOpen, 'circle': $store.state.menuType === 'circle' }">
     <span class="material pages">tv</span>
+    
     <div class="menu-center"> 
-      <MenuOption class="page-settings" iconCode="extension" :name="pagename" size="42px"></MenuOption>
+      <MenuOption class="page-settings" iconCode="view_carousel" :name="pagename" size="32"></MenuOption>
     </div>
+    <!-- <div style="width: 100%; height: 100%; clip-path: polygon(0 0%, 100% 80%, 80% 100%); position: absolute; background-color: rgba(255,0,0,0.5)"></div> -->
     <span class="material settings">settings</span>
   </div>
 </template>
@@ -135,10 +137,10 @@ export default {
 }
 
 .page-settings {
-  left: 46%;
-  top: 38%;
+  left: 40%;
+  top: 43%;
   height: 50px;
-  /* transform: rotate(-45deg); */
+  transform: rotate(315deg);
 }
 
 .material.settings {
