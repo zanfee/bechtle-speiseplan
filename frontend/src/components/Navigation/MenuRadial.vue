@@ -1,15 +1,16 @@
 <template>
   <div class="menu-radial unselectable" :class="{ 'open': $store.state.isMenuOpen, 'circle': $store.state.menuType === 'circle' }">
-    <!-- <div style="width: 100%; height: 100%; clip-path: polygon(0 0%, 100% 10%, 100% 40%); position: absolute; background-color: rgba(255,0,0,0.5)"></div>
-    <div style="width: 100%; height: 100%; clip-path: polygon(0 0%, 10% 100%, 42% 100%); position: absolute; background-color: rgba(255,0,0,0.5)"></div> -->
-    
-    <MenuOption class="pages" iconCode="tv" name="Pages" size="32"></MenuOption>
-    <div class="menu-center">
-      <!-- <div style="width: 100%; height: 100%; clip-path: polygon(0 0%, 100% 75%, 75% 100%); position: absolute; background-color: rgba(255,0,0,0.5)"></div> -->
-      <MenuOption class="page-settings" iconCode="view_carousel" :name="pagename" size="32"></MenuOption>
+    <div @click="openSettings('pages')" class="menu-item menu-right">
+      <MenuOption class="pages" iconCode="tv" name="Pages" size="32"></MenuOption>
     </div>
-    
-    <MenuOption class="settings" iconCode="settings" name="Settings" size="32"></MenuOption>
+    <div class="center-item">
+      <div @click="openSettings('page-settings')" class="menu-item menu-center">
+        <MenuOption class="page-settings" iconCode="view_carousel" :name="this.$store.state.currentPage + ' Settings'" size="32"></MenuOption>
+      </div>
+    </div>
+    <div @click="openSettings('settings')" class="menu-item menu-left">
+      <MenuOption class="settings" iconCode="settings" name="Settings" size="32"></MenuOption>
+    </div>
   </div>
 </template>
 
@@ -21,7 +22,7 @@ export default {
     MenuOption
   },
   mounted() {
-    let el = document.getElementsByClassName("menu-center")[0];
+    let el = document.getElementsByClassName("center-item")[0];
     this.$root.$on("progress-full", () => {
       el.classList.remove("progress-100");
       el.classList.add("progress-0");
@@ -31,9 +32,9 @@ export default {
       el.classList.add("progress-100");
     })
   },
-  computed: {
-    pagename() {
-      return this.$store.state.currentPage + " Settings";
+  methods: {
+    openSettings(tab) {
+      this.$store.commit("openSettings", tab);
     }
   }
 }
@@ -48,6 +49,7 @@ export default {
   height: 0px;
   z-index: 120;
   box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+  cursor: pointer;
 }
 
 .menu-radial.open.circle {
@@ -56,14 +58,13 @@ export default {
   z-index: 140;
 }
 
-.menu-center {
+.center-item {
   position: absolute;
   width: 0;
   height: 0;
   clip-path: polygon(0 0%, 100% 80%, 80% 100%);
   background-color: #008451;
   border-bottom-right-radius: 100%;
-  
 }
 
 .progress-0 {
@@ -76,22 +77,51 @@ export default {
   transition: 18s background-color;
 }
 
-.open .menu-center {
+.open .center-item {
   width: 100%;
   height: 100%;
   clip-path: polygon(0 0%, 100% 55%, 55% 100%);
 }
 
-:not(.open) .menu-center {
+:not(.open) .center-item {
   animation-name: collapse;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
 }
 
-.open .menu-center {
+.open .center-item {
   animation-name: expand;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
+}
+
+.menu-item {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-bottom-right-radius: 100%;
+  transition: width 1s, height 1s;
+}
+
+.open .menu-item {
+  width: 100%;
+  height: 100%;
+}
+
+.open .menu-right {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 55%);
+}
+
+.open .menu-left {
+  clip-path: polygon(0% 0%, 0% 100%, 55% 100%);
+}
+
+.dark .menu-item:hover {
+  background-color: #3c3c3ccc;
+}
+
+.light .menu-item:hover {
+  background-color: #ffffffcc;
 }
 
 @keyframes expand {
@@ -138,21 +168,21 @@ export default {
   left: 50%;
   top: 16%;
   transform: rotate(-75deg);
-  transform-origin: 50% 0;
+  transform-origin: 50% 0%;
 }
 
 .page-settings {
-  left: 32%;
-  top: 47%;
+  left: 51%;
+  top: 51%;
   height: 50px;
   transform: rotate(-45deg);
-  transform-origin: 50% 0;
+  transform-origin: 0% 90%;
 }
 
 .settings {
   left: 1%;
   top: 66%;
   transform: rotate(-15deg);
-  transform-origin: 50% 0;
+  transform-origin: 50% 0%;
 }
 </style>

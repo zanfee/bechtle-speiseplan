@@ -24,7 +24,7 @@ export default {
   transition-delay: 0.25s;
 }
 
-.open .option-element {
+.open.circle .option-element {
   opacity: 1;
 }
 

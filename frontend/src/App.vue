@@ -6,10 +6,12 @@
   >
     <Navigation/>
 
+    <Settings/>
+
     <AdminPage v-if="$store.state.currentPage === 'admin'"/>
     <CarouselPage v-if="$store.state.currentPage === 'carousel'"/>
-    <WeekPage v-if="$store.state.currentPage === 'week'"/>
     <DayPage v-if="$store.state.currentPage === 'day'"/>
+    <WeekPage v-if="$store.state.currentPage === 'week'"/>
 
     <Footer/>
   </div>
@@ -24,6 +26,8 @@ import CarouselPage from "./pages/CarouselPage";
 import DayPage from "./pages/DayPage";
 import WeekPage from "./pages/WeekPage";
 
+import Settings from "./components/Navigation/Settings";
+
 import Footer from "./components/Footer";
 
 var KEYCODE_M = 109;
@@ -36,12 +40,13 @@ export default {
     CarouselPage,
     DayPage,
     WeekPage,
+    Settings,
     Footer
   },
   mounted() {
     /* eslint-disable */
 
-    console.log("Bechtle Speiseplan ♥ v0.2.205 | Backend integration");
+    console.log("Bechtle Speiseplan ♥ v0.2.233 | Implement settings container");
     window.addEventListener("keypress", e => {
       if (e.keyCode === KEYCODE_N && this.$store.state.shortcuts) {
         this.$store.commit("toggleTheme");
