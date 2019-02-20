@@ -1,13 +1,13 @@
 <template>
   <nav :class="{ 'nav-open': $store.state.isMenuOpen }" id="nav-body">
     <ul class="nav-admin unselectable">
-      <SidebarList title="Bearbeiten" @click.native="$store.commit('setPage', 'admin')"></SidebarList>
+      <SidebarList title="Bearbeiten" @click.native="$router.push('/edit')"></SidebarList>
     </ul>
 
     <ul class="nav-view unselectable">
-      <SidebarListItem @click.native="$store.commit('setPage', 'carousel')">Karussell Ansicht</SidebarListItem>
-      <SidebarListItem @click.native="$store.commit('setPage', 'day')">Tagesübersicht</SidebarListItem>
-      <SidebarListItem @click.native="$store.commit('setPage', 'week')">Wochenübersicht</SidebarListItem>
+      <SidebarListItem @click.native="$router.push('/carousel')">Karussell Ansicht</SidebarListItem>
+      <SidebarListItem @click.native="$router.push('/day')">Tagesübersicht</SidebarListItem>
+      <SidebarListItem @click.native="$router.push('/week')">Wochenübersicht</SidebarListItem>
     </ul>
 
     <ul class="nav-base unselectable">
@@ -44,6 +44,11 @@ export default {
   },
   mounted() {
     this.$store.commit("loadThemeName");
+  },
+  methods: {
+    openUrl(url) {
+      this.$router.push(url)
+    }
   }
 };
 </script>

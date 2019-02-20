@@ -5,7 +5,6 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    currentPage: localStorage.getItem("page") == null ? "carousel" : localStorage.getItem("page"),
     settingsPage: "none",
     menuType: localStorage.getItem("menu-type") == null ? "sidebar" : localStorage.getItem("menu-type"),
     isMenuOpen: false,
@@ -17,7 +16,6 @@ export default new Vuex.Store({
   },
   mutations: {
     setPage(state, payload) {
-      state.currentPage = payload;
       localStorage.setItem("page", payload);
     },
     toggleMenuType(state) {

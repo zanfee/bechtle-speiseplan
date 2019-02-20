@@ -5,13 +5,8 @@
     :class="{ 'light': $store.state.theme === 1, 'dark': $store.state.theme === 2, 'fit': $store.state.fit }"
   >
     <Navigation/>
-
-    <Settings/>
-
-    <AdminPage v-if="$store.state.currentPage === 'admin'"/>
-    <CarouselPage v-if="$store.state.currentPage === 'carousel'"/>
-    <DayPage v-if="$store.state.currentPage === 'day'"/>
-    <WeekPage v-if="$store.state.currentPage === 'week'"/>
+    <Settings v-if="$store.state.settingsPage !== 'none'"/>
+    <router-view></router-view>
 
     <Footer/>
   </div>
@@ -19,15 +14,7 @@
 
 <script>
 import Navigation from "./components/Navigation/Navigation";
-
-import AdminPage from "./pages/AdminPage";
-
-import CarouselPage from "./pages/CarouselPage";
-import DayPage from "./pages/DayPage";
-import WeekPage from "./pages/WeekPage";
-
 import Settings from "./components/Navigation/Settings";
-
 import Footer from "./components/Footer";
 
 var KEYCODE_M = 109;
@@ -36,17 +23,12 @@ var KEYCODE_N = 110;
 export default {
   components: {
     Navigation,
-    AdminPage,
-    CarouselPage,
-    DayPage,
-    WeekPage,
     Settings,
     Footer
   },
   mounted() {
     /* eslint-disable */
-
-    console.log("Bechtle Speiseplan ♥ v0.2.233 | Implement settings container");
+    console.log("Current Page: " + this.$route.params.currentPage)
     window.addEventListener("keypress", e => {
       if (e.keyCode === KEYCODE_N && this.$store.state.shortcuts) {
         this.$store.commit("toggleTheme");
@@ -55,6 +37,7 @@ export default {
         this.$store.commit("toggleMenu");
       }
     });
+    console.log("Bechtle Speiseplan ♥ v0.2.233 | Implement settings container");    
   }
 };
 </script>

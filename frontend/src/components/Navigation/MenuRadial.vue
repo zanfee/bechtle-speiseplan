@@ -116,11 +116,11 @@ export default {
   clip-path: polygon(0% 0%, 0% 100%, 55% 100%);
 }
 
-.dark .menu-item:hover {
+.dark .open .menu-item:hover {
   background-color: #3c3c3ccc;
 }
 
-.light .menu-item:hover {
+.light .open .menu-item:hover {
   background-color: #ffffffcc;
 }
 

@@ -1,17 +1,33 @@
 <template>
   <div class="settings" :class="{ 'hidden': $store.state.settingsPage === 'none' }">
-    <div class="settings-navigation">
-      <SettingsTab v-for="tab in tabs" :key="tab" :length="tabs.length"></SettingsTab>
+    <div class="settings-header">
+      <h1 class="material unselectable">settings</h1>
+      <h1>{{ $store.state.settingsPage }}</h1>
     </div>
+    
+    <SettingsBody v-if="$store.state.settingsPage === 'settings'"/>
+    <PageSettingsBody v-if="$store.state.settingsPage === 'page-settings'"/>
+    <PagesBody v-if="$store.state.settingsPage === 'pages'"/>
+
+    <!-- <div class="settings-navigation">
+      <SettingsTab v-for="tab in tabs" :key="tab" :length="tabs.length"></SettingsTab>
+    </div> -->
+
   </div>
 </template>
 
 <script>
-import SettingsTab from "./SettingsTab";
+//import SettingsTab from "./SettingsTab";
+import SettingsBody from "./SettingsPages/SettingsBody";
+import PageSettingsBody from "./SettingsPages/PageSettingsBody"
+import PagesBody from "./SettingsPages/PagesBody"
 
 export default {
   components: {
-    SettingsTab
+    //SettingsTab,
+    SettingsBody,
+    PageSettingsBody,
+    PagesBody
   },
   data() {
     return {
@@ -22,6 +38,20 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  display: inline-block;
+  margin-right: calc(0.25em + 0.5vw);
+  vertical-align: unset;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+.fit h1 {
+  font-size: calc(1em + 1.5vh);
+}
+
 .settings {
   width: 40%;
   min-width: 70vh;
@@ -49,17 +79,25 @@ export default {
 }
 
 .light .settings {
-  background-color: #f9f9f9;
+  background-color: #f2f2f2;
 }
 
 .dark .settings {
   background-color: #505050;
 }
 
-.settings-navigation {
+.settings-header {
+  width: 90%;
+  /* height: 60px; */
+  line-height: 60px;
+  display: flex;
+  margin: 0 auto;
+}
+
+/* .settings-navigation {
   width: 90%;
   height: 10%;
   margin: 0 auto;
   display: flex;
-}
+} */
 </style>
