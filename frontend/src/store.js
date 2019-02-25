@@ -9,7 +9,6 @@ export default new Vuex.Store({
     menuType: localStorage.getItem("menu-type") == null ? "sidebar" : localStorage.getItem("menu-type"),
     isMenuOpen: false,
     theme: localStorage.getItem("current-theme") == null ? 1 : parseInt(localStorage.getItem("current-theme")),
-    themeName: "Tagmodus",
     fit: localStorage.getItem("fit") !== "false",
     shortcuts: localStorage.getItem("shortcuts") !== "false",
     slide: localStorage.getItem("slide") !== "false"
@@ -41,24 +40,6 @@ export default new Vuex.Store({
     toggleTheme(state) {
       state.theme === 2 /* amount of themes */ ? state.theme = 1 : state.theme++;
       localStorage.setItem("current-theme", state.theme.toString());
-      switch (state.theme) {
-        case 1:
-          state.themeName = "Nachtmodus";
-          break;
-        default:
-          state.themeName = "Tagmodus";
-          break;
-      }
-    },
-    loadThemeName(state) {
-      switch (state.theme) {
-        case 1:
-          state.themeName = "Nachtmodus";
-          break;
-        default:
-          state.themeName = "Tagmodus";
-          break;
-      }
     },
     toggleFit(state) {
       state.fit = !state.fit;

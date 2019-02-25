@@ -19,7 +19,7 @@
       </SidebarList>
 
       <SidebarList title="Einstellungen">
-        <SidebarListItem @click.native="$store.commit('toggleTheme');">{{ this.$store.state.themeName }}</SidebarListItem>
+        <SidebarListItem @click.native="$store.commit('toggleTheme');">{{ getThemeName }}</SidebarListItem>
         <SidebarListItem @click.native="$store.commit('toggleMenuType');">{{ this.$store.state.menuType }}</SidebarListItem>
         <SidebarListItem>Language</SidebarListItem>
         <SidebarListItem>Geschwindigkeit</SidebarListItem>
@@ -42,8 +42,15 @@ export default {
     SidebarListItem,
     SidebarListBox
   },
-  mounted() {
-    this.$store.commit("loadThemeName");
+  computed: {
+    getThemeName() {
+      switch (this.$store.state.theme) {
+        case 1:
+          return "Nachtmodus";
+        default:
+          return "Tagmodus";
+      }
+    }
   },
   methods: {
     openUrl(url) {
