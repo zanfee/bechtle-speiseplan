@@ -14,7 +14,7 @@
 
 <script>
 import Navigation from "./components/Navigation/Navigation";
-import Settings from "./components/Navigation/Settings";
+import Settings from "./components/Navigation/RadialMenu/Settings";
 import Footer from "./components/Footer";
 
 var KEYCODE_M = 109;
@@ -28,7 +28,6 @@ export default {
   },
   mounted() {
     /* eslint-disable */
-    console.log("Current Page: " + this.$route.params.currentPage)
     window.addEventListener("keypress", e => {
       if (e.keyCode === KEYCODE_N && this.$store.state.shortcuts) {
         this.$store.commit("toggleTheme");
@@ -37,7 +36,7 @@ export default {
         this.$store.commit("toggleMenu");
       }
     });
-    console.log("Bechtle Speiseplan ♥ v0.2.233 | Implement settings container");    
+    console.log("Bechtle Speiseplan ♥ v0.2.236 | Restructure menu files");    
   }
 };
 </script>
@@ -46,9 +45,5 @@ export default {
 .site {
   min-height: 100%;
   overflow-x: hidden;
-}
-
-nav {
-  margin-bottom: calc(58px + 0.5vh);
 }
 </style>

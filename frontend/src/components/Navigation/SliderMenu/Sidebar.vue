@@ -45,7 +45,7 @@ export default {
   computed: {
     getThemeName() {
       switch (this.$store.state.theme) {
-        case 1:
+        case 2:
           return "Nachtmodus";
         default:
           return "Tagmodus";

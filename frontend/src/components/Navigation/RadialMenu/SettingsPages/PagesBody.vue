@@ -1,6 +1,6 @@
 <template>
-  <div>
-    
+  <div class="settings-body">
+    e
   </div>
 </template>
 

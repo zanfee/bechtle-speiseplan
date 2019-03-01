@@ -7,7 +7,7 @@
 <script>
 export default {
   props: {
-    day: Number
+    day: String
   }
 };
 </script>

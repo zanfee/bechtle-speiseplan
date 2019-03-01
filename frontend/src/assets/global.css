@@ -196,13 +196,13 @@ p {
   background-color: #f5f5f5;
 }
 .light .burger-button.open:not(.circle) {
-  background-color: #F0F0F0;
+  background-color: #eaeaea;
 }
 .light .tool-container {
   background-color: #fcfcfc;
 }
 .light .menu-radial {
-  background-color: #d4d4d4;
+  background-color: #eaeaea;
 }
 .light .row {
   background-color: #bdbdbd;
@@ -221,7 +221,7 @@ p {
 }
 @media (hover: hover) {
   .light .tool-body, .light .burger-button:hover {
-    background-color: #f0f0f0;
+    background-color: #eaeaea;
   }
 }
 

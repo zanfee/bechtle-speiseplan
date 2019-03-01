@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Progressbar from "./Progressbar";
+import Progressbar from "./Navigation/Progressbar";
 
 export default {
   components: {

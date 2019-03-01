@@ -2,37 +2,43 @@
   <div class="settings" :class="{ 'hidden': $store.state.settingsPage === 'none' }">
     <div class="settings-header">
       <h1 class="material unselectable">settings</h1>
-      <h1>{{ $store.state.settingsPage }}</h1>
+      <h1>{{ settingsPageTitle }}</h1>
     </div>
     
     <SettingsBody v-if="$store.state.settingsPage === 'settings'"/>
     <PageSettingsBody v-if="$store.state.settingsPage === 'page-settings'"/>
     <PagesBody v-if="$store.state.settingsPage === 'pages'"/>
-
-    <!-- <div class="settings-navigation">
-      <SettingsTab v-for="tab in tabs" :key="tab" :length="tabs.length"></SettingsTab>
-    </div> -->
-
   </div>
 </template>
 
 <script>
-//import SettingsTab from "./SettingsTab";
 import SettingsBody from "./SettingsPages/SettingsBody";
 import PageSettingsBody from "./SettingsPages/PageSettingsBody"
 import PagesBody from "./SettingsPages/PagesBody"
 
 export default {
   components: {
-    //SettingsTab,
     SettingsBody,
     PageSettingsBody,
     PagesBody
   },
   data() {
     return {
-      tabs: ["Settings",  this.$store.state.currentPage + " Settings", "Pages"]
     };
+  },
+  computed: {
+    settingsPageTitle() {
+      switch(this.$store.state.settingsPage) {
+        case "settings":
+          return "Settings";
+        case "pages":
+          return "View";
+        case "page-settings":
+          return "Carousel Settings";
+        default:
+          return "";
+      }
+    }
   }
 }
 </script>
@@ -79,25 +85,31 @@ h1 {
 }
 
 .light .settings {
-  background-color: #f2f2f2;
+  background-color: #f9f9f9;
 }
 
 .dark .settings {
-  background-color: #505050;
+  background-color: #494949;
 }
 
 .settings-header {
   width: 90%;
-  /* height: 60px; */
-  line-height: 60px;
+  height: 80px;
   display: flex;
   margin: 0 auto;
+  align-items: center;
 }
 
-/* .settings-navigation {
-  width: 90%;
-  height: 10%;
-  margin: 0 auto;
-  display: flex;
-} */
+.settings-body {
+  height: calc(100% - 80px);
+  border-radius: inherit;
+}
+
+.light .settings-body {
+  background-color: #eaeaea;
+}
+
+.dark .settings-body {
+  background-color: #505050;
+}
 </style>

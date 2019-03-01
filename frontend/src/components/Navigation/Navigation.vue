@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div class="nav-header">
-      <MenuRadial/>
+      <RadialButton/>
       <BurgerButton @click.native="$store.commit('toggleMenu')"/>
       <div class="clock-box">
         <h6 v-html="clock" id="clock"></h6>
@@ -28,19 +28,19 @@
 </template>
 
 <script>
-import BurgerButton from "../BurgerButton";
+import BurgerButton from "./BurgerButton";
 
-import Sidebar from "./Sidebar";
-import MenuRadial from "./MenuRadial";
+import Sidebar from "./SliderMenu/Sidebar";
+import RadialButton from "./RadialMenu/RadialButton";
 
-import Progressbar from "../Progressbar";
+import Progressbar from "./Progressbar";
 
 export default {
   components: {
     Progressbar,
     BurgerButton,
     Sidebar,
-    MenuRadial
+    RadialButton
   },
   data() {
     return {
@@ -72,6 +72,10 @@ export default {
 </script>
 
 <style scoped>
+nav {
+  margin-bottom: calc(58px + 0.5vh);
+}
+
 .nav-header {
   width: 100%;
   position: fixed;
