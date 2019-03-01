@@ -43,7 +43,7 @@ export default {
       this.items.unshift(this.items[2]);
       this.items.splice(3, 1);
     });
-
+    
     this.fetchData();
   },
   methods: {

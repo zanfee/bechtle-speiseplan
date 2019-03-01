@@ -1,7 +1,7 @@
 <template>
   <nav :class="{ 'nav-open': $store.state.isMenuOpen }" id="nav-body">
     <ul class="nav-admin unselectable">
-      <SidebarList title="Bearbeiten" @click.native="$router.push('/edit')"></SidebarList>
+      <SidebarListItem :large="true" @click.native="$router.push('/edit')">Bearbeiten</SidebarListItem>
     </ul>
 
     <ul class="nav-view unselectable">
@@ -10,7 +10,7 @@
       <SidebarListItem @click.native="$router.push('/week')">Wochenübersicht</SidebarListItem>
     </ul>
 
-    <ul class="nav-base unselectable">
+    <div class="nav-base unselectable">
       <SidebarList title="Module">
         <SidebarListItem>Speiseplan Woche</SidebarListItem>
         <SidebarListItem>Speiseplan Tag</SidebarListItem>
@@ -27,7 +27,7 @@
         <SidebarListBox command="toggleShortcuts">Shortcuts</SidebarListBox>
         <SidebarListBox command="toggleSlide">Carousel Slide</SidebarListBox>
       </SidebarList>
-    </ul>
+    </div>
   </nav>
 </template>
 

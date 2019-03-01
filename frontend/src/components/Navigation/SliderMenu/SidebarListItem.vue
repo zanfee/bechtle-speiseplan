@@ -1,18 +1,37 @@
 <template>
-  <a class="item">
+  <li :class="{ 'indent': !large }">
     <slot></slot>
-  </a>
+  </li>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    large: Boolean
+  }
+};
 </script>
 
 <style scoped>
-.item {
+.indent {
   left: 16px;
-  visibility: visible;
   position: relative;
   font-weight: 400;
+}
+
+.light li {
+  color: #505050;
+}
+
+.dark li {
+  color: #dddddd;
+}
+
+.light .nav-admin li {
+  color: rgb(160, 10, 10);
+}
+
+.dark .nav-admin li {
+  color: rgb(247, 82, 82);
 }
 </style>

@@ -36,7 +36,7 @@ export default {
         this.$store.commit("toggleMenu");
       }
     });
-    console.log("Bechtle Speiseplan ♥ v0.2.236 | Restructure menu files");    
+    console.log("Bechtle Speiseplan ♥ v0.2.237 | Restructure slider menu");    
   }
 };
 </script>

@@ -1,10 +1,10 @@
 <template>
-  <a class="item">
+  <li :class="{ 'indent': !large }">
     <input type="checkbox" :id="id" @click="cmd">
     <label :for="id">
       <slot></slot>
     </label>
-  </a>
+  </li>
 </template>
 
 <script>
@@ -14,7 +14,10 @@ export default {
       id: null
     };
   },
-  props: ["command"],
+  props: {
+    command: String,
+    large: Boolean
+  },
   methods: {
     cmd() {
       this.$store.commit(this.command);
@@ -35,14 +38,18 @@ export default {
 </script>
 
 <style scoped>
-.item {
-  visibility: visible;
+.indent {
+  left: 16px;
   position: relative;
   font-weight: 400;
-  display: block;
-  margin-top: 0;
-  margin-bottom: 0.625em;
-  margin-left: 1em;
+}
+
+.light li {
+  color: #505050;
+}
+
+.dark li {
+  color: #dddddd;
 }
 
 [type="checkbox"] {
